@@ -15,6 +15,7 @@ CASES = [  # zip, expected House district labels (current map), expect split not
     ("82001", ["WY-00"], False, False),
     ("05401", ["VT-00"], False, False),
     ("20001", ["DC-00"], False, False),
+    ("53066", ["WI-05"], False, False),  # verified with Census geocoder (119th and 120th): WI-05
     ("00000", [], False, False),
 ]
 fails = []
@@ -48,6 +49,19 @@ with sync_playwright() as p:
                 if "running in 2026" not in txt.lower(): ok = False
                 # a member card must show at least one vote badge
                 if page.locator(".badge").count() == 0: ok = False; print(z, "no vote badges")
+                if z == "53066" and "Wisconsin · 5th District" not in page.inner_text(".loc"): ok = False; print(z, "district label mismatch")
+                # AIPAC-related flags: separate labels, 2025-26 only, never styled like vote badges
+                for t in page.locator("#results .flag").all_inner_texts():
+                    if "(2025-26)" not in t or "2023" in t: ok = False; print(z, "bad flag text", t)
+                if page.locator(".flag.badge, .flag.v-yea, .flag.v-nay").count(): ok = False; print(z, "flag styled as vote")
+                if page.locator(".flag-aipac.flag-udp").count(): ok = False; print(z, "combined flag")
+                fin_cards = page.locator("article.card [data-panel=money]").count()
+                heads = page.locator("article.card [data-panel=money] h4", has_text="AIPAC-related money").count()
+                if heads != fin_cards: ok = False; print(z, "AIPAC detail missing", heads, fin_cards)
+                dheads = page.locator("article.card [data-panel=money] h4", has_text="Weapons-industry PAC money").count()
+                if dheads != fin_cards: ok = False; print(z, "weapons-industry detail missing", dheads, fin_cards)
+                if page.locator(".flag-def.flag-aipac, .flag-def.flag-udp").count(): ok = False; print(z, "weapons flag combined with AIPAC flag")
+                if z == "53066" and page.locator("article.card .flag-def").count() < 2: ok = False; print(z, "expected weapons-industry flags (Baldwin, Fitzgerald)")
             # photos 404 are tolerated by design (hidden), but count them
             real_errors = [e for e in errors if "images/congress" not in e]
             if real_errors: ok = False; print(z, label, "errors:", real_errors[:5])
@@ -59,6 +73,8 @@ with sync_playwright() as p:
                 page.locator("[data-tab=money]").first.click()
                 page.locator("details.cand summary").first.click()
                 page.screenshot(path=f"{SHOTS}/results-10001-money-{label}.png", full_page=True)
+            if z == "53066":
+                page.screenshot(path=f"{SHOTS}/results-53066-{label}.png", full_page=True)
             if z == "20878" and label == "desktop":
                 page.screenshot(path=f"{SHOTS}/results-20878-split-desktop.png", full_page=True)
             if z == "78701" and label == "desktop":

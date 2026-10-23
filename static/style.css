@@ -71,3 +71,20 @@ details.cand summary{cursor:pointer;color:var(--green-2);font-size:.88rem}
 .skeleton{color:var(--muted);padding:20px 0}
 @media (max-width:560px){.stat b{font-size:.98rem}.badge{width:92px}.hide-sm{display:none}}
 [hidden]{display:none !important}
+
+/* AIPAC-related flags: neutral amber, distinct from vote colors */
+.flags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+.flag{display:inline-block;font-size:.78rem;line-height:1.25;padding:3px 8px;border-radius:6px;text-decoration:none;font-weight:600}
+.flag-aipac{border:1.5px solid #d97706;color:#92400e;background:#fffbeb}
+.flag-udp{border:1.5px dashed #64748b;color:#334155;background:#f8fafc}
+a.flag:hover,details.flag summary:hover{text-decoration:underline}
+details.flag:hover .flag-pop{text-decoration:none}
+.aipac-t td,.aipac-t th{font-size:.88rem}
+.flag-def,.flag-def-static{border:1.5px solid #57534e;color:#292524;background:#f5f5f4}
+details.flag-def{padding:0}
+details.flag-def summary{cursor:pointer;padding:3px 8px;list-style:none}
+details.flag-def summary::-webkit-details-marker{display:none}
+details.flag-def summary::after{content:" ▾";font-weight:400}
+details.flag-def[open] summary::after{content:" ▴"}
+.flag-pop{padding:4px 8px 6px;font-weight:400;border-top:1px solid #d6d3d1}
+.flag-pop .small{margin-top:3px}

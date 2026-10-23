@@ -46,6 +46,28 @@ Tests: `.venv/bin/pip install playwright` and then `.venv/bin/python scripts/e2e
 
 The site never fills gaps with made-up data. If a source fails during a build, the affected section says "unavailable" and the About section lists a warning.
 
+## AIPAC-related flags (2025–26 cycle)
+
+`aipac.py` adds two separate, neutral labels to members and 2026 candidates. They are never combined.
+
+- **Received AIPAC PAC money: $X (2025-26)** (amber outline). This comes from the Schedule B of AIPAC's PAC, **C00797670** (American Israel Public Affairs Committee Political Action Committee). It includes:
+  - direct contributions to the candidate's authorized committees;
+  - individual contributions AIPAC PAC forwarded as a conduit (memo "EARMARK OF …"), shown separately and net of voided or refunded earmarks.
+
+  Recipient committees are mapped to candidates with the FEC `ccl` linkage file plus each candidate's principal committee. Gifts to party committees and leadership PACs are not counted.
+- **AIPAC-affiliated super PAC spent $X supporting/opposing (2025-26)** (gray dashed outline). This comes from the Schedule E independent expenditures of United Democracy Project, **C00799031**, a super PAC. The data is pulled with `most_recent=true`, and a 24/48-hour notice is dropped when the same candidate, date, and amount also appears on a regular report. This is outside spending, not money the campaign received. The FEC lists no connected organization for UDP; the AIPAC affiliation is publicly reported.
+
+The data is fetched by committee rather than by candidate: about 400 FEC API calls for AIPAC PAC's roughly 40k disbursement rows, plus 4 calls for UDP. It is cached in `cache/aipac_2026.json` and refreshed weekly, and needs a personal `FEC_API_KEY` (with DEMO_KEY only an existing cache is used). A partial pull is never published. If the fetch fails, the previous cache is used or the site shows "unavailable". FEC bulk files (`pas2`, `oth`) were checked and are missing most of AIPAC PAC's 2025–26 reports, so they are not used.
+
+## Weapons-industry flag (2025–26 cycle)
+
+The **Received weapons-industry PAC money: $X (2025-26)** label (stone-gray solid outline) shows direct contributions to a candidate's committees from the corporate PACs listed in [`config/defense_pacs.json`](config/defense_pacs.json). Tapping the label shows the amount from each company.
+
+- **Data:** FEC bulk `pas2` file, transaction types 24K/24Z, excluding memo entries. Voided contributions come through as negative rows and are netted out.
+- **Companies:** the five largest DoD contractors by FY2024 obligations (CRS IF10600, SAM.gov data), plus Huntington Ingalls, L3Harris, BAE Systems Inc., Leidos, Textron, and General Atomics.
+- **Verification:** each committee ID was checked on api.open.fec.gov.
+- **Not included:** employee (individual) donations. The employer data the site already has is only each campaign's top 40 employers, so totals built from it would undercount. Gun-lobby groups are also excluded.
+
 ## Deploying publicly (GitHub Pages, updated weekly)
 
 `.github/workflows/weekly.yml` runs every Monday (and on manual dispatch or a push to `main`). It builds the site, caches downloads and FEC results between runs with `actions/cache`, and deploys `site/` to GitHub Pages.

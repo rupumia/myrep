@@ -1,0 +1,86 @@
+{
+  "_about": "Corporate PACs of major U.S. defense/weapons contractors used for the 'weapons-industry PAC money' flag. Selection: the five largest DoD contractors by FY2024 contract obligations (CRS In Focus IF10600, from the SAM.gov FY2024 Top 100 Contractors report) plus other DoD prime contractors whose main business is weapons systems, military aircraft, warships, munitions or defense electronics. Every committee ID was checked on api.open.fec.gov (committee type Q, connected organization as listed) on 2026-10-23. Defense contractors only: gun-lobby groups (NRA etc.) are not included. Edit this file to change the list; the site reads it at build time.",
+  "sources": [
+    {
+      "name": "CRS In Focus IF10600, Defense Primer: Department of Defense Contractors (FY2024 top five by obligations)",
+      "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF10600/IF10600.18.pdf"
+    },
+    {
+      "name": "SAM.gov Top 100 Contractors Reports (FY2024)",
+      "url": "https://sam.gov/reports/awards/static"
+    },
+    {
+      "name": "WarCosts FY2024 DoD contractor directory (compiled from SAM.gov/FPDS)",
+      "url": "https://www.warcosts.org/contractors/directory"
+    }
+  ],
+  "companies": [
+    {
+      "company": "Lockheed Martin",
+      "committee_id": "C00303024",
+      "fec_name": "LOCKHEED MARTIN CORPORATION EMPLOYEES' POLITICAL ACTION COMMITTEE",
+      "why": "Largest DoD contractor FY2024 ($50.7B obligations, CRS)"
+    },
+    {
+      "company": "RTX (Raytheon)",
+      "committee_id": "C00097568",
+      "fec_name": "EMPLOYEES OF RTX CORPORATION POLITICAL ACTION COMMITTEE",
+      "why": "2nd largest DoD contractor FY2024 ($24.8B, CRS)"
+    },
+    {
+      "company": "Boeing",
+      "committee_id": "C00142711",
+      "fec_name": "THE BOEING COMPANY PAC",
+      "why": "3rd largest DoD contractor FY2024 ($23.2B, CRS)"
+    },
+    {
+      "company": "Northrop Grumman",
+      "committee_id": "C00088591",
+      "fec_name": "EMPLOYEES OF NORTHROP GRUMMAN CORPORATION PAC",
+      "why": "4th largest DoD contractor FY2024 ($18.6B, CRS)"
+    },
+    {
+      "company": "General Dynamics",
+      "committee_id": "C00078451",
+      "fec_name": "GENERAL DYNAMICS CORPORATION POLITICAL ACTION COMMITTEE (GENERAL DYNAMICS EMPLOYEE PAC)",
+      "why": "5th largest DoD contractor FY2024 ($15.6B, CRS)"
+    },
+    {
+      "company": "Huntington Ingalls Industries",
+      "committee_id": "C00325092",
+      "fec_name": "HUNTINGTON INGALLS INDUSTRIES, INC. EMPLOYEES POLITICAL ACTION COMMITTEE (HIIPAC)",
+      "why": "Builds U.S. Navy aircraft carriers and submarines; among DoD's top 50 contractors FY2024 (SAM.gov data as compiled by WarCosts)"
+    },
+    {
+      "company": "L3Harris Technologies",
+      "committee_id": "C00100321",
+      "fec_name": "L3HARRIS TECHNOLOGIES, INC. PAC",
+      "why": "Defense electronics, missiles and rocket motors; among DoD's top 50 contractors FY2024 (SAM.gov data as compiled by WarCosts)"
+    },
+    {
+      "company": "BAE Systems Inc. (U.S.)",
+      "committee_id": "C00281212",
+      "fec_name": "BAE SYSTEMS INC. POLITICAL ACTION COMMITTEE (BAE SYSTEMS USA PAC)",
+      "why": "U.S. arm of BAE Systems; combat vehicles, munitions, ship repair; among DoD's top 50 contractors FY2024 (SAM.gov data as compiled by WarCosts)"
+    },
+    {
+      "company": "Leidos",
+      "committee_id": "C00546234",
+      "fec_name": "LEIDOS INC. POLITICAL ACTION COMMITTEE",
+      "why": "Major DoD prime contractor (defense systems and IT); among DoD's top 50 contractors FY2024 (SAM.gov data as compiled by WarCosts)"
+    },
+    {
+      "company": "Textron",
+      "committee_id": "C00123612",
+      "fec_name": "TEXTRON INC. POLITICAL ACTION COMMITTEE",
+      "why": "Bell military helicopters/tiltrotors and Textron Systems; among DoD's top 50 contractors FY2024 (SAM.gov data as compiled by WarCosts). (FEC lists its connected organization under a legacy name, Beechcraft.)"
+    },
+    {
+      "company": "General Atomics",
+      "committee_id": "C00215285",
+      "fec_name": "GENERAL ATOMICS POLITICAL ACTION COMMITTEE",
+      "why": "Maker of MQ-9 Reaper military drones (General Atomics Aeronautical Systems); among DoD's top 50 contractors FY2024 (SAM.gov data as compiled by WarCosts)"
+    }
+  ],
+  "not_included": "Diversified firms where defense is a minority of business (e.g. Honeywell, General Electric), IT/services contractors (Booz Allen Hamilton, SAIC, CACI), newer firms (Anduril, Palantir), trade associations, and gun-lobby groups (NRA etc.) are not counted."
+}

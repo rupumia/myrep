@@ -30,6 +30,46 @@ function votesPanel(m) {
   return `<ul class="votes">${li}</ul>${more}`;
 }
 
+function aipacFlags(f) {
+  const a = f && f.aipac && f.aipac.status === "ok" ? f.aipac : {direct: 0, earmarked: 0, udp_support: 0, udp_oppose: 0};
+  const got = a.direct + a.earmarked, out = [];
+  if (got > 0) out.push(`<a class="flag flag-aipac" href="${esc(a.pac_url)}" target="_blank" rel="noopener" title="Direct ${usd(a.direct)} + earmarked via AIPAC PAC ${usd(a.earmarked)}. Source: FEC">Received AIPAC PAC money: ${usd(got)} (2025-26)</a>`);
+  if (a.udp_support > 0) out.push(`<a class="flag flag-udp" href="${esc(a.udp_url)}" target="_blank" rel="noopener" title="Independent expenditures by United Democracy Project. Not money given to the campaign. Source: FEC">AIPAC-affiliated super PAC spent ${usd(a.udp_support)} supporting (2025-26)</a>`);
+  if (a.udp_oppose > 0) out.push(`<a class="flag flag-udp" href="${esc(a.udp_url)}" target="_blank" rel="noopener" title="Independent expenditures by United Democracy Project. Not money given to the campaign. Source: FEC">AIPAC-affiliated super PAC spent ${usd(a.udp_oppose)} opposing (2025-26)</a>`);
+  const d = f && f.defense;
+  if (d && d.status === "ok" && d.total > 0) out.push(`<details class="flag flag-def"><summary>Received weapons-industry PAC money: ${usd(d.total)} (2025-26)</summary>
+    <div class="flag-pop">${d.by_company.map(x => `<div>${esc(x.company)}: ${usd(x.total)}</div>`).join("")}<div class="small">Direct contributions from the listed defense contractors' corporate PACs. <a href="${esc(d.url)}" target="_blank" rel="noopener">Source: FEC →</a></div></div></details>`);
+  return out.length ? `<div class="flags">${out.join("")}</div>` : "";
+}
+
+function defenseDetail(f) {
+  const d = f && f.defense;
+  let h = `<h4>Weapons-industry PAC money (2025–26)</h4>`;
+  if (!d || d.status !== "ok") return h + `<div class="unavail">Not available in this update.</div>`;
+  if (!(d.total > 0)) return h + `<div class="small">No direct contributions from the listed defense contractors' PACs reported in FEC bulk data for 2025–26. <a href="${esc(d.url)}" target="_blank" rel="noopener">Check on FEC</a> · <a href="#about-defense">Which companies?</a></div>`;
+  return h + `<table class="aipac-t"><thead><tr><th>Company PAC</th><th class="num">Amount</th></tr></thead><tbody>` +
+    d.by_company.map(x => `<tr><td><a href="https://www.fec.gov/data/committee/${esc(x.committee_id)}/?cycle=2026" target="_blank" rel="noopener">${esc(x.company)}</a></td><td class="num">${usd(x.total)}</td></tr>`).join("") +
+    `<tr><th>Total</th><th class="num">${usd(d.total)}</th></tr></tbody></table><div class="small">Direct PAC contributions only; employee donations are not included here. <a href="${esc(d.url)}" target="_blank" rel="noopener">FEC records →</a> · <a href="#about-defense">Which companies?</a></div>`;
+}
+
+function aipacDetail(f) {
+  const a = f && f.aipac;
+  let h = `<h4>AIPAC-related money (2025–26)</h4>`;
+  if (!a || a.status !== "ok") return h + `<div class="unavail">AIPAC-related FEC data is unavailable in this update.</div>`;
+  const got = a.direct + a.earmarked;
+  if (!got && !a.udp_support && !a.udp_oppose) return h + `<div class="small">No AIPAC PAC contributions (direct or earmarked) and no United Democracy Project outside spending reported for 2025–26. <a href="${esc(a.pac_url)}" target="_blank" rel="noopener">AIPAC PAC on FEC</a> · <a href="${esc(a.udp_url)}" target="_blank" rel="noopener">UDP spending on FEC</a></div>`;
+  h += `<table class="aipac-t"><tbody>
+    <tr><td>Direct contributions from AIPAC PAC</td><td class="num">${usd(a.direct)}</td></tr>
+    <tr><td>Individual contributions earmarked through AIPAC PAC</td><td class="num">${usd(a.earmarked)}</td></tr>
+    <tr><th>Received via AIPAC PAC, total</th><th class="num">${usd(got)}</th></tr>
+  </tbody></table><div class="small">Net of refunds. <a href="${esc(a.pac_url)}" target="_blank" rel="noopener">AIPAC PAC disbursements on FEC →</a></div>
+  <table class="aipac-t"><tbody>
+    <tr><td>United Democracy Project (AIPAC-affiliated super PAC) outside spending supporting</td><td class="num">${usd(a.udp_support)}</td></tr>
+    <tr><td>United Democracy Project outside spending opposing</td><td class="num">${usd(a.udp_oppose)}</td></tr>
+  </tbody></table><div class="small">Outside spending is independent of the campaign and is not money the campaign received. <a href="${esc(a.udp_url)}" target="_blank" rel="noopener">UDP independent expenditures on FEC →</a> FEC data fetched ${esc(a.fetched)}.</div>`;
+  return h;
+}
+
 function moneyBlock(f, opts = {}) {
   if (!f) return `<div class="unavail">Campaign finance data is unavailable for this person.</div>`;
   let h = "";
@@ -59,6 +99,8 @@ function moneyBlock(f, opts = {}) {
       `</tbody></table><div class="small">Itemized donations ($200+), grouped by the employer donors reported. FEC data fetched ${esc(e.fetched)}.</div>`;
   } else if (e && e.status === "ok") h += `<div class="unavail">No itemized individual contributions reported yet.</div>`;
   else h += `<div class="unavail">Employer breakdown not available yet (FEC API rate limit; filled in on later updates). See the FEC page below.</div>`;
+  h += aipacDetail(f);
+  h += defenseDetail(f);
   h += `<p class="links"><a href="${esc(f.fec_url)}" target="_blank" rel="noopener">Full FEC record →</a></p>`;
   return h;
 }
@@ -75,6 +117,7 @@ function memberCard(m, note) {
         <div class="meta">${esc(m.title)} · ${esc(where)}</div>
         <div class="meta">${esc(m.party)} · term ends ${fmtDate(m.term_end)}</div>
         ${note ? `<div class="meta"><em>${esc(note)}</em></div>` : ""}
+        ${aipacFlags(m.finance)}
         <div class="links">${m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Website</a>` : ""}${m.phone ? `<a href="tel:${esc(m.phone)}">${esc(m.phone)}</a>` : ""}<a href="${esc(m.bioguide_url)}" target="_blank" rel="noopener">Bio</a></div>
       </div>
     </div>
@@ -96,7 +139,7 @@ function raceBlock(race, members, title) {
     const rec = c.bioguide ? (members[c.bioguide] ? `Current member of Congress: voting record is on ${esc(members[c.bioguide].name)}'s card above.` : `Current member of Congress (another seat or district); <a href="https://bioguide.congress.gov/search/bio/${esc(c.bioguide)}" target="_blank" rel="noopener">see bio</a>.`)
       : "No congressional voting record (not a current member of Congress).";
     return `<tr><td><strong>${esc(c.name)}</strong> <span class="party" title="${esc(c.party)}">${esc(c.party_abbr)}</span><br>
-      <span class="status ${st}">${esc(c.status === "Unknown" ? "Status not listed" : c.status)}</span>${c.bioguide ? ` <span class="status st-open">Current member</span>` : ""}
+      <span class="status ${st}">${esc(c.status === "Unknown" ? "Status not listed" : c.status)}</span>${c.bioguide ? ` <span class="status st-open">Current member</span>` : ""}${aipacFlags(c.finance)}
       <details class="cand"><summary>Donors & details</summary><p class="small">${rec}</p>${moneyBlock(c.finance, {n: 5})}</details></td>
       <td class="num">${usd(c.finance.totals.receipts)}</td><td class="num hide-sm">${usd(c.finance.totals.cash_on_hand)}</td></tr>`;
   }).join("");
@@ -190,6 +233,8 @@ $("#zip-form").addEventListener("submit", e => { e.preventDefault(); lookup($("#
     add("house_votes", s.house_votes?.latest_vote_date ? `latest vote ${fmtDate(s.house_votes.latest_vote_date)}` : "");
     add("senate_votes", s.senate_votes?.latest_vote_date ? `latest vote ${fmtDate(s.senate_votes.latest_vote_date)} (Voteview can lag the Senate by days to weeks)` : "");
     add("fec", s.fec?.coverage_through ? `reports through ${esc(s.fec.coverage_through)}` : "");
+    add("aipac", s.aipac?.status === "ok" ? `fetched ${esc(s.aipac.retrieved)}` : "unavailable in this update");
+    if (meta.defense_pacs) $("#defense-list").innerHTML = meta.defense_pacs.companies.map(c => `<li>${esc(c.company)}: <a href="https://www.fec.gov/data/committee/${esc(c.committee_id)}/" target="_blank" rel="noopener">${esc(c.fec_name)} (${esc(c.committee_id)})</a></li>`).join("");
     add("fec_api", s.fec_api ? `employer breakdowns cover ${s.fec_api.committees_covered} of ${s.fec_api.committees_total} campaigns so far` : "");
     $("#sources-list").innerHTML = items.join("") + (meta.warnings || []).map(w => `<li class="notice err">${esc(w)}</li>`).join("");
   } else {

@@ -24,6 +24,7 @@ import csv, io, json, os, re, shutil, sys, time, zipfile, datetime as dt
 from collections import defaultdict
 import xml.etree.ElementTree as ET
 import requests
+import aipac
 import districts2026
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -269,11 +270,50 @@ def load_fec():
         f = line.rstrip("\n").split("|")
         if len(f) < 21 or f[5] not in ("24K", "24Z") or not f[16] or f[19] == "X": continue
         pacs[f[16]][f[0]] += money(f[14])
+        if f[0] in DEFENSE_IDS: DEFENSE_RCPT[f[16]].add(f[15])
     meta["sources"]["fec"] = {"name": "Federal Election Commission bulk data, 2025-2026 cycle (candidate summary, candidate & committee master, committee-to-candidate contributions)",
         "url": "https://www.fec.gov/data/browse-data/?tab=bulk-data", "retrieved": meta["built_at"][:10],
         "coverage_through": latest_cvg(weball)}
     log(len(weball), "FEC candidate summaries,", len(cn), "candidates,", len(pacs), "with committee contributions")
     return weball, cn, cm, pacs
+
+def committee_to_candidates(cn):
+    """Authorized (P/A) committee -> candidate ids, from ccl + each candidate's principal committee."""
+    m = defaultdict(set)
+    for line in open(fec_bulk("ccl", "ccl.txt"), encoding="latin-1"):
+        f = line.rstrip("\n").split("|")
+        if len(f) >= 6 and f[5] in ("P", "A") and f[0][:1] in ("H", "S"): m[f[3]].add(f[0])
+    for c in cn.values():
+        if c.get("CAND_PCC") and c["CAND_ID"][:1] in ("H", "S"): m[c["CAND_PCC"]].add(c["CAND_ID"])
+    return m
+
+def run_aipac(cn):
+    raw = aipac.fetch(os.path.join(ROOT, "cache"), FEC_KEY, interval=float(os.environ.get("AIPAC_CALL_INTERVAL", FEC_INTERVAL)),
+                      max_calls=int(os.environ.get("AIPAC_MAX_CALLS", "800")), log=log)
+    agg = aipac.aggregate(raw, committee_to_candidates(cn)) if raw else {}
+    meta["sources"]["aipac"] = {"name": "FEC API: AIPAC PAC (C00797670) Schedule B disbursements and United Democracy Project (C00799031) Schedule E independent expenditures, 2025-26",
+        "url": "https://www.fec.gov/data/committee/C00797670/?cycle=2026", "status": "ok" if raw else "unavailable",
+        "retrieved": raw["fetched"] if raw else None, "schedule_b_rows": len(raw["schedule_b"]) if raw else 0,
+        "schedule_e_rows": len(raw["schedule_e"]) if raw else 0}
+    if not raw: meta["warnings"].append("AIPAC-related FEC data unavailable this build")
+    return agg, (raw["fetched"] if raw else None)
+
+DEFENSE = json.load(open(os.path.join(ROOT, "config", "defense_pacs.json")))
+DEFENSE_IDS = {c["committee_id"]: c["company"] for c in DEFENSE["companies"]}
+DEFENSE_RCPT = defaultdict(set)
+
+def defense_for(cand_ids, pacs):
+    """Direct 2025-26 contributions (24K/24Z, FEC bulk pas2) from the listed defense-contractor PACs."""
+    by = defaultdict(float); rc = set()
+    for c in cand_ids:
+        for cm_id, amt in pacs.get(c, {}).items():
+            if cm_id in DEFENSE_IDS: by[cm_id] += amt
+        rc |= DEFENSE_RCPT.get(c, set())
+    items = sorted(({"company": DEFENSE_IDS[k], "committee_id": k, "total": round(v, 2)} for k, v in by.items() if v), key=lambda x: -x["total"])
+    url = ("https://www.fec.gov/data/disbursements/?two_year_transaction_period=2026" + "".join(f"&committee_id={k}" for k in sorted(by))
+           + "".join(f"&recipient_committee_id={r}" for r in sorted(x for x in rc if x))) if items else \
+          "https://www.fec.gov/data/disbursements/?two_year_transaction_period=2026" + "".join(f"&committee_id={k}" for k in sorted(DEFENSE_IDS))
+    return {"status": "ok", "cycle": "2025-26", "total": round(sum(x["total"] for x in items), 2), "by_company": items, "url": url}
 
 def finance_for(cid, weball, cn, cm, pacs):
     w = weball.get(cid); c = cn.get(cid, {})
@@ -401,6 +441,8 @@ def main():
         prio += [cn.get(m["fec_id"], {}).get("CAND_PCC") for m in members.values()]
         allc = sorted({cid for v in races.values() for cid in v}, key=lambda i: -money(weball.get(i, {}).get("TTL_RECEIPTS")))
         prio += [cn[cid]["CAND_PCC"] for cid in allc if money(weball.get(cid, {}).get("TTL_RECEIPTS")) >= 5000]
+        try: aip, aip_date = run_aipac(cn)
+        except Exception as e: aip, aip_date = {}, None; meta["warnings"].append(f"AIPAC data unavailable: {e}"); log("AIPAC FAILED", e)
         emp = fec_employers(prio)
 
     # members
@@ -416,6 +458,8 @@ def main():
             m["votes"] = v
         if fec_ok and m["fec_id"]:
             m["finance"] = finance_for(m["fec_id"], weball, cn, cm, pacs); attach_employers(m["finance"], emp)
+            m["finance"]["aipac"] = aipac.badge_data(m["fec_ids"], aip, aip_date)
+            m["finance"]["defense"] = defense_for(m["fec_ids"], pacs)
         else:
             m["finance"] = None
         write_json(f"members/{bid}.json", m)
@@ -429,6 +473,8 @@ def main():
         cands = []
         for cid in ids:
             c = cn[cid]; f = finance_for(cid, weball, cn, cm, pacs); attach_employers(f, emp)
+            f["aipac"] = aipac.badge_data([cid], aip, aip_date)
+            f["defense"] = defense_for([cid], pacs)
             bio = fec2bio.get(cid)
             cands.append({"fec_id": cid, "name": c["CAND_NAME"], "party": c["CAND_PTY_AFFILIATION"],
                 "party_abbr": PARTY_ABBR.get(c["CAND_PTY_AFFILIATION"], c["CAND_PTY_AFFILIATION"]),
@@ -444,6 +490,18 @@ def main():
         v["name"] = STATE_NAMES.get(st, st)
         write_json(f"states/{st}.json", v)
     meta["votes_per_member"] = VOTES_PER_MEMBER
+    meta["defense_pacs"] = {"companies": DEFENSE["companies"], "sources": DEFENSE["sources"], "not_included": DEFENSE["not_included"]}
+    if fec_ok:
+        def flag(a): return a.get("status") == "ok" and (a["direct"] + a["earmarked"] > 0)
+        def udpf(a): return a.get("status") == "ok" and (a["udp_support"] > 0 or a["udp_oppose"] > 0)
+        allc = [c for k in races for c in json.load(open(os.path.join(OUT, f"races/{k}.json")))["candidates"]]
+        mf = [m["finance"] for m in members.values() if m.get("finance")]; cf = [c["finance"] for c in allc]
+        meta["flag_counts"] = {"members_total": len(members), "candidates_total": len(allc),
+            "members_aipac_pac": sum(flag(f["aipac"]) for f in mf) if aip_date else None,
+            "members_udp": sum(udpf(f["aipac"]) for f in mf) if aip_date else None,
+            "candidates_aipac_pac": sum(flag(f["aipac"]) for f in cf) if aip_date else None,
+            "candidates_udp": sum(udpf(f["aipac"]) for f in cf) if aip_date else None,
+            "members_defense": sum(f["defense"]["total"] > 0 for f in mf), "candidates_defense": sum(f["defense"]["total"] > 0 for f in cf)}
     write_json("meta.json", meta)
     log("done ->", SITE)
 
