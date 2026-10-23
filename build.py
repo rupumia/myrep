@@ -25,6 +25,7 @@ from collections import defaultdict
 import xml.etree.ElementTree as ET
 import requests
 import aipac
+import israel
 import districts2026
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +49,7 @@ FIPS = {"01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT","1
 STATE_NAMES = {"AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming","AS":"American Samoa","GU":"Guam","MP":"Northern Mariana Islands","PR":"Puerto Rico","VI":"U.S. Virgin Islands"}
 PARTY_ABBR = {"Democrat":"D","Republican":"R","Independent":"I","DEM":"D","REP":"R","IND":"I","DFL":"D","LIB":"L","GRE":"G","CON":"C","NNE":"None","NPA":"NPA","UN":"U","OTH":"Other"}
 
-meta = {"built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"), "sources": {}, "warnings": []}
+meta = {"built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"), "sources": {}, "warnings": [], "israel_rollcalls": {}}
 S = requests.Session(); S.headers.update(UA)
 
 def log(*a): print("[build]", *a, flush=True)
@@ -170,6 +171,28 @@ def norm_vote(v):
     v = (v or "").strip()
     return {"Aye": "Yea", "No": "Nay", "Yea": "Yea", "Nay": "Nay"}.get(v, v or "Not Voting")
 
+def house_israel_rolls():
+    """(year, roll) -> {"title", "terms"} for every House roll call of this Congress, classified Israel-related or not."""
+    texts = {}
+    try:
+        ct = israel.CongressText(os.path.join(ROOT, "cache"), os.environ.get("CONGRESS_API_KEY") or FEC_KEY,
+                                 interval=float(os.environ.get("CONGRESS_CALL_INTERVAL", "0.8")), log=log)
+        texts = israel.house_roll_text(ct, CONGRESS, 2025, log=log)
+        meta["sources"]["congress_gov"] = {"name": "congress.gov API: House roll-call metadata, bill titles and amendment purposes (used for vote topics)",
+            "url": "https://api.congress.gov/", "calls_this_build": ct.calls, "stopped_reason": ct.stopped, "retrieved": meta["built_at"][:10]}
+        log(f"israel: congress.gov {ct.calls} calls, {len(texts)} House roll calls with text, stop: {ct.stopped}")
+    except Exception as e:
+        log("congress.gov text FAILED", e); meta["warnings"].append(f"congress.gov bill titles unavailable this build: {e}")
+    try:
+        vv = list(csv.DictReader(open(fetch(f"https://voteview.com/static/data/out/rollcalls/H{CONGRESS}_rollcalls.csv", f"H{CONGRESS}_rollcalls.csv"))))
+        for r in vv:
+            k = (int(r["date"][:4]), int(r["clerk_rollnumber"]))
+            texts.setdefault(k, {"title": "", "texts": []})["texts"] += [r["vote_desc"], r["dtl_desc"]]
+            if not texts[k]["title"]: texts[k]["title"] = r["vote_desc"]
+    except Exception as e:
+        log("Voteview House rollcalls FAILED", e)
+    return {k: {"title": v["title"], "terms": israel.match(*v["texts"])} for k, v in texts.items()}
+
 def build_house_votes():
     year = dt.date.today().year
     rolls = []
@@ -182,7 +205,13 @@ def build_house_votes():
             x = house_roll(y, n)
             if x: rolls.append((y, n, x))
             n -= 1
-    by_member = defaultdict(list); latest = None
+    topics = house_israel_rolls()
+    have = {(y, n) for y, n, _ in rolls}
+    for (y, n), t in sorted(topics.items()):
+        if t["terms"] and (y, n) not in have:
+            x = house_roll(y, n)
+            if x: rolls.append((y, n, x))
+    by_member = defaultdict(list); latest = None; n_isr = 0
     for y, n, x in rolls:
         root = ET.fromstring(x); md = root.find("vote-metadata")
         if (md.findtext("vote-type") or "").upper() == "QUORUM": continue
@@ -190,16 +219,22 @@ def build_house_votes():
         latest = max(latest or date, date)
         legis = md.findtext("legis-num") or ""
         tot = md.find("vote-totals/totals-by-vote")
+        t = topics.get((y, n), {"title": "", "terms": []})
+        q = md.findtext("vote-question") or ""; desc = (md.findtext("vote-desc") or "").strip()
+        terms = sorted(set(t["terms"]) | set(israel.match(q, desc, legis)))
+        n_isr += bool(terms)
         info = {"chamber": "house", "roll": n, "year": y, "date": date,
                 "bill": legis if legis and legis != "0" else "", "bill_url": bill_link(legis),
-                "question": md.findtext("vote-question") or "", "description": (md.findtext("vote-desc") or "").strip(),
+                "question": q, "description": desc or t["title"],
                 "result": md.findtext("vote-result") or "",
                 "yeas": int(tot.findtext("yea-total") or 0) if tot is not None else None,
                 "nays": int(tot.findtext("nay-total") or 0) if tot is not None else None,
+                "israel": bool(terms), "israel_terms": terms,
                 "source_url": f"https://clerk.house.gov/Votes/{y}{n}"}
         for rv in root.iter("recorded-vote"):
             leg = rv.find("legislator"); bid = leg.get("name-id")
             by_member[bid].append(dict(info, vote=norm_vote(rv.findtext("vote"))))
+    meta["israel_rollcalls"]["house"] = n_isr
     meta["sources"]["house_votes"] = {"name": "Office of the Clerk, U.S. House: roll-call vote XML", "url": "https://clerk.house.gov/Votes",
         "latest_vote_date": latest, "retrieved": meta["built_at"][:10]}
     return by_member
@@ -212,7 +247,10 @@ def build_senate_votes():
     mb = fetch(f"https://voteview.com/static/data/out/members/S{CONGRESS}_members.csv", f"S{CONGRESS}_members.csv")
     calls = list(csv.DictReader(open(rc)))
     calls.sort(key=lambda r: int(r["rollnumber"]))
+    terms = {int(r["rollnumber"]): israel.match(r["vote_question"], r["vote_desc"], r.get("dtl_desc", "")) for r in calls}
     recent = {int(r["rollnumber"]): r for r in calls[-VOTES_PER_MEMBER * 2:]}
+    recent.update({int(r["rollnumber"]): r for r in calls if terms[int(r["rollnumber"])]})
+    meta["israel_rollcalls"]["senate"] = sum(1 for t in terms.values() if t)
     icpsr2bio = {r["icpsr"]: r["bioguide_id"] for r in csv.DictReader(open(mb)) if r["bioguide_id"]}
     by_member = defaultdict(list); latest = max(r["date"] for r in calls) if calls else None
     for r in csv.DictReader(open(vt)):
@@ -227,6 +265,7 @@ def build_senate_votes():
             "bill": c["bill_number"], "bill_url": bill_link(re.sub(r"^(HR|S|HRES|SRES|HJRES|SJRES|HCONRES|SCONRES)(\d+)$", r"\1 \2", c["bill_number"] or "")),
             "question": c["vote_question"], "description": c["vote_desc"], "result": c["vote_result"],
             "yeas": int(c["yea_count"]), "nays": int(c["nay_count"]), "vote": VV_CAST.get(code, "Unknown"),
+            "israel": bool(terms[n]), "israel_terms": terms[n],
             "source_url": f"https://www.senate.gov/legislative/LIS/roll_call_votes/vote{CONGRESS}{sess}/vote_{CONGRESS}_{sess}_{cr:05d}.htm"})
     meta["sources"]["senate_votes"] = {"name": "Voteview (UCLA) Senate roll calls & member votes, mirroring official Senate LIS records",
         "url": "https://voteview.com/data", "latest_vote_date": latest, "retrieved": meta["built_at"][:10]}
@@ -454,7 +493,11 @@ def main():
         src = hv if m["chamber"] == "house" else sv
         if src is None: m["votes"] = None
         else:
-            v = sorted(src.get(bid, []), key=lambda x: (x["date"], x["roll"]), reverse=True)[:VOTES_PER_MEMBER]
+            allv = sorted(src.get(bid, []), key=lambda x: (x["date"], x["roll"]), reverse=True)
+            v = allv[:VOTES_PER_MEMBER]
+            # also keep every Israel-related vote from the whole Congress (not just the recent window);
+            # the frontend lists those first
+            v += [dict(x, older=True) for x in allv[VOTES_PER_MEMBER:] if x.get("israel")]
             m["votes"] = v
         if fec_ok and m["fec_id"]:
             m["finance"] = finance_for(m["fec_id"], weball, cn, cm, pacs); attach_employers(m["finance"], emp)
@@ -490,6 +533,7 @@ def main():
         v["name"] = STATE_NAMES.get(st, st)
         write_json(f"states/{st}.json", v)
     meta["votes_per_member"] = VOTES_PER_MEMBER
+    meta["israel_keywords"] = israel.KEYWORDS
     meta["defense_pacs"] = {"companies": DEFENSE["companies"], "sources": DEFENSE["sources"], "not_included": DEFENSE["not_included"]}
     if fec_ok:
         def flag(a): return a.get("status") == "ok" and (a["direct"] + a["earmarked"] > 0)

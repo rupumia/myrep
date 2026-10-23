@@ -1,0 +1,5 @@
+{
+  "label": "Israel-related",
+  "description": "A roll call is labeled Israel-related when its bill or resolution title, amendment purpose, vote question, or vote description contains one of these words or phrases (whole words, case-insensitive). Edit this list to change the rule; the next build applies it.",
+  "keywords": ["Israel", "Israeli", "Gaza", "Hamas", "Iron Dome", "West Bank", "Palestinian", "Palestinians", "UNRWA"]
+}

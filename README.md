@@ -3,7 +3,7 @@
 Type a 5-digit ZIP code and see:
 
 * **Your members of Congress**: both senators and your House member. If the ZIP crosses district lines, every possible House member is shown along with the approximate share of the ZIP in each district.
-* **Recent roll-call votes**: the 30 most recent votes for each member, with Yea/Nay/Not Voting, the result, a link to the official roll call, and a link to the bill on congress.gov.
+* **Recent roll-call votes**: the 30 most recent votes for each member, with Yea/Nay/Not Voting, the result, a link to the official roll call, and a link to the bill on congress.gov. **Israel-related votes** from anywhere in the current Congress are added and listed first (see below).
 * **Campaign money (FEC, 2025–2026)**: total raised, cash on hand, money from individuals, PACs, party committees and self-funding; the top committees and PACs that gave directly; and the top employers of individual donors.
 * **2026 races**: everyone registered with the FEC for the seat who has reported raising money, labeled Incumbent / Challenger / Open seat, with the same finance details. Challengers are labeled as having no congressional voting record. For states that redrew their House maps for 2026 (currently AL, CA, FL, LA, MO, NC, OH, TN, TX and UT, detected automatically), the House race shown is for the ZIP's district under the **new** map.
 
@@ -29,6 +29,8 @@ Useful environment variables:
 | `PRIORITY_ZIPS` | none | ZIPs whose seats get FEC calls first |
 | `VOTES_PER_MEMBER` | 30 | recent votes stored per member |
 | `OFFLINE=1` | off | reuse files already downloaded into `cache/raw` |
+| `CONGRESS_API_KEY` | `FEC_API_KEY` | api.data.gov key for congress.gov bill titles (Israel-related labels) |
+| `CONGRESS_CALL_INTERVAL` | 0.8 s | pause between congress.gov calls |
 
 Tests: `.venv/bin/pip install playwright` and then `.venv/bin/python scripts/e2e_test.py http://localhost:8080`. This runs headless Chromium at desktop and mobile widths for ZIPs 10001, 94103, 78701, 20878 (split), 82001 (WY at-large), 05401 (VT at-large), 20001 (DC) and an invalid ZIP. It fails on any console error or failed request and writes screenshots to `screenshots/`.
 
@@ -45,6 +47,15 @@ Tests: `.venv/bin/pip install playwright` and then `.venv/bin/python scripts/e2e
 | Top employers of individual donors | [FEC API](https://api.open.fec.gov/developers/) `schedules/schedule_a/by_employer`, cached in `cache/fec_employers.json` | refreshed when older than 7 days |
 
 The site never fills gaps with made-up data. If a source fails during a build, the affected section says "unavailable" and the About section lists a warning.
+
+## Israel-related votes
+
+`israel.py` labels a roll call **Israel-related** (neutral slate pill; Yea stays green, Nay red) when any of its text fields contains a word or phrase from [`config/israel_keywords.json`](config/israel_keywords.json): Israel, Israeli, Gaza, Hamas, Iron Dome, West Bank, Palestinian(s), UNRWA. Matching is whole-word and case-insensitive. Edit the JSON to change the rule.
+
+- **Text checked.** House: Clerk XML vote question/description/bill number, Voteview's short title, and from the [congress.gov API](https://api.congress.gov/) the bill's official title or, for amendment votes, the amendment's purpose/description and the amended bill's title. Senate: Voteview's vote question and description (the Senate LIS title or amendment purpose).
+- **Scope.** Every roll call of the 119th Congress is checked, not just the 30 most recent. Each member's JSON keeps the 30 most recent votes plus every Israel-related vote (`"israel": true`, `"israel_terms": [...]`, older ones marked `"older": true`). The frontend lists Israel-related votes first (newest first, always visible), then the rest in date order.
+- **congress.gov** uses the same api.data.gov key as the FEC (`FEC_API_KEY`, or `CONGRESS_API_KEY` if set). Lookups are cached in `cache/congress_text.json`; the first run makes ~800 calls (~12 min), later runs only a handful. Without a key, only the Clerk/Voteview text is used.
+- **Limits.** It's a literal title match: it says nothing about which side a vote favors, and it misses votes where Israel isn't named in the title (e.g. omnibus spending bills or procedural "rule" votes).
 
 ## AIPAC-related flags (2025–26 cycle)
 

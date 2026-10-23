@@ -88,3 +88,8 @@ details.flag-def summary::after{content:" ▾";font-weight:400}
 details.flag-def[open] summary::after{content:" ▴"}
 .flag-pop{padding:4px 8px 6px;font-weight:400;border-top:1px solid #d6d3d1}
 .flag-pop .small{margin-top:3px}
+
+/* Israel-related topic label: neutral slate, distinct from Yea (green) / Nay (red) */
+.topic{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:1px 7px;border-radius:999px;margin-bottom:3px}
+.topic-isr{border:1.5px solid #475569;color:#1e293b;background:#f1f5f9}
+.votes-note{margin:0 0 6px}

@@ -22,12 +22,18 @@ function voteBadge(v) {
 function votesPanel(m) {
   if (m.votes == null) return `<div class="unavail">Voting records are unavailable right now (the data source failed during the last update).</div>`;
   if (!m.votes.length) return `<div class="unavail">No recorded votes found for this member in the most recent roll calls (they may be newly sworn in).</div>`;
-  const li = m.votes.map((v, i) => `<li ${i >= 8 ? 'hidden data-extra' : ''}>${voteBadge(v.vote)}<div>
+  // Israel-related votes first (recent-first among themselves), then everything else in the existing order
+  const isr = m.votes.filter(v => v.israel), rest = m.votes.filter(v => !v.israel);
+  const votes = isr.concat(rest), show = Math.max(8, isr.length);
+  const li = votes.map((v, i) => `<li ${i >= show ? 'hidden data-extra' : ''}${v.israel ? ' class="isr"' : ''}>${voteBadge(v.vote)}<div>
+    ${v.israel ? `<span class="topic topic-isr" title="Matched: ${esc((v.israel_terms || []).join(", "))}. See About &amp; data for the keyword rule.">Israel-related</span>` : ""}
     <div class="vq">${v.bill ? (v.bill_url ? `<a href="${esc(v.bill_url)}" target="_blank" rel="noopener">${esc(v.bill)}</a> · ` : esc(v.bill) + " · ") : ""}${esc(v.question)}</div>
     ${v.description ? `<div class="vd">${esc(v.description)}</div>` : ""}
     <div class="small">${fmtDate(v.date)} · Result: ${esc(v.result)}${v.yeas != null ? ` (${v.yeas}–${v.nays})` : ""} · <a href="${esc(v.source_url)}" target="_blank" rel="noopener">Roll call ${v.roll}</a></div></div></li>`).join("");
-  const more = m.votes.length > 8 ? `<button class="more" data-more>Show all ${m.votes.length} recent votes</button>` : "";
-  return `<ul class="votes">${li}</ul>${more}`;
+  const nRecent = rest.length + isr.filter(v => !v.older).length;
+  const head = isr.length ? `<p class="small votes-note">${isr.length} Israel-related vote${isr.length > 1 ? "s" : ""} from this Congress shown first, then the ${nRecent} most recent votes. <a href="#about-israel">How votes are labeled</a></p>` : "";
+  const more = votes.length > show ? `<button class="more" data-more>Show all ${votes.length} votes</button>` : "";
+  return `${head}<ul class="votes">${li}</ul>${more}`;
 }
 
 function aipacFlags(f) {
@@ -234,6 +240,7 @@ $("#zip-form").addEventListener("submit", e => { e.preventDefault(); lookup($("#
     add("senate_votes", s.senate_votes?.latest_vote_date ? `latest vote ${fmtDate(s.senate_votes.latest_vote_date)} (Voteview can lag the Senate by days to weeks)` : "");
     add("fec", s.fec?.coverage_through ? `reports through ${esc(s.fec.coverage_through)}` : "");
     add("aipac", s.aipac?.status === "ok" ? `fetched ${esc(s.aipac.retrieved)}` : "unavailable in this update");
+    if (meta.israel_keywords && meta.israel_keywords.length) $("#israel-keywords").textContent = meta.israel_keywords.join(", ");
     if (meta.defense_pacs) $("#defense-list").innerHTML = meta.defense_pacs.companies.map(c => `<li>${esc(c.company)}: <a href="https://www.fec.gov/data/committee/${esc(c.committee_id)}/" target="_blank" rel="noopener">${esc(c.fec_name)} (${esc(c.committee_id)})</a></li>`).join("");
     add("fec_api", s.fec_api ? `employer breakdowns cover ${s.fec_api.committees_covered} of ${s.fec_api.committees_total} campaigns so far` : "");
     $("#sources-list").innerHTML = items.join("") + (meta.warnings || []).map(w => `<li class="notice err">${esc(w)}</li>`).join("");
