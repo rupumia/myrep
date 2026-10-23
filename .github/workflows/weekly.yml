@@ -1,0 +1,71 @@
+name: Weekly data build & deploy
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"   # every Monday 09:17 UTC
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore data cache (FEC employer results, roll-call XML, boundary files)
+        uses: actions/cache/restore@v4
+        with:
+          path: cache
+          key: data-cache-${{ github.run_id }}
+          restore-keys: data-cache-
+
+      - name: Build static site
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+          # With a personal key (1,000 calls/hour) refresh every campaign each week (~2.7 h).
+          # Without one, DEMO_KEY allows only a handful of calls per hour.
+          FEC_MAX_CALLS: ${{ secrets.FEC_API_KEY != '' && '2800' || '8' }}
+          FEC_CALL_INTERVAL: ${{ secrets.FEC_API_KEY != '' && '3.7' || '2' }}
+        run: python build.py
+
+      - name: Save data cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: cache
+          key: data-cache-${{ github.run_id }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

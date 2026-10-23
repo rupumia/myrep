@@ -1,0 +1,5 @@
+requests>=2.31
+geopandas>=1.0
+pyogrio>=0.7
+shapely>=2.0
+pandas>=2.0

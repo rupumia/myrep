@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyRep — How your members of Congress vote, and who funds them</title>
+<meta name="description" content="Enter your ZIP code to see your U.S. senators and representative, their recent roll-call votes, campaign finance from the FEC, and 2026 candidates. Nonpartisan, public data only.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./" aria-label="MyRep home"><span class="logo" aria-hidden="true">★</span> MyRep</a>
+    <nav><a href="#about">About &amp; data</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Who represents you in Congress?</h1>
+    <p class="lead">See how your senators and House member voted, who funds their campaigns, and who is running in 2026.</p>
+    <form id="zip-form" class="zip-form" autocomplete="off">
+      <label for="zip" class="sr-only">5-digit ZIP code</label>
+      <input id="zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="Enter ZIP code" required>
+      <button type="submit">Look up</button>
+    </form>
+    <p id="form-msg" class="form-msg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<main id="results" class="wrap" aria-live="polite"></main>
+
+<section id="about" class="about wrap">
+  <h2>About &amp; data sources</h2>
+  <p>MyRep is a nonpartisan, open-source prototype. Everything comes from free public records; nothing here is an endorsement. Party is shown as a plain text label.</p>
+  <ul id="sources-list"></ul>
+  <h3>Things to know</h3>
+  <ul>
+    <li><strong>ZIP codes vs. districts.</strong> ZIP codes are mapped with Census ZIP Code Tabulation Areas (ZCTAs). A ZIP can cross district lines; when it does we show every possible district and the share of its land area in each. Confirm with your address at <a href="https://www.house.gov/representatives/find-your-representative">house.gov</a>.</li>
+    <li><strong>Votes.</strong> We show each member's most recent roll-call votes. “Yea/Aye” is shown as Yea and “Nay/No” as Nay. Procedural votes are included because they are part of the record.</li>
+    <li><strong>Money.</strong> Totals are for the 2025–2026 FEC reporting period. “Top committees/PACs” are direct contributions from political committees (including party committees) reported to the FEC. “Top employers” are employers that individual donors listed; companies themselves cannot give directly to federal candidates.</li>
+    <li><strong>2026 candidates</strong> are everyone registered with the FEC for the seat. The list can include people who lost a primary, withdrew, or never appeared on a ballot. Several states redrew their House maps for 2026, so a 2026 district number may cover a different area than your current district.</li>
+  </ul>
+  <p class="updated">Data last updated: <span id="updated">—</span></p>
+</section>
+
+<footer class="site-footer"><div class="wrap">MyRep · public data from the U.S. House Clerk, Voteview, the FEC, the Census Bureau, and the @unitedstates project.</div></footer>
+<script src="app.js"></script>
+</body>
+</html>
