@@ -17,8 +17,21 @@ import requests
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CFG = json.load(open(os.path.join(ROOT, "config", "israel_keywords.json")))
 KEYWORDS = CFG["keywords"]
-PATTERN = re.compile(r"(?<![A-Za-z0-9])(" + "|".join(re.escape(k).replace(r"\ ", r"\s+") for k in
+def _canon(w):
+    """Lower-case and treat any run of spaces/hyphens/dashes as one space ("anti-Semitism" == "anti semitism")."""
+    return re.sub(r"[\s\-\u2010-\u2015]+", " ", w).strip().lower()
+
+def _kw_regex(k):
+    # Each word of a keyword must appear whole; words may be separated by spaces or hyphens/dashes.
+    return r"[\s\-\u2010-\u2015]+".join(re.escape(p) for p in _canon(k).split(" "))
+
+# Whole words: no letter/digit directly before or after. A hyphen is a word boundary on the outside
+# (so "United States-Israel" still matches "Israel"); only listed keywords match, so "Semitism"
+# alone is never a match, while "anti-Semitism" / "anti Semitism" / "antisemitism" all are.
+PATTERN = re.compile(r"(?<![A-Za-z0-9])(" + "|".join(_kw_regex(k) for k in
                      sorted(KEYWORDS, key=len, reverse=True)) + r")(?![A-Za-z0-9])", re.I)
+CANON = {}
+for _k in KEYWORDS: CANON.setdefault(_canon(_k), _k)
 API = "https://api.congress.gov/v3"
 
 def match(*texts):
@@ -26,8 +39,7 @@ def match(*texts):
     found = set()
     for t in texts:
         for m in PATTERN.finditer(t or ""):
-            w = re.sub(r"\s+", " ", m.group(1)).lower()
-            found.add(next((k for k in KEYWORDS if k.lower() == w), m.group(1)))
+            found.add(CANON.get(_canon(m.group(1)), m.group(1)))
     return sorted(found)
 
 class CongressText:
