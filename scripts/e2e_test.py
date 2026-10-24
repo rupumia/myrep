@@ -18,6 +18,7 @@ CASES = [  # zip, expected House district labels (current map), expect split not
     ("53066", ["WI-05"], False, False),  # verified with Census geocoder (119th and 120th): WI-05
     ("00000", [], False, False),
 ]
+PACKAGE_NOTE = "Package of nominations, including the Special Envoy to Monitor and Combat Anti-Semitism."
 fails = []
 exe = os.environ.get("CHROME", "/usr/bin/google-chrome")
 with sync_playwright() as p:
@@ -68,7 +69,13 @@ with sync_playwright() as p:
                     seq: [...c.querySelectorAll('ul.votes > li')].map(li => li.classList.contains('isr') ? 1 : 0),
                     hiddenIsr: c.querySelectorAll('ul.votes > li.isr[hidden]').length,
                     pills: c.querySelectorAll('ul.votes > li.isr .topic-isr').length,
-                    dates: [...c.querySelectorAll('ul.votes > li.isr .small')].map(e => e.textContent.split(' · ')[0])}))""")
+                    dates: [...c.querySelectorAll('ul.votes > li.isr .small')].map(e => e.textContent.split(' · ')[0]),
+                    notes: [...c.querySelectorAll('ul.votes > li .vnote')].map(e => { const li = e.closest('li'), cs = getComputedStyle(e);
+                        return {roll: ((li.textContent.match(/Roll call (\\d+)/) || [])[1] || ''), text: e.textContent.trim(),
+                                isr: li.classList.contains('isr'), badge: e.matches('.badge, .v-yea, .v-nay, .topic'),
+                                italic: cs.fontStyle === 'italic', weight: +cs.fontWeight,
+                                small: parseFloat(cs.fontSize) < parseFloat(getComputedStyle(li.querySelector('.vq')).fontSize),
+                                afterTitle: e.previousElementSibling?.classList.contains('vq') || false}; })}))""")
                 for c in order:
                     n = sum(c["seq"])
                     if c["seq"][:n] != [1] * n: ok = False; print(z, c["name"], "Israel-related votes not first", c["seq"][:12])
@@ -79,6 +86,17 @@ with sync_playwright() as p:
                     pd = [_dt.datetime.strptime(d.strip(), "%b %d, %Y") for d in ds]
                     if pd != sorted(pd, reverse=True): ok = False; print(z, c["name"], "Israel-related votes not newest-first")
                     if z == "53066" and label == "desktop": print(f"  {c['name']}: {n} Israel-related vote(s) listed first of {len(c['seq'])}")
+                    # Package-of-nominations notes: only on Israel-related votes, muted text right under the title, never a badge
+                    for nt in c["notes"]:
+                        if not nt["isr"]: ok = False; print(z, c["name"], "package note on a non-Israel vote", nt)
+                        if not nt["text"].startswith("Package of nominations, including "): ok = False; print(z, c["name"], "unexpected note", nt)
+                        if nt["badge"] or not nt["italic"] or nt["weight"] >= 600 or not nt["small"] or not nt["afterTitle"]:
+                            ok = False; print(z, c["name"], "package note styled wrong", nt)
+                    if z == "53066":
+                        got = sorted((nt["roll"], nt["text"]) for nt in c["notes"])
+                        want = sorted((r, PACKAGE_NOTE) for r in ("653", "655")) if c["name"] in ("Tammy Baldwin", "Ron Johnson") else []
+                        if got != want: ok = False; print(z, c["name"], "package notes", got, "expected", want)
+                        if label == "desktop" and got: print(f"  {c['name']}: package note on roll calls {[g[0] for g in got]}")
                 if page.locator(".topic-isr.badge, .topic-isr.v-yea, .topic-isr.v-nay").count(): ok = False; print(z, "Israel pill styled as vote")
             # photos 404 are tolerated by design (hidden), but count them
             real_errors = [e for e in errors if "images/congress" not in e]
@@ -97,6 +115,15 @@ with sync_playwright() as p:
                 if label == "mobile" and card.count():
                     card.locator("ul.votes").scroll_into_view_if_needed()
                     card.screenshot(path=os.environ.get("ISRAEL_SHOT", f"{SHOTS}/results-53066-israel-mobile.png"))
+                    # close-up of the two package-note votes (cloture + confirmation are adjacent, newest first)
+                    nl = card.locator("ul.votes > li", has=page.locator(".vnote"))
+                    if nl.count():
+                        nl.first.scroll_into_view_if_needed()
+                        b1, b2 = nl.first.bounding_box(), nl.last.bounding_box()
+                        cb = card.bounding_box()
+                        sy = page.evaluate("() => window.scrollY")  # boxes are viewport-relative; clip a full-page shot
+                        page.screenshot(path=os.environ.get("PACKAGE_SHOT", f"{SHOTS}/results-53066-package-note.png"), full_page=True,
+                                        clip={"x": cb["x"], "y": b1["y"] + sy - 4, "width": cb["width"], "height": b2["y"] + b2["height"] - b1["y"] + 8})
             if z == "20878" and label == "desktop":
                 page.screenshot(path=f"{SHOTS}/results-20878-split-desktop.png", full_page=True)
             if z == "78701" and label == "desktop":

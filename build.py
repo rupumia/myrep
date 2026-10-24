@@ -248,6 +248,9 @@ def build_senate_votes():
     calls = list(csv.DictReader(open(rc)))
     calls.sort(key=lambda r: int(r["rollnumber"]))
     terms = {int(r["rollnumber"]): israel.match(r["vote_question"], r["vote_desc"], r.get("dtl_desc", "")) for r in calls}
+    notes = {int(r["rollnumber"]): israel.package_note(r["vote_question"], r["vote_desc"], r.get("dtl_desc", ""))
+             for r in calls if terms[int(r["rollnumber"])]}
+    if any(notes.values()): log("israel: package notes on Voteview rollnumbers", [n for n in notes if notes[n]])
     recent = {int(r["rollnumber"]): r for r in calls[-VOTES_PER_MEMBER * 2:]}
     recent.update({int(r["rollnumber"]): r for r in calls if terms[int(r["rollnumber"])]})
     meta["israel_rollcalls"]["senate"] = sum(1 for t in terms.values() if t)
@@ -266,6 +269,7 @@ def build_senate_votes():
             "question": c["vote_question"], "description": c["vote_desc"], "result": c["vote_result"],
             "yeas": int(c["yea_count"]), "nays": int(c["nay_count"]), "vote": VV_CAST.get(code, "Unknown"),
             "israel": bool(terms[n]), "israel_terms": terms[n],
+            **({"israel_note": notes[n]} if notes.get(n) else {}),
             "source_url": f"https://www.senate.gov/legislative/LIS/roll_call_votes/vote{CONGRESS}{sess}/vote_{CONGRESS}_{sess}_{cr:05d}.htm"})
     meta["sources"]["senate_votes"] = {"name": "Voteview (UCLA) Senate roll calls & member votes, mirroring official Senate LIS records",
         "url": "https://voteview.com/data", "latest_vote_date": latest, "retrieved": meta["built_at"][:10]}

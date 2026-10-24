@@ -34,6 +34,43 @@ CANON = {}
 for _k in KEYWORDS: CANON.setdefault(_canon(_k), _k)
 API = "https://api.congress.gov/v3"
 
+NOMINEE_SPLIT = re.compile(r";\s*and\s+|;\s+")
+NOMINEE_RE = re.compile(r"^\s*[^;]{1,80}?,\s*of [^,;]+,\s*to be\s+(?P<pos>.+)$", re.S)
+
+def package_note(question, *texts):
+    """Neutral note for an en-bloc nomination vote that matched only through some of its nominees.
+
+    Senate en-bloc nomination votes list every nominee as "Name, of State, to be <position>",
+    separated by "; and ". If such a list has 2+ nominees, the vote question/other text has no
+    keyword, and only some nominees match, return
+    "Package of nominations, including the <position of the first matching nominee>."
+    Otherwise return "" (no note).
+    """
+    if match(question): return ""
+    for t in texts:
+        # Group the "; and "-separated pieces by nominee: a piece that doesn't start a new
+        # "Name, of State, to be ..." entry continues the previous nominee's position.
+        noms = []
+        for s in (x for x in NOMINEE_SPLIT.split(t or "") if x.strip()):
+            m = NOMINEE_RE.match(s)
+            if m: noms.append(m.group("pos"))
+            elif noms: noms[-1] += "; " + s
+            else: noms = None; break
+        if not noms or len(noms) < 2:
+            if match(t): return ""  # keyword is in ordinary (non-package) text
+            continue
+        hits = [p for p in noms if match(p)]
+        if not hits or len(hits) == len(noms): continue
+        pos = hits[0].strip().rstrip(".")
+        # Keep just the title (drop ", with the rank of Ambassador", "; to serve concurrently ...") if the keyword survives.
+        short = re.split(r"[,;]", pos)[0].strip()
+        pos = short if match(short) else pos
+        if not re.match(r"(?i)(the|a|an)\s", pos): pos = "the " + pos
+        return f"Package of nominations, including {pos}."
+    return ""
+
+
+
 def match(*texts):
     """Return the sorted list of distinct keywords found (empty list = not Israel-related)."""
     found = set()

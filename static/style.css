@@ -93,3 +93,4 @@ details.flag-def[open] summary::after{content:" ▴"}
 .topic{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:1px 7px;border-radius:999px;margin-bottom:3px}
 .topic-isr{border:1.5px solid #475569;color:#1e293b;background:#f1f5f9}
 .votes-note{margin:0 0 6px}
+.vnote{font-size:.8rem;color:var(--muted);font-style:italic;margin:1px 0 2px}

@@ -28,6 +28,7 @@ function votesPanel(m) {
   const li = votes.map((v, i) => `<li ${i >= show ? 'hidden data-extra' : ''}${v.israel ? ' class="isr"' : ''}>${voteBadge(v.vote)}<div>
     ${v.israel ? `<span class="topic topic-isr" title="Matched: ${esc((v.israel_terms || []).join(", "))}. See About &amp; data for the keyword rule.">Israel-related</span>` : ""}
     <div class="vq">${v.bill ? (v.bill_url ? `<a href="${esc(v.bill_url)}" target="_blank" rel="noopener">${esc(v.bill)}</a> · ` : esc(v.bill) + " · ") : ""}${esc(v.question)}</div>
+    ${v.israel_note ? `<div class="vnote">${esc(v.israel_note)}</div>` : ""}
     ${v.description ? `<div class="vd">${esc(v.description)}</div>` : ""}
     <div class="small">${fmtDate(v.date)} · Result: ${esc(v.result)}${v.yeas != null ? ` (${v.yeas}–${v.nays})` : ""} · <a href="${esc(v.source_url)}" target="_blank" rel="noopener">Roll call ${v.roll}</a></div></div></li>`).join("");
   const nRecent = rest.length + isr.filter(v => !v.older).length;
