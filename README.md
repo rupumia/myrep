@@ -102,3 +102,12 @@ Notes: GitHub pauses scheduled workflows in repos with no activity for 60 days, 
 * Employer names are free text typed by donors. Obvious variants are merged, but "Wachtell Lipton" and "Wachtell Lipton Rosen & Katz" can still show up separately.
 * Senate votes come from Voteview, which can lag senate.gov.
 * Finance totals cover the 2025–2026 two-year period only. A senator's full six-year cycle isn't summed.
+
+## "On your ballot" (Wisconsin, Nov 3, 2026)
+
+`wi_ballot.py` writes `site/data/ballot/WI.json` from two committed snapshots in `data_src/`:
+
+* `wi_contests_2026.json`: Wisconsin Elections Commission "All Contests and Candidates" + "Referendum Listing" (Oct 6, 2026 files), made by `scripts/wi_ballot_snapshot.py`. A snapshot is committed because elections.wi.gov blocks some scripted/CI traffic, and the list is final on Election Day.
+* `wi_zcta_geo.json`: ZCTA overlap shares with state Senate/Assembly districts, counties, municipalities, and school districts (Census TIGER/Line 2025), made by `scripts/wi_zcta_geo.py`. Shares are land-area shares, not population or address counts.
+
+The frontend hides the section after Nov 9, 2026. Other states show links to Vote.org / vote.gov. Unmatched WEC contests (Price County Supervisor District 5, Marshfield joint municipal court) are listed in `meta.json` under `ballot.unmatched_wi`.

@@ -1,0 +1,5893 @@
+{
+"election": "2026 General Election",
+"date": "2026-11-03",
+"retrieved": "2026-11-03",
+"sources": [
+{
+"name": "WEC: All Contests and Candidates, November 3, 2026 (file dated Oct 6, 2026)",
+"url": "https://elections.wi.gov/sites/default/files/documents/All%20Contests%20and%20Candidates_November%203%2C%202026.xlsx"
+},
+{
+"name": "WEC: Referendum Listing (Oct 6, 2026)",
+"url": "https://elections.wi.gov/sites/default/files/documents/Referendum%20Listing%2010.6.26..xlsx"
+}
+],
+"contests": [
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "GOVERNOR / LIEUTENANT GOVERNOR",
+"district": "Wisconsin",
+"pos": 250,
+"referendum": false,
+"candidates": [
+{
+"name": "Tom Tiffany / David Varnam",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "David Crowley / Sarah Godlewski",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "ATTORNEY GENERAL",
+"district": "Wisconsin",
+"pos": 252,
+"referendum": false,
+"candidates": [
+{
+"name": "Eric Toney",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Josh Kaul",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "SECRETARY OF STATE",
+"district": "Wisconsin",
+"pos": 253,
+"referendum": false,
+"candidates": [
+{
+"name": "Jay Schroeder",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "JoCasta Zamarripa",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Pete Karas",
+"party": "Wisconsin Green",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE TREASURER",
+"district": "Wisconsin",
+"pos": 254,
+"referendum": false,
+"candidates": [
+{
+"name": "John S. Leiber",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Yee Leng Xiong",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 1",
+"district": "Congressional - District 1",
+"pos": 1201,
+"referendum": false,
+"candidates": [
+{
+"name": "Bryan Steil",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Mitchell Berman",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 2",
+"district": "Congressional - District 2",
+"pos": 1202,
+"referendum": false,
+"candidates": [
+{
+"name": "Mark Pocan",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 3",
+"district": "Congressional - District 3",
+"pos": 1203,
+"referendum": false,
+"candidates": [
+{
+"name": "Derrick Van Orden",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Rebecca Cooke",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Alexander Valiensi Kent",
+"party": "Independent",
+"pos": 3
+},
+{
+"name": "Rustin Provance",
+"party": "Independent",
+"pos": 4
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 4",
+"district": "Congressional - District 4",
+"pos": 1204,
+"referendum": false,
+"candidates": [
+{
+"name": "Tim Rogers",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Gwen Moore",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Arthur Burks",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 5",
+"district": "Congressional - District 5",
+"pos": 1205,
+"referendum": false,
+"candidates": [
+{
+"name": "Scott Fitzgerald",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Andrew Beck",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 6",
+"district": "Congressional - District 6",
+"pos": 1206,
+"referendum": false,
+"candidates": [
+{
+"name": "Glenn Grothman",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Brad Smith",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Matthew Arndt",
+"party": "Wisconsin Green",
+"pos": 3
+},
+{
+"name": "Elizabeth Anne Fitzgibbon",
+"party": "Independent",
+"pos": 4
+},
+{
+"name": "Mike Thurow",
+"party": "Independent",
+"pos": 5
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 7",
+"district": "Congressional - District 7",
+"pos": 1207,
+"referendum": false,
+"candidates": [
+{
+"name": "Michael Alfonso",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Fred Clark",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE IN CONGRESS DISTRICT 8",
+"district": "Congressional - District 8",
+"pos": 1208,
+"referendum": false,
+"candidates": [
+{
+"name": "Tony Wied",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Rick Crosson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 1",
+"district": "State Senate - District 1",
+"pos": 1301,
+"referendum": false,
+"candidates": [
+{
+"name": "Nic Cravillion",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Mark Becker",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 3",
+"district": "State Senate - District 3",
+"pos": 1303,
+"referendum": false,
+"candidates": [
+{
+"name": "Tim Carpenter",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 5",
+"district": "State Senate - District 5",
+"pos": 1305,
+"referendum": false,
+"candidates": [
+{
+"name": "Mike Roberts",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Robyn Vining",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 7",
+"district": "State Senate - District 7",
+"pos": 1307,
+"referendum": false,
+"candidates": [
+{
+"name": "Mike Moeller",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Chris J. Larson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 9",
+"district": "State Senate - District 9",
+"pos": 1309,
+"referendum": false,
+"candidates": [
+{
+"name": "Amy Binsfeld",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Christian Ellis",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 11",
+"district": "State Senate - District 11",
+"pos": 1311,
+"referendum": false,
+"candidates": [
+{
+"name": "Ellen Schutt",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Adam Duda",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 13",
+"district": "State Senate - District 13",
+"pos": 1313,
+"referendum": false,
+"candidates": [
+{
+"name": "John Jagler",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Sasha Ripley",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 15",
+"district": "State Senate - District 15",
+"pos": 1315,
+"referendum": false,
+"candidates": [
+{
+"name": "Scott Fleming",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Mark Spreitzer",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Christopher Dean",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 17",
+"district": "State Senate - District 17",
+"pos": 1317,
+"referendum": false,
+"candidates": [
+{
+"name": "Howard Marklein",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jenna Jacobson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 19",
+"district": "State Senate - District 19",
+"pos": 1319,
+"referendum": false,
+"candidates": [
+{
+"name": "Rachael Ann Cabral-Guevara",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Emily Daniels Tseffos",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 21",
+"district": "State Senate - District 21",
+"pos": 1321,
+"referendum": false,
+"candidates": [
+{
+"name": "Jim Croft",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Trevor Jung",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 23",
+"district": "State Senate - District 23",
+"pos": 1323,
+"referendum": false,
+"candidates": [
+{
+"name": "Romaine Robert Quinn",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jeff Foster",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 25",
+"district": "State Senate - District 25",
+"pos": 1325,
+"referendum": false,
+"candidates": [
+{
+"name": "Erik Severson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Charly Ray",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 27",
+"district": "State Senate - District 27",
+"pos": 1327,
+"referendum": false,
+"candidates": [
+{
+"name": "Dianne Hesselbein",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 29",
+"district": "State Senate - District 29",
+"pos": 1329,
+"referendum": false,
+"candidates": [
+{
+"name": "Cory Tomczyk",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Gillian Battino",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 31",
+"district": "State Senate - District 31",
+"pos": 1331,
+"referendum": false,
+"candidates": [
+{
+"name": "Michele Magadance Skinner",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jeff Smith",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "STATE SENATOR DISTRICT 33",
+"district": "State Senate - District 33",
+"pos": 1333,
+"referendum": false,
+"candidates": [
+{
+"name": "Chris Kapenga",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Mike Van Someren",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 1",
+"district": "Assembly - District 1",
+"pos": 1401,
+"referendum": false,
+"candidates": [
+{
+"name": "Joel Kitchens",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Renee A. Paplham",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 2",
+"district": "Assembly - District 2",
+"pos": 1402,
+"referendum": false,
+"candidates": [
+{
+"name": "Shae Sortwell",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Alicia Saunders",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 3",
+"district": "Assembly - District 3",
+"pos": 1403,
+"referendum": false,
+"candidates": [
+{
+"name": "Ron Tusler",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Michael J. Goodwin",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 4",
+"district": "Assembly - District 4",
+"pos": 1404,
+"referendum": false,
+"candidates": [
+{
+"name": "David Steffen",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Alexia Unertl",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 5",
+"district": "Assembly - District 5",
+"pos": 1405,
+"referendum": false,
+"candidates": [
+{
+"name": "Joy Goeben",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Justin Schumacher",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "David Schupbach",
+"party": "Wisconsin Green",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 6",
+"district": "Assembly - District 6",
+"pos": 1406,
+"referendum": false,
+"candidates": [
+{
+"name": "Elijah Behnke",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Shirley Hinze",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 7",
+"district": "Assembly - District 7",
+"pos": 1407,
+"referendum": false,
+"candidates": [
+{
+"name": "Lee Whiting",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Karen Kirsch",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 8",
+"district": "Assembly - District 8",
+"pos": 1408,
+"referendum": false,
+"candidates": [
+{
+"name": "Angel Sanchez",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ismael Luna",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 9",
+"district": "Assembly - District 9",
+"pos": 1409,
+"referendum": false,
+"candidates": [
+{
+"name": "Sam Guerrero",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Priscilla A. Prado",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 10",
+"district": "Assembly - District 10",
+"pos": 1410,
+"referendum": false,
+"candidates": [
+{
+"name": "Darrin Madison",
+"party": "Democratic",
+"pos": 1
+},
+{
+"name": "Robert Longwell-Grice",
+"party": "Wisconsin Green",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 11",
+"district": "Assembly - District 11",
+"pos": 1411,
+"referendum": false,
+"candidates": [
+{
+"name": "Shandowlyon Reaves",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Sequanna Taylor",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 12",
+"district": "Assembly - District 12",
+"pos": 1412,
+"referendum": false,
+"candidates": [
+{
+"name": "Russell Antonio Goodwin, Sr.",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 13",
+"district": "Assembly - District 13",
+"pos": 1413,
+"referendum": false,
+"candidates": [
+{
+"name": "Mike Morgan",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Amy Zimmerman",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 14",
+"district": "Assembly - District 14",
+"pos": 1414,
+"referendum": false,
+"candidates": [
+{
+"name": "AmyRose Murphy",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Angelito Tenorio",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 15",
+"district": "Assembly - District 15",
+"pos": 1415,
+"referendum": false,
+"candidates": [
+{
+"name": "Adam Neylon",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Stephen Tryon",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 16",
+"district": "Assembly - District 16",
+"pos": 1416,
+"referendum": false,
+"candidates": [
+{
+"name": "Alciro Deacon",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Kalan Haywood",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 17",
+"district": "Assembly - District 17",
+"pos": 1417,
+"referendum": false,
+"candidates": [
+{
+"name": "Charlene Abughrin",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Supreme Moore Omokunde",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 18",
+"district": "Assembly - District 18",
+"pos": 1418,
+"referendum": false,
+"candidates": [
+{
+"name": "Joel Richmond",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Margaret Arney",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 19",
+"district": "Assembly - District 19",
+"pos": 1419,
+"referendum": false,
+"candidates": [
+{
+"name": "Yasmine B. Outlaw",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ryan Clancy",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 20",
+"district": "Assembly - District 20",
+"pos": 1420,
+"referendum": false,
+"candidates": [
+{
+"name": "Kyle Cleary",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Christine M. Sinicki",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 21",
+"district": "Assembly - District 21",
+"pos": 1421,
+"referendum": false,
+"candidates": [
+{
+"name": "Dylan Pfaffenbach",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Daniel J. Bukiewicz",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 22",
+"district": "Assembly - District 22",
+"pos": 1422,
+"referendum": false,
+"candidates": [
+{
+"name": "Paul Melotik",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Dana Glasstein",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 23",
+"district": "Assembly - District 23",
+"pos": 1423,
+"referendum": false,
+"candidates": [
+{
+"name": "Aleaner Pabonnie",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Deb Andraca",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 24",
+"district": "Assembly - District 24",
+"pos": 1424,
+"referendum": false,
+"candidates": [
+{
+"name": "Dan Knodl",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Matt Brown",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 25",
+"district": "Assembly - District 25",
+"pos": 1425,
+"referendum": false,
+"candidates": [
+{
+"name": "Paul Tittl",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Christopher Able",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 26",
+"district": "Assembly - District 26",
+"pos": 1426,
+"referendum": false,
+"candidates": [
+{
+"name": "John Belanger",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Joe Sheehan",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 27",
+"district": "Assembly - District 27",
+"pos": 1427,
+"referendum": false,
+"candidates": [
+{
+"name": "Lindee Brill",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 28",
+"district": "Assembly - District 28",
+"pos": 1428,
+"referendum": false,
+"candidates": [
+{
+"name": "Rob Kreibich",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Robin Lillesve",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 29",
+"district": "Assembly - District 29",
+"pos": 1429,
+"referendum": false,
+"candidates": [
+{
+"name": "Treig Pronschinske",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Chris Danou",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 30",
+"district": "Assembly - District 30",
+"pos": 1430,
+"referendum": false,
+"candidates": [
+{
+"name": "Shannon Zimmerman",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Kevin Knoke",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 31",
+"district": "Assembly - District 31",
+"pos": 1431,
+"referendum": false,
+"candidates": [
+{
+"name": "Tyler August",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "John Perryman",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 32",
+"district": "Assembly - District 32",
+"pos": 1432,
+"referendum": false,
+"candidates": [
+{
+"name": "Amanda Nedweski",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Greg Miller",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 33",
+"district": "Assembly - District 33",
+"pos": 1433,
+"referendum": false,
+"candidates": [
+{
+"name": "Steve Wicklund",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Maria Elena Bisabarros",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 34",
+"district": "Assembly - District 34",
+"pos": 1434,
+"referendum": false,
+"candidates": [
+{
+"name": "Rob Swearingen",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Merlin Van Buren",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 35",
+"district": "Assembly - District 35",
+"pos": 1435,
+"referendum": false,
+"candidates": [
+{
+"name": "Calvin Callahan",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Elizabeth McCrank",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 36",
+"district": "Assembly - District 36",
+"pos": 1436,
+"referendum": false,
+"candidates": [
+{
+"name": "Jeffrey L. Mursau",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Shena Chapman",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 37",
+"district": "Assembly - District 37",
+"pos": 1437,
+"referendum": false,
+"candidates": [
+{
+"name": "Mark Born",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "LaToya Bates",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 38",
+"district": "Assembly - District 38",
+"pos": 1438,
+"referendum": false,
+"candidates": [
+{
+"name": "William Penterman",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Terri Wenkman",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 39",
+"district": "Assembly - District 39",
+"pos": 1439,
+"referendum": false,
+"candidates": [
+{
+"name": "Alex Dallman",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Michael Skivington",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 40",
+"district": "Assembly - District 40",
+"pos": 1440,
+"referendum": false,
+"candidates": [
+{
+"name": "Julie Helmer",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Karen DeSanto",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 41",
+"district": "Assembly - District 41",
+"pos": 1441,
+"referendum": false,
+"candidates": [
+{
+"name": "Tony Kurtz",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Zach Commons",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 42",
+"district": "Assembly - District 42",
+"pos": 1442,
+"referendum": false,
+"candidates": [
+{
+"name": "Keith F. Miller",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Maureen McCarville",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 43",
+"district": "Assembly - District 43",
+"pos": 1443,
+"referendum": false,
+"candidates": [
+{
+"name": "Paul McGraw",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Brienne Brown",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 44",
+"district": "Assembly - District 44",
+"pos": 1444,
+"referendum": false,
+"candidates": [
+{
+"name": "Ron Woodman",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ann Roe",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 45",
+"district": "Assembly - District 45",
+"pos": 1445,
+"referendum": false,
+"candidates": [
+{
+"name": "Jocelyn Jordan",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Clinton Anderson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 46",
+"district": "Assembly - District 46",
+"pos": 1446,
+"referendum": false,
+"candidates": [
+{
+"name": "John Donohue",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Joan Fitzgerald",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 47",
+"district": "Assembly - District 47",
+"pos": 1447,
+"referendum": false,
+"candidates": [
+{
+"name": "Sandy Bakk",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Randy Udell",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 48",
+"district": "Assembly - District 48",
+"pos": 1448,
+"referendum": false,
+"candidates": [
+{
+"name": "Mark Kjorlie",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Andrew Hysell",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 49",
+"district": "Assembly - District 49",
+"pos": 1449,
+"referendum": false,
+"candidates": [
+{
+"name": "Travis Tranel",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "John Rindy",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 50",
+"district": "Assembly - District 50",
+"pos": 1450,
+"referendum": false,
+"candidates": [
+{
+"name": "Jon Aleckson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Bill Oemichen",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 51",
+"district": "Assembly - District 51",
+"pos": 1451,
+"referendum": false,
+"candidates": [
+{
+"name": "Todd Novak",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ben Gruber",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Nathan Tataje",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 52",
+"district": "Assembly - District 52",
+"pos": 1452,
+"referendum": false,
+"candidates": [
+{
+"name": "Reive Pullen",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Lee Snodgrass",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 53",
+"district": "Assembly - District 53",
+"pos": 1453,
+"referendum": false,
+"candidates": [
+{
+"name": "David Daniels",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Becky Nichols",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Rachael Dowling",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 54",
+"district": "Assembly - District 54",
+"pos": 1454,
+"referendum": false,
+"candidates": [
+{
+"name": "Tim Paterson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Lori Palmeri",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 55",
+"district": "Assembly - District 55",
+"pos": 1455,
+"referendum": false,
+"candidates": [
+{
+"name": "Nate Gustafson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Alex Corrigan",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 56",
+"district": "Assembly - District 56",
+"pos": 1456,
+"referendum": false,
+"candidates": [
+{
+"name": "Anthony W. Phillips",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Grace Abitz",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 57",
+"district": "Assembly - District 57",
+"pos": 1457,
+"referendum": false,
+"candidates": [
+{
+"name": "Kevin Krentz",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Joey Marschall",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 58",
+"district": "Assembly - District 58",
+"pos": 1458,
+"referendum": false,
+"candidates": [
+{
+"name": "Bernie Newman",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Dennis D. Degenhardt",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 59",
+"district": "Assembly - District 59",
+"pos": 1459,
+"referendum": false,
+"candidates": [
+{
+"name": "Bradley Petersen",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jack Holzman",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 60",
+"district": "Assembly - District 60",
+"pos": 1460,
+"referendum": false,
+"candidates": [
+{
+"name": "Marty Ryan",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Tiffany Brault",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 61",
+"district": "Assembly - District 61",
+"pos": 1461,
+"referendum": false,
+"candidates": [
+{
+"name": "Bob Donovan",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ben Brist",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 62",
+"district": "Assembly - District 62",
+"pos": 1462,
+"referendum": false,
+"candidates": [
+{
+"name": "Mike Bellagio",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Angelina M. Cruz",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 63",
+"district": "Assembly - District 63",
+"pos": 1463,
+"referendum": false,
+"candidates": [
+{
+"name": "Robert Wittke",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Eddie Phanichkul",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 64",
+"district": "Assembly - District 64",
+"pos": 1464,
+"referendum": false,
+"candidates": [
+{
+"name": "Ed Hibsch",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Tip McGuire",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 65",
+"district": "Assembly - District 65",
+"pos": 1465,
+"referendum": false,
+"candidates": [
+{
+"name": "Valerie Kretchmer",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ben DeSmidt",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 66",
+"district": "Assembly - District 66",
+"pos": 1466,
+"referendum": false,
+"candidates": [
+{
+"name": "Gina Cefalu Paulick",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Greta Neubauer",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 67",
+"district": "Assembly - District 67",
+"pos": 1467,
+"referendum": false,
+"candidates": [
+{
+"name": "David Armstrong",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Indiana Thompson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 68",
+"district": "Assembly - District 68",
+"pos": 1468,
+"referendum": false,
+"candidates": [
+{
+"name": "Rob Summerfield",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Elisha King",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 69",
+"district": "Assembly - District 69",
+"pos": 1469,
+"referendum": false,
+"candidates": [
+{
+"name": "Karen Hurd",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Roger Halls",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Josh Kelley",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 70",
+"district": "Assembly - District 70",
+"pos": 1470,
+"referendum": false,
+"candidates": [
+{
+"name": "Nancy VanderMeer",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Stephanie Stuve Bodeen",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 71",
+"district": "Assembly - District 71",
+"pos": 1471,
+"referendum": false,
+"candidates": [
+{
+"name": "Jeff Disher",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Vinnie Miresse",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 72",
+"district": "Assembly - District 72",
+"pos": 1472,
+"referendum": false,
+"candidates": [
+{
+"name": "Scott Krug",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Christine Maltese",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 73",
+"district": "Assembly - District 73",
+"pos": 1473,
+"referendum": false,
+"candidates": [
+{
+"name": "Frank Kostka",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Angela Stroud",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 74",
+"district": "Assembly - District 74",
+"pos": 1474,
+"referendum": false,
+"candidates": [
+{
+"name": "Chanz Green",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Paul Johnson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 75",
+"district": "Assembly - District 75",
+"pos": 1475,
+"referendum": false,
+"candidates": [
+{
+"name": "Duke Tucker",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Keith Mogel",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 76",
+"district": "Assembly - District 76",
+"pos": 1476,
+"referendum": false,
+"candidates": [
+{
+"name": "Nina Chat",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Dina Nina Martinez-Rutherford",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 77",
+"district": "Assembly - District 77",
+"pos": 1477,
+"referendum": false,
+"candidates": [
+{
+"name": "Jane McCormick",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Renuka Mayadev",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 78",
+"district": "Assembly - District 78",
+"pos": 1478,
+"referendum": false,
+"candidates": [
+{
+"name": "Henry Johnson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Shelia Stubbs",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 79",
+"district": "Assembly - District 79",
+"pos": 1479,
+"referendum": false,
+"candidates": [
+{
+"name": "John Fons",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Lisa Subeck",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 80",
+"district": "Assembly - District 80",
+"pos": 1480,
+"referendum": false,
+"candidates": [
+{
+"name": "Simran Arora",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Mike Bare",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 81",
+"district": "Assembly - District 81",
+"pos": 1481,
+"referendum": false,
+"candidates": [
+{
+"name": "Mark S. Maier",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Alex Joers",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 82",
+"district": "Assembly - District 82",
+"pos": 1482,
+"referendum": false,
+"candidates": [
+{
+"name": "Bryson Reyes",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Rico Camacho",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 83",
+"district": "Assembly - District 83",
+"pos": 1483,
+"referendum": false,
+"candidates": [
+{
+"name": "Dave Maxey",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 84",
+"district": "Assembly - District 84",
+"pos": 1484,
+"referendum": false,
+"candidates": [
+{
+"name": "Chuck Wichgers",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 85",
+"district": "Assembly - District 85",
+"pos": 1485,
+"referendum": false,
+"candidates": [
+{
+"name": "Patrick Snyder",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "John Kroll",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 86",
+"district": "Assembly - District 86",
+"pos": 1486,
+"referendum": false,
+"candidates": [
+{
+"name": "John Spiros",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Andy Wuethrich",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 87",
+"district": "Assembly - District 87",
+"pos": 1487,
+"referendum": false,
+"candidates": [
+{
+"name": "Brent Jacobson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Bob Look",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 88",
+"district": "Assembly - District 88",
+"pos": 1488,
+"referendum": false,
+"candidates": [
+{
+"name": "Ben Franklin",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Brandy Tollefson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 89",
+"district": "Assembly - District 89",
+"pos": 1489,
+"referendum": false,
+"candidates": [
+{
+"name": "Bobby R. Lindsey",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ryan Spaude",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 90",
+"district": "Assembly - District 90",
+"pos": 1490,
+"referendum": false,
+"candidates": [
+{
+"name": "Jessica Henderson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Amaad Rivera-Wagner",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 91",
+"district": "Assembly - District 91",
+"pos": 1491,
+"referendum": false,
+"candidates": [
+{
+"name": "Bruce Stabenow",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jodi Emerson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 92",
+"district": "Assembly - District 92",
+"pos": 1492,
+"referendum": false,
+"candidates": [
+{
+"name": "Clint Moses",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jeremiah Fredrickson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 93",
+"district": "Assembly - District 93",
+"pos": 1493,
+"referendum": false,
+"candidates": [
+{
+"name": "Michael Ayala",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Christian Phelps",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 94",
+"district": "Assembly - District 94",
+"pos": 1494,
+"referendum": false,
+"candidates": [
+{
+"name": "Keith Purnell",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Steve Doyle",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 95",
+"district": "Assembly - District 95",
+"pos": 1495,
+"referendum": false,
+"candidates": [
+{
+"name": "Cedric Schnitzler",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jill Billings",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Paul Michael Weber",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 96",
+"district": "Assembly - District 96",
+"pos": 1496,
+"referendum": false,
+"candidates": [
+{
+"name": "Jim Green",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Tara Johnson",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 97",
+"district": "Assembly - District 97",
+"pos": 1497,
+"referendum": false,
+"candidates": [
+{
+"name": "Cindi Duchow",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 98",
+"district": "Assembly - District 98",
+"pos": 1498,
+"referendum": false,
+"candidates": [
+{
+"name": "Jim Piwowarczyk",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Matt Philibert",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "REPRESENTATIVE TO THE ASSEMBLY DISTRICT 99",
+"district": "Assembly - District 99",
+"pos": 1499,
+"referendum": false,
+"candidates": [
+{
+"name": "Barbara Dittrich",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ADAMS COUNTY",
+"contest": "Adams County Sheriff",
+"district": "Adams County",
+"pos": 20104,
+"referendum": false,
+"candidates": [
+{
+"name": "Brent R. York",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ADAMS COUNTY",
+"contest": "Adams County Clerk of Circuit Court",
+"district": "Adams County",
+"pos": 20105,
+"referendum": false,
+"candidates": [
+{
+"name": "Miranda Christensen",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ASHLAND COUNTY",
+"contest": "Ashland County Sheriff",
+"district": "Ashland County",
+"pos": 20204,
+"referendum": false,
+"candidates": [
+{
+"name": "Nate Delegan",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ASHLAND COUNTY",
+"contest": "Ashland County Clerk of Circuit Court",
+"district": "Ashland County",
+"pos": 20206,
+"referendum": false,
+"candidates": [
+{
+"name": "Lexi Pierce",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BARRON COUNTY",
+"contest": "Barron County Sheriff",
+"district": "Barron County",
+"pos": 20304,
+"referendum": false,
+"candidates": [
+{
+"name": "Jodi Kummet",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BARRON COUNTY",
+"contest": "Barron County Clerk of Circuit Court",
+"district": "Barron County",
+"pos": 20305,
+"referendum": false,
+"candidates": [
+{
+"name": "Ann Barnes",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BAYFIELD COUNTY",
+"contest": "Bayfield County Sheriff",
+"district": "Bayfield County",
+"pos": 20404,
+"referendum": false,
+"candidates": [
+{
+"name": "Tony Williams",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BAYFIELD COUNTY",
+"contest": "Bayfield County Clerk of Circuit Court",
+"district": "Bayfield County",
+"pos": 20406,
+"referendum": false,
+"candidates": [
+{
+"name": "Emma Grove",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BROWN COUNTY",
+"contest": "Brown County Sheriff",
+"district": "Brown County",
+"pos": 20504,
+"referendum": false,
+"candidates": [
+{
+"name": "Todd J. Delain",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BROWN COUNTY",
+"contest": "Brown County Clerk of Circuit Court",
+"district": "Brown County",
+"pos": 20506,
+"referendum": false,
+"candidates": [
+{
+"name": "John A. Vander Leest",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BUFFALO COUNTY",
+"contest": "Buffalo County Sheriff",
+"district": "Buffalo County",
+"pos": 20604,
+"referendum": false,
+"candidates": [
+{
+"name": "Jake Laehn",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BUFFALO COUNTY",
+"contest": "Buffalo County Coroner",
+"district": "Buffalo County",
+"pos": 20605,
+"referendum": false,
+"candidates": [
+{
+"name": "Cindy Giese",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BUFFALO COUNTY",
+"contest": "Buffalo County Clerk of Circuit Court",
+"district": "Buffalo County",
+"pos": 20606,
+"referendum": false,
+"candidates": [
+{
+"name": "Julie Vollmer",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BURNETT COUNTY",
+"contest": "Burnett County Sheriff",
+"district": "Burnett County",
+"pos": 20704,
+"referendum": false,
+"candidates": [
+{
+"name": "Mikal Anton",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "BURNETT COUNTY",
+"contest": "Burnett County Clerk of Circuit Court",
+"district": "Burnett County",
+"pos": 20706,
+"referendum": false,
+"candidates": [
+{
+"name": "Danielle Kolecki",
+"party": "Independent",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CALUMET COUNTY",
+"contest": "Calumet County Sheriff",
+"district": "Calumet County",
+"pos": 20804,
+"referendum": false,
+"candidates": [
+{
+"name": "Brett Bowe",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Nick Sablich",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "CALUMET COUNTY",
+"contest": "Calumet County Clerk of Circuit Court",
+"district": "Calumet County",
+"pos": 20805,
+"referendum": false,
+"candidates": [
+{
+"name": "Kayla Bembenek",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CHIPPEWA COUNTY",
+"contest": "Chippewa County Sheriff",
+"district": "Chippewa County",
+"pos": 20904,
+"referendum": false,
+"candidates": [
+{
+"name": "Travis Hakes",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CHIPPEWA COUNTY",
+"contest": "Chippewa County Coroner",
+"district": "Chippewa County",
+"pos": 20905,
+"referendum": false,
+"candidates": [
+{
+"name": "Ronald Patten",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CHIPPEWA COUNTY",
+"contest": "Chippewa County Clerk of Circuit Court",
+"district": "Chippewa County",
+"pos": 20906,
+"referendum": false,
+"candidates": [
+{
+"name": "Nate Liedl",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jennifer Kragness Lee",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Clark County Sheriff",
+"district": "Clark County",
+"pos": 21004,
+"referendum": false,
+"candidates": [
+{
+"name": "Kerry L. Kirn",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Gene R. Roehl",
+"party": "Independent",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Clark County Coroner",
+"district": "Clark County",
+"pos": 21005,
+"referendum": false,
+"candidates": [
+{
+"name": "Clarissa M. Rochester",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Clark County Clerk of Circuit Court",
+"district": "Clark County",
+"pos": 21006,
+"referendum": false,
+"candidates": [
+{
+"name": "Heather Bravener",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "COLUMBIA COUNTY",
+"contest": "Columbia County Sheriff",
+"district": "Columbia County",
+"pos": 21104,
+"referendum": false,
+"candidates": [
+{
+"name": "Roger L. Brandner",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "COLUMBIA COUNTY",
+"contest": "Columbia County Clerk of Circuit Courts",
+"district": "Columbia County",
+"pos": 21105,
+"referendum": false,
+"candidates": [
+{
+"name": "Julie Kayartz",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CRAWFORD COUNTY",
+"contest": "Crawford County Sheriff",
+"district": "Crawford County",
+"pos": 21204,
+"referendum": false,
+"candidates": [
+{
+"name": "Dale McCullick",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CRAWFORD COUNTY",
+"contest": "Crawford County Coroner",
+"district": "Crawford County",
+"pos": 21205,
+"referendum": false,
+"candidates": [
+{
+"name": "Joe Morovits",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CRAWFORD COUNTY",
+"contest": "Crawford County Clerk of Circuit Court",
+"district": "Crawford County",
+"pos": 21206,
+"referendum": false,
+"candidates": [
+{
+"name": "Holly R. Tanner",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DANE COUNTY",
+"contest": "Dane County Sheriff",
+"district": "Dane County",
+"pos": 21304,
+"referendum": false,
+"candidates": [
+{
+"name": "Kalvin D. Barrett",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DANE COUNTY",
+"contest": "Dane County Clerk of Circuit Court",
+"district": "Dane County",
+"pos": 21306,
+"referendum": false,
+"candidates": [
+{
+"name": "Jeff Okazaki",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DODGE COUNTY",
+"contest": "Dodge County Sheriff",
+"district": "Dodge County",
+"pos": 21404,
+"referendum": false,
+"candidates": [
+{
+"name": "Dale J. Schmidt",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DODGE COUNTY",
+"contest": "Dodge County Clerk of Circuit Court",
+"district": "Dodge County",
+"pos": 21405,
+"referendum": false,
+"candidates": [
+{
+"name": "Kelly Enright",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DOOR COUNTY",
+"contest": "Door County Sheriff",
+"district": "Door County",
+"pos": 21504,
+"referendum": false,
+"candidates": [
+{
+"name": "Curt Vandertie",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Tammy Weckler-Sternard",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Randy Wagner",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "DOOR COUNTY",
+"contest": "Door County Clerk of Circuit Court",
+"district": "Door County",
+"pos": 21505,
+"referendum": false,
+"candidates": [
+{
+"name": "Becky Rericha",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Shannon Lauder",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "DOUGLAS COUNTY",
+"contest": "Douglas County Sheriff",
+"district": "Douglas County",
+"pos": 21604,
+"referendum": false,
+"candidates": [
+{
+"name": "Matthew T. Izzard",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DOUGLAS COUNTY",
+"contest": "Douglas County Clerk of Circuit Court",
+"district": "Douglas County",
+"pos": 21605,
+"referendum": false,
+"candidates": [
+{
+"name": "Michele Wick",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DUNN COUNTY",
+"contest": "Dunn County Sheriff",
+"district": "Dunn County",
+"pos": 21704,
+"referendum": false,
+"candidates": [
+{
+"name": "Kevin Bygd",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "DUNN COUNTY",
+"contest": "Dunn County Clerk of Circuit Court",
+"district": "Dunn County",
+"pos": 21705,
+"referendum": false,
+"candidates": [
+{
+"name": "Katie M. Schalley",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "EAU CLAIRE COUNTY",
+"contest": "Eau Claire County Sheriff",
+"district": "Eau Claire County",
+"pos": 21804,
+"referendum": false,
+"candidates": [
+{
+"name": "Dave Riewestahl",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "EAU CLAIRE COUNTY",
+"contest": "Eau Claire County Clerk of Circuit Court",
+"district": "Eau Claire County",
+"pos": 21805,
+"referendum": false,
+"candidates": [
+{
+"name": "Cherie Norberg",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "FLORENCE COUNTY",
+"contest": "Florence County Sheriff",
+"district": "Florence County",
+"pos": 21904,
+"referendum": false,
+"candidates": [
+{
+"name": "TERESA CHRISMAN",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "FLORENCE COUNTY",
+"contest": "Florence County Clerk of Circuit Court",
+"district": "Florence County",
+"pos": 21906,
+"referendum": false,
+"candidates": [
+{
+"name": "JESSICA MCCOY",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "FOND DU LAC COUNTY",
+"contest": "Fond du Lac Sheriff",
+"district": "Fond du Lac County",
+"pos": 22004,
+"referendum": false,
+"candidates": [
+{
+"name": "Ryan F. Waldschmidt",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "FOND DU LAC COUNTY",
+"contest": "Fond du Lac Clerk of Circuit Court",
+"district": "Fond du Lac County",
+"pos": 22006,
+"referendum": false,
+"candidates": [
+{
+"name": "Shelly Weber",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "FOREST COUNTY",
+"contest": "Forest County Sheriff",
+"district": "Forest County",
+"pos": 22104,
+"referendum": false,
+"candidates": [
+{
+"name": "Andy Karcz",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "FOREST COUNTY",
+"contest": "Forest County Clerk of Circuit Court",
+"district": "Forest County",
+"pos": 22105,
+"referendum": false,
+"candidates": [
+{
+"name": "Christy Doane",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "GRANT COUNTY",
+"contest": "Grant County Sheriff",
+"district": "Grant County",
+"pos": 22204,
+"referendum": false,
+"candidates": [
+{
+"name": "Craig W. Reukauf",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "GRANT COUNTY",
+"contest": "Grant County Coroner",
+"district": "Grant County",
+"pos": 22205,
+"referendum": false,
+"candidates": [
+{
+"name": "Phyllis Fuerstenberg",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "GRANT COUNTY",
+"contest": "Grant County Clerk of Circuit Court",
+"district": "Grant County",
+"pos": 22206,
+"referendum": false,
+"candidates": [
+{
+"name": "Tina McDonald",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "GREEN COUNTY",
+"contest": "Green County Sheriff",
+"district": "Green County",
+"pos": 22304,
+"referendum": false,
+"candidates": [
+{
+"name": "Cody Kanable",
+"party": "Independent",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "GREEN COUNTY",
+"contest": "Green County Coroner",
+"district": "Green County",
+"pos": 22305,
+"referendum": false,
+"candidates": [
+{
+"name": "Amy Jo Walter",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Monica Hack",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "GREEN COUNTY",
+"contest": "Green County Clerk of Circuit Court",
+"district": "Green County",
+"pos": 22306,
+"referendum": false,
+"candidates": [
+{
+"name": "Melanie Leutenegger",
+"party": "Democratic",
+"pos": 1
+},
+{
+"name": "Jennifer Prien",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "GREEN LAKE COUNTY",
+"contest": "Green Lake County Sheriff",
+"district": "Green Lake County",
+"pos": 22404,
+"referendum": false,
+"candidates": [
+{
+"name": "Jason H Preuss",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "GREEN LAKE COUNTY",
+"contest": "Green Lake County Clerk of Circuit Court",
+"district": "Green Lake County",
+"pos": 22406,
+"referendum": false,
+"candidates": [
+{
+"name": "Amy S. Thoma",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "IOWA COUNTY",
+"contest": "Iowa County Sheriff",
+"district": "Iowa County",
+"pos": 22504,
+"referendum": false,
+"candidates": [
+{
+"name": "Michael W. Peterson",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "IOWA COUNTY",
+"contest": "Iowa County Coroner",
+"district": "Iowa County",
+"pos": 22505,
+"referendum": false,
+"candidates": [
+{
+"name": "Wendell F. Hamlin",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "IOWA COUNTY",
+"contest": "Iowa County Clerk of Circuit Court",
+"district": "Iowa County",
+"pos": 22506,
+"referendum": false,
+"candidates": [
+{
+"name": "Lia N. Leahy",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "IRON COUNTY",
+"contest": "Iron County Sheriff",
+"district": "Iron County",
+"pos": 22604,
+"referendum": false,
+"candidates": [
+{
+"name": "Mike Randall",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "IRON COUNTY",
+"contest": "Iron County Coroner",
+"district": "Iron County",
+"pos": 22605,
+"referendum": false,
+"candidates": [
+{
+"name": null,
+"party": null,
+"pos": 0
+}
+]
+},
+{
+"jurisdiction": "IRON COUNTY",
+"contest": "Iron County Clerk of Circuit Courts",
+"district": "Iron County",
+"pos": 22606,
+"referendum": false,
+"candidates": [
+{
+"name": "Karen L. Ransanici",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "JACKSON COUNTY",
+"contest": "Jackson County Sheriff",
+"district": "Jackson County",
+"pos": 22704,
+"referendum": false,
+"candidates": [
+{
+"name": "Kristin Bills Garcia",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Duane M. Waldera",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "JACKSON COUNTY",
+"contest": "Jackson County Clerk of Circuit Court",
+"district": "Jackson County",
+"pos": 22706,
+"referendum": false,
+"candidates": [
+{
+"name": "Jean Sahr",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "JEFFERSON COUNTY",
+"contest": "Jefferson County Sheriff",
+"district": "Jefferson County",
+"pos": 22804,
+"referendum": false,
+"candidates": [
+{
+"name": "Travis Maze",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "JEFFERSON COUNTY",
+"contest": "Jefferson County Clerk of Circuit Court",
+"district": "Jefferson County",
+"pos": 22805,
+"referendum": false,
+"candidates": [
+{
+"name": "Cindy Hamre-Incha",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "JUNEAU COUNTY",
+"contest": "Juneau County Sheriff",
+"district": "Juneau County",
+"pos": 22904,
+"referendum": false,
+"candidates": [
+{
+"name": "Zachary U. Board",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "JUNEAU COUNTY",
+"contest": "Juneau County Clerk of Circuit Court",
+"district": "Juneau County",
+"pos": 22906,
+"referendum": false,
+"candidates": [
+{
+"name": "Alecia M. Kast",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "KENOSHA COUNTY",
+"contest": "Kenosha County Sheriff",
+"district": "Kenosha County",
+"pos": 23004,
+"referendum": false,
+"candidates": [
+{
+"name": "David W. Zoerner",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "KENOSHA COUNTY",
+"contest": "Kenosha County Clerk of Circuit Court",
+"district": "Kenosha County",
+"pos": 23006,
+"referendum": false,
+"candidates": [
+{
+"name": "Zach Rodriguez",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Brian M. Sheffler",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "KEWAUNEE COUNTY",
+"contest": "Kewaunee County Sheriff",
+"district": "Kewaunee County",
+"pos": 23104,
+"referendum": false,
+"candidates": [
+{
+"name": "Eric C. Zellner",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "KEWAUNEE COUNTY",
+"contest": "Kewaunee County Coroner",
+"district": "Kewaunee County",
+"pos": 23105,
+"referendum": false,
+"candidates": [
+{
+"name": "Rory A. Groessl",
+"party": "Independent",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "KEWAUNEE COUNTY",
+"contest": "Kewaunee County Clerk of Circuit Court",
+"district": "Kewaunee County",
+"pos": 23106,
+"referendum": false,
+"candidates": [
+{
+"name": "Jennie Ledvina",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LA CROSSE COUNTY",
+"contest": "La Crosse County Sheriff",
+"district": "La Crosse County",
+"pos": 23204,
+"referendum": false,
+"candidates": [
+{
+"name": "John C. Siegel",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LA CROSSE COUNTY",
+"contest": "La Crosse County Clerk of Circuit Court",
+"district": "La Crosse County",
+"pos": 23205,
+"referendum": false,
+"candidates": [
+{
+"name": "Tammy Pedretti",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LAFAYETTE COUNTY",
+"contest": "Lafayette County Sheriff",
+"district": "Lafayette County",
+"pos": 23304,
+"referendum": false,
+"candidates": [
+{
+"name": "Josh Jerry",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LAFAYETTE COUNTY",
+"contest": "Lafayette County Coroner",
+"district": "Lafayette County",
+"pos": 23305,
+"referendum": false,
+"candidates": [
+{
+"name": "Linda J. Gebhardt",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LAFAYETTE COUNTY",
+"contest": "Lafayette County Clerk of Circuit Court",
+"district": "Lafayette County",
+"pos": 23306,
+"referendum": false,
+"candidates": [
+{
+"name": "Trisha Rowe",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LANGLADE COUNTY",
+"contest": "Langlade County Sheriff",
+"district": "Langlade County",
+"pos": 23404,
+"referendum": false,
+"candidates": [
+{
+"name": "Daniel P. Bauknecht",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LANGLADE COUNTY",
+"contest": "Langlade County Coroner",
+"district": "Langlade County",
+"pos": 23405,
+"referendum": false,
+"candidates": [
+{
+"name": "Larry Shadick",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LANGLADE COUNTY",
+"contest": "Langlade County Clerk of Circuit Court",
+"district": "Langlade County",
+"pos": 23406,
+"referendum": false,
+"candidates": [
+{
+"name": "Tina M. Wild",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LINCOLN COUNTY",
+"contest": "Lincoln County Sheriff",
+"district": "Lincoln County",
+"pos": 23504,
+"referendum": false,
+"candidates": [
+{
+"name": "Andy VanderWyst",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LINCOLN COUNTY",
+"contest": "Lincoln County Coroner",
+"district": "Lincoln County",
+"pos": 23505,
+"referendum": false,
+"candidates": [
+{
+"name": "Valerie Caylor",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "LINCOLN COUNTY",
+"contest": "Lincoln County Clerk of Circuit Court",
+"district": "Lincoln County",
+"pos": 23506,
+"referendum": false,
+"candidates": [
+{
+"name": "Thomas Barker",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MANITOWOC COUNTY",
+"contest": "Manitowoc County Sheriff",
+"district": "Manitowoc County",
+"pos": 23604,
+"referendum": false,
+"candidates": [
+{
+"name": "Daniel L. Hartwig",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MANITOWOC COUNTY",
+"contest": "Manitowoc County Clerk of Circuit Court",
+"district": "Manitowoc County",
+"pos": 23607,
+"referendum": false,
+"candidates": [
+{
+"name": "Angela A.P. Linderud",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MARATHON COUNTY",
+"contest": "Marathon County Sheriff",
+"district": "Marathon County",
+"pos": 23704,
+"referendum": false,
+"candidates": [
+{
+"name": "Chad D. Billeb",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MARATHON COUNTY",
+"contest": "Marathon County Clerk of Circuit Court",
+"district": "Marathon County",
+"pos": 23705,
+"referendum": false,
+"candidates": [
+{
+"name": "Kelly Schremp",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MARINETTE COUNTY",
+"contest": "Marinette County Sheriff",
+"district": "Marinette County",
+"pos": 23804,
+"referendum": false,
+"candidates": [
+{
+"name": "Randy P. Miller",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MARINETTE COUNTY",
+"contest": "Marinette County Clerk of Circuit Court",
+"district": "Marinette County",
+"pos": 23806,
+"referendum": false,
+"candidates": [
+{
+"name": "Carrie Brazeau",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MARQUETTE COUNTY",
+"contest": "Marquette County Sheriff",
+"district": "Marquette County",
+"pos": 23904,
+"referendum": false,
+"candidates": [
+{
+"name": "Joe Konrath",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MARQUETTE COUNTY",
+"contest": "Marquette County Clerk of Circuit Court",
+"district": "Marquette County",
+"pos": 23906,
+"referendum": false,
+"candidates": [
+{
+"name": "Shari M. Rudolph",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MENOMINEE COUNTY",
+"contest": "Menominee County Sheriff",
+"district": "Menominee County",
+"pos": 24004,
+"referendum": false,
+"candidates": [
+{
+"name": "Rebecca Smith Waupoose",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MENOMINEE COUNTY",
+"contest": "Menominee County Clerk of Circuit Court",
+"district": "Menominee County",
+"pos": 24005,
+"referendum": false,
+"candidates": [
+{
+"name": "Delsy Kakwitch",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Milwaukee County Sheriff",
+"district": "Milwaukee County",
+"pos": 24104,
+"referendum": false,
+"candidates": [
+{
+"name": "Denita R. Ball",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Milwaukee County Clerk of Circuit Court",
+"district": "Milwaukee County",
+"pos": 24107,
+"referendum": false,
+"candidates": [
+{
+"name": "Anna Maria Hodges",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MONROE COUNTY",
+"contest": "Monroe County Sheriff",
+"district": "Monroe County",
+"pos": 24204,
+"referendum": false,
+"candidates": [
+{
+"name": "Mike Krause",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "MONROE COUNTY",
+"contest": "Monroe County Clerk of Circuit Court",
+"district": "Monroe County",
+"pos": 24205,
+"referendum": false,
+"candidates": [
+{
+"name": "Laura L. Endres",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "OCONTO COUNTY",
+"contest": "Oconto County Sheriff",
+"district": "Oconto County",
+"pos": 24304,
+"referendum": false,
+"candidates": [
+{
+"name": "Todd Skarban",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "OCONTO COUNTY",
+"contest": "Oconto County Clerk of Circuit Court",
+"district": "Oconto County",
+"pos": 24305,
+"referendum": false,
+"candidates": [
+{
+"name": "Trisha L. LeFebre",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ONEIDA COUNTY",
+"contest": "Oneida County Sheriff",
+"district": "Oneida County",
+"pos": 24404,
+"referendum": false,
+"candidates": [
+{
+"name": "Grady Hartman",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ONEIDA COUNTY",
+"contest": "Oneida County Clerk of Circuit Court",
+"district": "Oneida County",
+"pos": 24405,
+"referendum": false,
+"candidates": [
+{
+"name": "Brenda Behrle",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "OUTAGAMIE COUNTY",
+"contest": "Outagamie County Sheriff",
+"district": "Outagamie County",
+"pos": 24504,
+"referendum": false,
+"candidates": [
+{
+"name": "Clint C. Kriewaldt",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "OUTAGAMIE COUNTY",
+"contest": "Outagamie County Clerk of Circuit Court",
+"district": "Outagamie County",
+"pos": 24507,
+"referendum": false,
+"candidates": [
+{
+"name": "Diane Leith",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "OZAUKEE COUNTY",
+"contest": "Ozaukee County Sheriff",
+"district": "Ozaukee County",
+"pos": 24604,
+"referendum": false,
+"candidates": [
+{
+"name": "Christy Knowles",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "OZAUKEE COUNTY",
+"contest": "Ozaukee County Clerk of Circuit Court",
+"district": "Ozaukee County",
+"pos": 24606,
+"referendum": false,
+"candidates": [
+{
+"name": "Connie Mueller",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PEPIN COUNTY",
+"contest": "Pepin County Sheriff",
+"district": "Pepin County",
+"pos": 24704,
+"referendum": false,
+"candidates": [
+{
+"name": "Joel D. Wener",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PEPIN COUNTY",
+"contest": "Pepin County Coroner",
+"district": "Pepin County",
+"pos": 24705,
+"referendum": false,
+"candidates": [
+{
+"name": null,
+"party": null,
+"pos": 0
+}
+]
+},
+{
+"jurisdiction": "PEPIN COUNTY",
+"contest": "Pepin County Clerk of Circuit Court",
+"district": "Pepin County",
+"pos": 24706,
+"referendum": false,
+"candidates": [
+{
+"name": "Audrey Lieffring",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PIERCE COUNTY",
+"contest": "Pierce County Sheriff",
+"district": "Pierce County",
+"pos": 24804,
+"referendum": false,
+"candidates": [
+{
+"name": "Chad Koranda",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PIERCE COUNTY",
+"contest": "Pierce County Clerk of Circuit Court",
+"district": "Pierce County",
+"pos": 24805,
+"referendum": false,
+"candidates": [
+{
+"name": "Kerry Feuerhelm",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "POLK COUNTY",
+"contest": "Polk County Sheriff",
+"district": "Polk County",
+"pos": 24904,
+"referendum": false,
+"candidates": [
+{
+"name": "Rob Rorvick",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "POLK COUNTY",
+"contest": "Polk County Clerk of Circuit Court",
+"district": "Polk County",
+"pos": 24905,
+"referendum": false,
+"candidates": [
+{
+"name": "Jackie Patterson",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PORTAGE COUNTY",
+"contest": "Portage County Sheriff",
+"district": "Portage County",
+"pos": 25004,
+"referendum": false,
+"candidates": [
+{
+"name": "Joshua R. Ostrowski",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PORTAGE COUNTY",
+"contest": "Portage County Clerk of Circuit Court",
+"district": "Portage County",
+"pos": 25007,
+"referendum": false,
+"candidates": [
+{
+"name": "Lisa M. Roth",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PRICE COUNTY",
+"contest": "Price County Sheriff",
+"district": "Price County",
+"pos": 25104,
+"referendum": false,
+"candidates": [
+{
+"name": "Robert Hawn",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PRICE COUNTY",
+"contest": "Price County Coroner",
+"district": "Price County",
+"pos": 25105,
+"referendum": false,
+"candidates": [
+{
+"name": "Amy Casey",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PRICE COUNTY",
+"contest": "Price County Clerk of Circuit Court",
+"district": "Price County",
+"pos": 25106,
+"referendum": false,
+"candidates": [
+{
+"name": "Amy Walker",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "PRICE COUNTY",
+"contest": "Price County Supervisor District 5",
+"district": "Price County Supervisory District 5",
+"pos": 25115,
+"referendum": false,
+"candidates": [
+{
+"name": "Preston Scheuermann",
+"party": null,
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "RACINE COUNTY",
+"contest": "Racine County Sheriff",
+"district": "Racine County",
+"pos": 25204,
+"referendum": false,
+"candidates": [
+{
+"name": "Cary A. Madrigal",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Donald E. Vandervest",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "RACINE COUNTY",
+"contest": "Racine County Clerk of Circuit Court",
+"district": "Racine County",
+"pos": 25206,
+"referendum": false,
+"candidates": [
+{
+"name": "Amy Vanderhoef",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "RICHLAND COUNTY",
+"contest": "Richland County Sheriff",
+"district": "Richland County",
+"pos": 25304,
+"referendum": false,
+"candidates": [
+{
+"name": "Clay J. Porter",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "RICHLAND COUNTY",
+"contest": "Richland County Coroner",
+"district": "Richland County",
+"pos": 25305,
+"referendum": false,
+"candidates": [
+{
+"name": null,
+"party": null,
+"pos": 0
+}
+]
+},
+{
+"jurisdiction": "RICHLAND COUNTY",
+"contest": "Richland County Clerk of Circuit Court",
+"district": "Richland County",
+"pos": 25306,
+"referendum": false,
+"candidates": [
+{
+"name": "Stacy S. Kleist",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ROCK COUNTY",
+"contest": "Rock County Sheriff",
+"district": "Rock County",
+"pos": 25404,
+"referendum": false,
+"candidates": [
+{
+"name": "Curtis Fell",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ROCK COUNTY",
+"contest": "Rock County Clerk of Circuit Court",
+"district": "Rock County",
+"pos": 25405,
+"referendum": false,
+"candidates": [
+{
+"name": "Amanda Nelson",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "RUSK COUNTY",
+"contest": "Rusk County Sheriff",
+"district": "Rusk County",
+"pos": 25505,
+"referendum": false,
+"candidates": [
+{
+"name": "Phil Grassmann",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "RUSK COUNTY",
+"contest": "Rusk County Clerk of Circuit Court",
+"district": "Rusk County",
+"pos": 25506,
+"referendum": false,
+"candidates": [
+{
+"name": "Lisa K. Strop",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ST. CROIX COUNTY",
+"contest": "St. Croix County Sheriff",
+"district": "St. Croix County",
+"pos": 25604,
+"referendum": false,
+"candidates": [
+{
+"name": "Scott Knudson",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "ST. CROIX COUNTY",
+"contest": "St. Croix County Clerk of Circuit Court",
+"district": "St. Croix County",
+"pos": 25605,
+"referendum": false,
+"candidates": [
+{
+"name": "Kathy A. Kittel",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SAUK COUNTY",
+"contest": "Sauk County Sheriff",
+"district": "Sauk County",
+"pos": 25704,
+"referendum": false,
+"candidates": [
+{
+"name": "Matt Burch",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Ryan P. Jesberger",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SAUK COUNTY",
+"contest": "Sauk County Coroner",
+"district": "Sauk County",
+"pos": 25705,
+"referendum": false,
+"candidates": [
+{
+"name": "Don Skrabel",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Amber Giddings",
+"party": "Independent",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SAUK COUNTY",
+"contest": "Sauk County Clerk of Circuit Court",
+"district": "Sauk County",
+"pos": 25706,
+"referendum": false,
+"candidates": [
+{
+"name": "Carrie A. Wastlick",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SAWYER COUNTY",
+"contest": "Sawyer County Sheriff",
+"district": "Sawyer County",
+"pos": 25804,
+"referendum": false,
+"candidates": [
+{
+"name": "Bryan Deyo",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SAWYER COUNTY",
+"contest": "Sawyer County Clerk of Circuit Court",
+"district": "Sawyer County",
+"pos": 25806,
+"referendum": false,
+"candidates": [
+{
+"name": "Marge Kelsey",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SHAWANO COUNTY",
+"contest": "Shawano County Sheriff",
+"district": "Shawano County",
+"pos": 25904,
+"referendum": false,
+"candidates": [
+{
+"name": "George Lenzner",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SHAWANO COUNTY",
+"contest": "Shawano County Coroner",
+"district": "Shawano County",
+"pos": 25905,
+"referendum": false,
+"candidates": [
+{
+"name": "Brian Westfahl",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SHAWANO COUNTY",
+"contest": "Shawano County Clerk of Circuit Court",
+"district": "Shawano County",
+"pos": 25906,
+"referendum": false,
+"candidates": [
+{
+"name": "Ethan Schmidt",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SHEBOYGAN COUNTY",
+"contest": "Sheboygan County Sheriff",
+"district": "Sheboygan County",
+"pos": 26004,
+"referendum": false,
+"candidates": [
+{
+"name": "Matthew Spence",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "SHEBOYGAN COUNTY",
+"contest": "Sheboygan County Clerk of Circuit Court",
+"district": "Sheboygan County",
+"pos": 26005,
+"referendum": false,
+"candidates": [
+{
+"name": "Christine M. Koenig",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "TAYLOR COUNTY",
+"contest": "Taylor County Sheriff",
+"district": "Taylor County",
+"pos": 26104,
+"referendum": false,
+"candidates": [
+{
+"name": "Corey J Dassow",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "TAYLOR COUNTY",
+"contest": "Taylor County Clerk of Circuit Court",
+"district": "Taylor County",
+"pos": 26105,
+"referendum": false,
+"candidates": [
+{
+"name": "Jill Scheithauer",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "TREMPEALEAU COUNTY",
+"contest": "Trempealeau County Sheriff",
+"district": "Trempealeau County",
+"pos": 26204,
+"referendum": false,
+"candidates": [
+{
+"name": "Erica Koxlien",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "TREMPEALEAU COUNTY",
+"contest": "Trempealeau County Clerk of Circuit Court",
+"district": "Trempealeau County",
+"pos": 26205,
+"referendum": false,
+"candidates": [
+{
+"name": "Jessica A. Schue",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Mary Teresa Foss",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "Vernon County Sheriff",
+"district": "Vernon County",
+"pos": 26304,
+"referendum": false,
+"candidates": [
+{
+"name": "Roy Torgerson",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "Vernon County Coroner",
+"district": "Vernon County",
+"pos": 26305,
+"referendum": false,
+"candidates": [
+{
+"name": "Betty Nigh",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "Vernon County Clerk of Circuit Court",
+"district": "Vernon County",
+"pos": 26306,
+"referendum": false,
+"candidates": [
+{
+"name": "Sheila Olson",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "VILAS COUNTY",
+"contest": "Vilas County Sheriff",
+"district": "Vilas County",
+"pos": 26404,
+"referendum": false,
+"candidates": [
+{
+"name": "Gerard T. Ritter",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "VILAS COUNTY",
+"contest": "Vilas County Clerk of Circuit Court",
+"district": "Vilas County",
+"pos": 26406,
+"referendum": false,
+"candidates": [
+{
+"name": "Beth A. Soltow",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WALWORTH COUNTY",
+"contest": "Walworth County Sheriff",
+"district": "Walworth County",
+"pos": 26504,
+"referendum": false,
+"candidates": [
+{
+"name": "Tom Hausner",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Csaba Keller",
+"party": "Constitution",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WALWORTH COUNTY",
+"contest": "Walworth County Clerk of Circuit Court",
+"district": "Walworth County",
+"pos": 26505,
+"referendum": false,
+"candidates": [
+{
+"name": "Michele Jacobs",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WASHBURN COUNTY",
+"contest": "Washburn County Sheriff",
+"district": "Washburn County",
+"pos": 26604,
+"referendum": false,
+"candidates": [
+{
+"name": "Jason Bart Bartholomew",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WASHBURN COUNTY",
+"contest": "Washburn County Coroner",
+"district": "Washburn County",
+"pos": 26605,
+"referendum": false,
+"candidates": [
+{
+"name": "Andrew Curtis",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WASHBURN COUNTY",
+"contest": "Washburn County Clerk of Circuit Court",
+"district": "Washburn County",
+"pos": 26606,
+"referendum": false,
+"candidates": [
+{
+"name": "Shannon Anderson",
+"party": "Independent",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WASHINGTON COUNTY",
+"contest": "Washington County Sheriff",
+"district": "Washington County",
+"pos": 26704,
+"referendum": false,
+"candidates": [
+{
+"name": "Martin R. Schulteis",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WASHINGTON COUNTY",
+"contest": "Washington County Clerk of Circuit Court",
+"district": "Washington County",
+"pos": 26706,
+"referendum": false,
+"candidates": [
+{
+"name": "Sherry Coykendall",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WAUKESHA COUNTY",
+"contest": "Waukesha County Sheriff",
+"district": "Waukesha County",
+"pos": 26804,
+"referendum": false,
+"candidates": [
+{
+"name": "Nick Ollinger",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WAUKESHA COUNTY",
+"contest": "Waukesha County Clerk of Circuit Court",
+"district": "Waukesha County",
+"pos": 26806,
+"referendum": false,
+"candidates": [
+{
+"name": "Monica Paz",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WAUPACA COUNTY",
+"contest": "Waupaca County Sheriff",
+"district": "Waupaca County",
+"pos": 26904,
+"referendum": false,
+"candidates": [
+{
+"name": "Timothy R. Wilz",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Justin A. Malueg",
+"party": "Independent",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "WAUPACA COUNTY",
+"contest": "Waupaca County Clerk of Circuit Court",
+"district": "Waupaca County",
+"pos": 26906,
+"referendum": false,
+"candidates": [
+{
+"name": "Renee L. Hosket",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WAUSHARA COUNTY",
+"contest": "Waushara County Sheriff",
+"district": "Waushara County",
+"pos": 27004,
+"referendum": false,
+"candidates": [
+{
+"name": "Zachary L. Gunderson",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Nina Monacelli",
+"party": "Democratic",
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "WAUSHARA COUNTY",
+"contest": "Waushara County Clerk of Circuit Court",
+"district": "Waushara County",
+"pos": 27006,
+"referendum": false,
+"candidates": [
+{
+"name": "Katrina Rasmussen",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WINNEBAGO COUNTY",
+"contest": "Winnebago County Sheriff",
+"district": "Winnebago County",
+"pos": 27104,
+"referendum": false,
+"candidates": [
+{
+"name": "Darin M. Rice",
+"party": "Republican",
+"pos": 1
+},
+{
+"name": "Jason W. Rippl",
+"party": "Democratic",
+"pos": 2
+},
+{
+"name": "Danielle Falesnik",
+"party": "Independent",
+"pos": 3
+}
+]
+},
+{
+"jurisdiction": "WINNEBAGO COUNTY",
+"contest": "Winnebago County Clerk of Circuit Court",
+"district": "Winnebago County",
+"pos": 27107,
+"referendum": false,
+"candidates": [
+{
+"name": "Desiree Bongers",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WOOD COUNTY",
+"contest": "Wood County Sheriff",
+"district": "Wood County",
+"pos": 27204,
+"referendum": false,
+"candidates": [
+{
+"name": "Shawn Becker",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WOOD COUNTY",
+"contest": "Wood County Coroner",
+"district": "Wood County",
+"pos": 27205,
+"referendum": false,
+"candidates": [
+{
+"name": "David A. Patton",
+"party": "Democratic",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WOOD COUNTY",
+"contest": "Wood County Clerk of Circuit Court",
+"district": "Wood County",
+"pos": 27206,
+"referendum": false,
+"candidates": [
+{
+"name": "Kimberly A. Stimac",
+"party": "Republican",
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "WOOD COUNTY",
+"contest": "Municipal Judge Marshfield Area Joint Municipal Court",
+"district": "MARSHFIELD AREA JOINT MUNICIPAL COURT",
+"pos": 180721,
+"referendum": false,
+"candidates": [
+{
+"name": "Krista J. James",
+"party": null,
+"pos": 1
+},
+{
+"name": "Alanna Feddick-Goodwin",
+"party": null,
+"pos": 2
+}
+]
+},
+{
+"jurisdiction": "CITY OF JEFFERSON - JEFFERSON COUNTY",
+"contest": "City of Jefferson Municipal Judge",
+"district": "City of Jefferson",
+"pos": 300937,
+"referendum": false,
+"candidates": [
+{
+"name": "Brandon White",
+"party": null,
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "CITY OF VERONA - DANE COUNTY",
+"contest": "Verona Municipal Judge",
+"district": "City of Verona",
+"pos": 302509,
+"referendum": false,
+"candidates": [
+{
+"name": "James Kokalj",
+"party": null,
+"pos": 1
+}
+]
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "State of Wisconsin Partial Veto Referendum - QUESTION 1",
+"district": "Wisconsin",
+"pos": 910001,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION 1: \u201cPartial veto. Shall section 10 (1) (c) of article V of the constitution be amended to prohibit the governor, in exercising his or her partial veto authority, from creating or increasing or authorizing the creation or increase of any tax or fee?\u201d"
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "State of Wisconsin Freedom to Gather in Places of Worship During an Emergency Referendum - QUESTION 2",
+"district": "Wisconsin",
+"pos": 910002,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION 2: \"Freedom to gather in places of worship during an emergency. Shall section 18 of article I of the constitution, which deals with religious liberty, be amended to prohibit the state or a political subdivision of the state from ordering the closure of, or forbidding gatherings in, places of worship in response to a state of emergency, including a public health emergency?\""
+},
+{
+"jurisdiction": "STATE OF WISCONSIN",
+"contest": "State of Wisconsin Governmental Entity Discrimination Prohibited Referendum - QUESTION 3",
+"district": "Wisconsin",
+"pos": 910003,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION 3: \"Governmental entity discrimination prohibited. Shall section 27 of article I of the constitution be created to prohibit governmental entities in the state from discriminating against, or granting preferential treatment to, any individual or group on the basis of race, sex, color, ethnicity, or national origin in public employment, public education, public contracting, or public administration?\""
+},
+{
+"jurisdiction": "RUSK COUNTY",
+"contest": "Rusk County Jail Referendum",
+"district": "Rusk County",
+"pos": 930000,
+"referendum": true,
+"candidates": [],
+"question": "Shall Rusk County, Wisconsin, be authorized to issue general obligation bonds in an amount approximately $32,321,829.46 for the purpose of constructing, furnishing, and equipping a new county jail facility?"
+},
+{
+"jurisdiction": "LAFAYETTE COUNTY",
+"contest": "Lafayette County Capital Expenditures Referendum - QUESTION 1",
+"district": "Lafayette County",
+"pos": 930001,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION 1: \u201cShould the Lafayette County Board of Supervisors authorize and approve the County\n\nincurring capital expenditures associated with the construction of a new nursing home, borrowing\n\nfunds to support the capital expenditures and levying a property tax to support the debt service\n\npayments that will be above the allowable levy limit established in state law?\u201d"
+},
+{
+"jurisdiction": "LAFAYETTE COUNTY",
+"contest": "Lafayette County Levy Increase Referendum - QUESTION 2",
+"district": "Lafayette County",
+"pos": 930002,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION 2: \u201cUnder state law, the increase in the levy of the County of Lafayette for the tax to be\n\nimposed for the next fiscal year, 2027, is limited to 1.088%, which results in an estimated levy of\n\n$10,087,262. Shall the County of Lafayette be allowed to exceed this limit and increase the levy for\n\nthe next fiscal year, 2027, for the purpose of paying a portion of the cost to operate and maintain\n\nLafayette Manor, by an estimated total of 4.957% which results in a levy of $10,587,262, and include\n\nthe increase of $500,000 for fiscal years 2028 through 2031?\u201d"
+},
+{
+"jurisdiction": "BURNETT COUNTY",
+"contest": "Burnett Decreasing County Board Members Referendum",
+"district": "Burnett County",
+"pos": 930010,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the Board of Supervisors of Burnett County be decreased from 21 members to 15 members?"
+},
+{
+"jurisdiction": "CITY OF EAGLE RIVER - VILAS COUNTY",
+"contest": "City of Eagle River Term Limits Referendum",
+"district": "City of Eagle River",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION 1:\n\nShall the City of Eagle River adopt a charter ordinance creating Section 2-105 of the Eagle River Municipal Code to establish term limits for the offices of Mayor and Alderperson by:\n\n1. Limiting service as Mayor or Alderperson to four consecutive two-year terms;\n2. Requiring a six-year period before a person who has served four consecutive terms may again serve in the same office;\n3. Prohibiting a person who has served four consecutive terms as Mayor from immediately serving as an Alderperson, and prohibiting a person who has served four consecutive terms as an Alderperson from immediately serving as Mayor; and\n4. Counting terms served both before and after enactment of the ordinance when applying these term limits."
+},
+{
+"jurisdiction": "CITY OF FOUNTAIN CITY - BUFFALO COUNTY",
+"contest": "City of Fountain City Treasurer Referendum",
+"district": "City of Fountain City",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Should the City of Fountain City Charter Ordinance 2026-02 to abolish the office of treasurer and to establish the office of Administrator-Treasurer be approved?"
+},
+{
+"jurisdiction": "CITY OF HUDSON - ST. CROIX COUNTY",
+"contest": "City of Hudson Fire Department Staffing Referendum",
+"district": "City of Hudson",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Under state law, the increase in the levy of the City of Hudson for the tax to be imposed for the next fiscal year, 2027, is limited to 0.872%, which results in a levy of $13,335,657. Shall the City of Hudson be allowed to exceed this limit and increase the levy for the next fiscal year, 2027, for the purpose of improving emergency services with 9 additional full-time fire staff and ongoing Hudson Fire Department expenses, by a total of 9.698%, which results in a levy of $14,628,943 and on ongoing basis, include the increase of $1,293,285.68 for each fiscal year going forward?"
+},
+{
+"jurisdiction": "CITY OF LA CROSSE - LA CROSSE COUNTY",
+"contest": "City of La Crosse Citizens' Advisory Healthcare Action Committee",
+"district": "City of La Crosse",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Citizens\u2019 Advisory Healthcare Action Committee.   Shall the City establish a Citizens\u2019 Advisory Healthcare Action Committee to develop a biennial Healthcare Action Plan and provide a public process for community input on healthcare?"
+},
+{
+"jurisdiction": "CITY OF MUSKEGO - WAUKESHA COUNTY",
+"contest": "City of Muskego Levy Increase Referendum",
+"district": "City of Muskego",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Under state law, the increase in the levy of the City of Muskego for the tax to be imposed for the next fiscal year, 2027, is limited to 1.593%, which results in a levy of $14,732,877.00. Shall the City of Muskego be allowed to exceed this limit and increase the levy for the next fiscal year, 2027, for the purpose of improving public safety services in the City of Muskego, which, are the City\u2019s Police, Fire, EMS, Rescue, and Public Works services, including staffing and support for those services, by a total of 40.047%, which results in a levy of $20,632,877.00, and on an ongoing basis, include the increase of $5,900,000.00 for each fiscal year going forward?"
+},
+{
+"jurisdiction": "CITY OF NEW BERLIN - WAUKESHA COUNTY",
+"contest": "City of New Berlin Public Safety Referendum",
+"district": "City of New Berlin",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Under state law, the increase in the levy of the City of New Berlin for the tax to be imposed for the next fiscal year, 2027, is limited to 0.762%, which results in a levy of $38,484,163. Shall the City of New Berlin be allowed to exceed this limit and increase the levy for the next fiscal year, 2027, and on an ongoing basis, for the purpose of increasing staffing in the police and fire departments and to purchase an additional vehicle and equipment to support those additional personnel, by a total of 8.11%, which results in a levy of $41,606,312, and on an ongoing basis, include the increase of $3,122,149.00 in the base levy for each fiscal year going forward?"
+},
+{
+"jurisdiction": "CITY OF PLYMOUTH - SHEBOYGAN COUNTY",
+"contest": "City of Plymouth Levy Increase Referendum",
+"district": "City of Plymouth",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Under state law, the increase in the levy of the City of Plymouth for the tax to be imposed for the next fiscal year, 2027, is limited to 2.046%, which results in a levy of $5,769,712. Shall the City of Plymouth be allowed to  exceed this limit and increase the levy for the next fiscal year, 2027, for the purpose of funding three additional police officers and related equipment and wage adjustments in the Police Department, by a total of 10.399%, which results in a levy of $6,369,712 and on an ongoing basis, include the increase of $600,000 for each fiscal year going forward?"
+},
+{
+"jurisdiction": "TOWN OF ARLAND - BARRON COUNTY",
+"contest": "Town of Arland Zoning Referendum",
+"district": "Town of Arland",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "DO YOU SUPPORT THE TOWN OF ARLAND ADOPTING THE BARRON COUNTY GENERAL ZONING ORDINANCES?"
+},
+{
+"jurisdiction": "TOWN OF CORNING - LINCOLN COUNTY",
+"contest": "Town of Corning Clerk Appointment Referendum",
+"district": "Town of Corning",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the person holding the office of Corning Town Clerk in the Town of Corning be appointed by the Town Board?\""
+},
+{
+"jurisdiction": "TOWN OF HARRISON - LINCOLN COUNTY",
+"contest": "Town of Harrison - Lincoln County Advisory Zoning Referendum",
+"district": "Town of Harrison",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Advisory Referendum Question - \"Should the Town Board of the Town of Harrison adopt the Lincoln County Zoning Ordinance to govern land use and zoning development within the Town?\""
+},
+{
+"jurisdiction": "TOWN OF HAYWARD - SAWYER COUNTY",
+"contest": "Town of Hayward Exceed Levy Limit Referendum",
+"district": "Town of Hayward",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "\u201cUnder state law, the increase in the levy of the Town of Hayward for the tax to be imposed for the next fiscal year, 2027, is limited to 1.511%, which results in a levy of $825,008. Shall the Town of Hayward be allowed to exceed this limit and increase the levy for the next fiscal year, 2027, for the new construction of fire and highway departments and refurbishing of existing Town Hall, by a total of 53.8% which results in a levy of $1,268,902, and on an ongoing basis include an increase of $443,894 for each fiscal year beginning in 2027 through 2046.\u201d"
+},
+{
+"jurisdiction": "TOWN OF WALDWICK - IOWA COUNTY",
+"contest": "Town of Waldwick Exceed Levy Limit Referendum",
+"district": "Town of Waldwick",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Under state law, the increase in the levy of the Town of Waldwick for the tax to be imposed for the next fiscal year, 2026, is limited to 1.115%, which results in a levy of $169,408. Shall the Town of Waldwick be allowed to exceed this limit and increase the levy for the next fiscal year, 2026, for hiring a full-time patrolman, by a total of 47.2%, which results in a levy of $249,408, for an ongoing basis, including the increase of $80,000 for each fiscal year going forward?"
+},
+{
+"jurisdiction": "VILLAGE OF NECEDAH - JUNEAU COUNTY",
+"contest": "Village of Necedah Term Limit Referendum",
+"district": "Village of Necedah",
+"pos": 940000,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Village of Necedah adopt the proposed Charter Ordinance, without alteration, to establish a limit of two consecutive 2-year terms of office for Village Trustees and Village President?"
+},
+{
+"jurisdiction": "TOWN OF AUBURNDALE - WOOD COUNTY",
+"contest": "Caucus to Paper Nomination",
+"district": "Town of Auburndale",
+"pos": 940010,
+"referendum": true,
+"candidates": [],
+"question": "Shall all candidates in the town of Auburndale for elective town offices be nominated at a nonpartisan primary?"
+},
+{
+"jurisdiction": "CITY OF EAU CLAIRE - MULTIPLE COUNTIES",
+"contest": "City of Eau Claire Citizens' Advisory Healthcare Action Committee Referendum",
+"district": "City of Eau Claire",
+"pos": 940010,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION: \"Shall an ordinance be enacted creating Chapter 2.53 of the Code of Ordinances of the City of Eau Claire creating the Citizens' Advisory Healthcare Action Committee?\""
+},
+{
+"jurisdiction": "CITY OF JANESVILLE - ROCK COUNTY",
+"contest": "City of Janesville Direct Legislation Petition on GM/JATCO Site Development Referendum",
+"district": "City of Janesville",
+"pos": 940010,
+"referendum": true,
+"candidates": [],
+"question": "Should approval of proposed development agreements, development projects, sales, and leases of the GM/JATCO sites for projects exceeding $450 million in project costs be decided by a majority vote of the electors?"
+},
+{
+"jurisdiction": "TOWN OF MEENON - BURNETT COUNTY",
+"contest": "Town of Meenon Clerk Appointment Referendum - Question 1",
+"district": "Town of Meenon",
+"pos": 940010,
+"referendum": true,
+"candidates": [],
+"question": "Shall the person holding the office of town clerk in the Town of Meenon be appointed by the town board rather than being elected by the town electors?"
+},
+{
+"jurisdiction": "TOWN OF GRAND RAPIDS - WOOD COUNTY",
+"contest": "Exceed Revenue Limits",
+"district": "Town of Grand Rapids",
+"pos": 940015,
+"referendum": true,
+"candidates": [],
+"question": "Question: Under state law, the increase in the levy of the Town of Grand Rapids for the tax to be imposed for the next fiscal year, 2027, is limited to .949% (based on actual data or the Town's best estimate), which results in a levy of $1,888,036. Shall the Town of Grand Rapids be allowed to exceed this limit and increase the levy for the next fiscal year, 2027, for the purpose of maintaining and providing general town operations and public safety services, including police protection, fire protection, and emergency services, by a total of 15.890%, which results in a levy of $2,188,036, and on an ongoing basis, include the increase of $300,000 for each fiscal year going forward?"
+},
+{
+"jurisdiction": "TOWN OF MEENON - BURNETT COUNTY",
+"contest": "Town of Meenon Treasurer Appointment Referendum - Question 2",
+"district": "Town of Meenon",
+"pos": 940020,
+"referendum": true,
+"candidates": [],
+"question": "Shall the person holding the office of town treasurer in the Town of Meenon be appointed by the town board rather than being elected by the town electors?"
+},
+{
+"jurisdiction": "TOWN OF HUDSON - ST. CROIX COUNTY",
+"contest": "Town of Hudson Tax Levy for Emergency Services Referendum",
+"district": "Town of Hudson",
+"pos": 940222,
+"referendum": true,
+"candidates": [],
+"question": "Under state law, the increase in the levy of the Town of Hudson for the tax to be imposed for the next fiscal year, 2027, is limited to 1.079%, which results in a levy of $1,314,542. Shall the Town of Hudson be allowed to exceed this limit and increase the levy for the next fiscal year, 2027, for the purpose of paying the increased costs of emergency services imposed by our contract with the City of Hudson, which has decided to add 9 full time firefighters and other associated expenses to reduce response times and provide improved emergency services, by a total of 37.474%, which results in a levy of $1,807,154, and on an ongoing basis, include the increase of $492,612 for each fiscal year going forward?"
+},
+{
+"jurisdiction": "BARRON COUNTY",
+"contest": "Barron Area School District Operating Expenses Referendum",
+"district": "Barron Area School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Barron Area School District, Barron and Dunn Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,500,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "MONROE COUNTY",
+"contest": "Cashton School District Operating Referendum",
+"district": "Cashton School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Cashton, Monroe, Vernon and La Crosse Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $450,000 per year for three years, beginning with the 2027-2028 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "WALWORTH COUNTY",
+"contest": "Delavan-Darien Exceed Revenue Limit Referendum",
+"district": "Delavan - Darien School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Delavan-Darien, Walworth and Rock Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $5,500,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 schoolyear, for non-recurring purposes consisting of operational expenses, including student academic resources, co-curricular programming, employ School Resource Officers, and staff salaries and benefits?"
+},
+{
+"jurisdiction": "IOWA COUNTY",
+"contest": "Dodgeville School District Operational Expenses Referendum",
+"district": "Dodgeville School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Dodgeville School District, Iowa County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,900,000 per year for three years, beginning with the 2026-2027 school year and ending with the 2028-2029 school year, for non-recurring purposes consisting of operational expenses, including educational programming?"
+},
+{
+"jurisdiction": "JEFFERSON COUNTY",
+"contest": "Fort Atkinson School District Exceed Revenue Limit Referendum",
+"district": "Fort Atkinson School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Fort Atkinson, located in Jefferson and Rock Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $7,100,000 beginning with the 2027-2028 school year, for recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "ST. CROIX COUNTY",
+"contest": "Glenwood City School District Exceed Revenue Limit Referendum",
+"district": "Glenwood City School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Glenwood City, St. Croix and Dunn Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $750,000 per year for four years, beginning with the 2026-2027 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "KEWAUNEE COUNTY",
+"contest": "Luxemburg-Casco SD Exceed Revenue Limit Referendum",
+"district": "Luxemburg-Casco School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Luxemburg-Casco School District, Kewaunee and Brown Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,800,000 per year for three years, beginning with the 2027-2028 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational expenses including teacher and staff compensation and benefits and maintaining reading, math and college and technical career programming?"
+},
+{
+"jurisdiction": "ONEIDA COUNTY",
+"contest": "MJ1 School -Exceed Revenue Limit",
+"district": "Minocqua J1 School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Joint School District Number 1, Towns of Minocqua, Hazelhurst and Lake Tomahawk, Oneida County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $3,500,000 beginning with the 2027-2028 school year, for recurring purposes consisting of operational expenses, maintenance expenses, and debt service for capital improvements?"
+},
+{
+"jurisdiction": "MARQUETTE COUNTY",
+"contest": "Montello School District Exceed Revenue Limit Referendum",
+"district": "Montello School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Montello School District, Marquette and Green Lake Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $2,000,000 in each year for the 2026-2027 school year, the 2027-2028 school year, the 2028-2029 school year and the 2029-2030 school year, for non-recurring purposes consisting of operational and maintenance expenses, including for educational programming, facility maintenance and employee compensation and benefits?"
+},
+{
+"jurisdiction": "RUSK COUNTY",
+"contest": "School District of Ladysmith Referendum",
+"district": "Ladysmith School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Ladysmith, Rusk County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $950,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of maintaining current educational programs, student services, and general maintenance?"
+},
+{
+"jurisdiction": "DODGE COUNTY",
+"contest": "School District of Mayville Exceed Revenue Limit Referendum",
+"district": "Mayville School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the School District of Mayville, Dodge County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $950,000 per year for seven years, beginning with the 2027-2028 school year and ending with the 2033-2034 school year, for non-recurring purposes consisting of operational and maintenance expenses, including to maintain district facilities, for school safety and security, student transportation, and educational programming?"
+},
+{
+"jurisdiction": "SHEBOYGAN COUNTY",
+"contest": "Sheboygan Falls School District Facility Improvements Referendum",
+"district": "Sheboygan Falls School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Sheboygan Falls, Sheboygan County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $65,700,000 for the public purpose of paying the cost of a school facility improvement project consisting of:\n- renovations and updates at the Elementary School, including to special education and classroom spaces, the media center and cafeteria/kitchen;\n- construction of additions and renovations at the High School for science classrooms and labs, career and technical education, a science, technology, engineering and math lab, the media center and weight  room/fitness area;\n- renovations and updates at the High School, including to special education and classroom spaces, the locker rooms, existing gymnasium and auditorium;\n- district-wide accessibility, safety, security and site improvements;\n- other capital projects identified in the District's capital improvement plan; and\n- acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "KENOSHA COUNTY",
+"contest": "Twin Lakes #4 School District Exceed Revenue Limit Referendum",
+"district": "Twin Lakes #4 School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District Number 4, Village of Twin Lakes, Kenosha County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $800,000 per year for four years, beginning with the 2026-2027 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "DANE COUNTY",
+"contest": "Waunakee School District to Exceed the Revenue Limit Referendum- Question #1",
+"district": "Waunakee Community School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Waunakee Community School District, Dane County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $4,200,000 for the 2027-2028 school year; by an additional $2,100,000 for the 2028-2029 school year; by an additional $2,100,000 for the 2029-2030 school year; and by an additional $2,100,000 for the 2030-2031 school year (for a total of $10,500,000 and to remain at that amount thereafter), for recurring purposes consisting of ongoing operational expenses and employee compensation expenses?"
+},
+{
+"jurisdiction": "TREMPEALEAU COUNTY",
+"contest": "Whitehall School District Exceed Revenue Limit Referendum",
+"district": "Whitehall School District",
+"pos": 950000,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Whitehall School District, Trempealeau and Jackson Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,250,000 per year for two years, beginning with the 2027-2028 school year and ending with the 2028-2029 school year, to continue the approval for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "ADAMS COUNTY",
+"contest": "Adams-Friendship Area School District Exceed Revenue Limit Referendum",
+"district": "Adams-Friendship Area School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Adams-Friendship Area School District, Adams County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $2,750,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of maintaining current 4K-5th grade and 6th-8th grade class sizes, \nexisting career and technical education programming, co-curricular experiences, and operational costs associated with maintaining school buildings?"
+},
+{
+"jurisdiction": "MARATHON COUNTY",
+"contest": "Athens School District Exceed Revenue Limit Referendum",
+"district": "Athens  School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Athens, Marathon and Taylor Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $600,000 per year for four years, beginning withe the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "CHIPPEWA COUNTY",
+"contest": "Bloomer School District General Obligation Bonds Referendum",
+"district": "Bloomer School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the School District of Bloomer, Chippewa and Dunn Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $77,000,000 for the public purpose of paying the cost of a school building and facility improvement project consisting of:  construction of a new high school with a community performing arts center; safety and security, capital maintenance and building infrastructure improvements at the Middle and Elementary Schools; and district-wide site improvements and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "CALUMET COUNTY",
+"contest": "Brillion Public School District Exceed Revenue Limit Referendum",
+"district": "Brillion Public School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Brillion Public School District, Calumet, Manitowoc and Brown Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,000,000 per year for 5 years, beginning with the 2026-2027 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of expenses to maintain educational programs and services, pay staff compensation, update technology, and building maintenance costs?"
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Brown Deer School District Operational Referendum",
+"district": "Brown Deer School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Question Number I: Shall the School District of Brown Deer, Milwaukee County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $2,800,000 per year for five years, beginning with the 2026-2027 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operational and maintenance expenses, including teacher and staff compensation?"
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "De Soto Area School District Educational Programs Referendum",
+"district": "De Soto Area School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the De Soto Area School District, Vernon and Crawford Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $500,000 for the 2026-2027 school year, by $1,400,000 for the 2027-2028 school year and by $1,700,000 for the 2028-2029 school year, for non-recurring purposes consisting of maintaining facilities, instructional programs, student services and updating security and network technology systems?"
+},
+{
+"jurisdiction": "OCONTO COUNTY",
+"contest": "Gillett School District Exceed Revenue Limits Referendum",
+"district": "Gillett School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "\u201cShall the Gillett School District, Oconto and Shawano Counties, Wisconsin, be authorized to exceed the revenue limit specified in Section 121.91, of the Wisconsin Statutes, by $1,900,000 in each year for the 2026-2027, the 2027-2028, and the 2028-2029 school years, for non-recurring purposes, to sustain student educational programming, operations, and facilities maintenance?\u201d"
+},
+{
+"jurisdiction": "MARINETTE COUNTY",
+"contest": "Marinette Schools-$68,000,000 Bonds",
+"district": "Marinette School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Marinette School District, Marinette County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed\n$68,000,000 for the public purpose of paying the cost of a school facility improvement project at the Middle and High Schools consisting of: construction of additions and renovations at the Middle School, including for career and technical education, art, music, special education and commons spaces; renovations at the High School, including to career and technical education, music, science spaces and locker rooms; building infrastructure, systems, safety, security, accessibility and site improvements; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "CRAWFORD COUNTY",
+"contest": "Seneca Area School District Exceed Revenue Limit",
+"district": "Seneca School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Seneca Area School District, located in Crawford County, Wisconsin, be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $500,000 for recurring purposes starting with the 2027-2028 school year and by an additional $470,000 for recurring purposes starting with the 2028-2029 school year, for a total recurring amount of $970,000 for purposes consisting of operational costs to maintain instructional programs, staffing, technology, transportation, and facilities management?"
+},
+{
+"jurisdiction": "ST. CROIX COUNTY",
+"contest": "Somerset School District Exceed Revenue Limit Referendum",
+"district": "Somerset School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Somerset, located in St. Croix County, Wisconsin, be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,400,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of operational expenses, including but not limited to staffing, facility maintenance, and maintaining programs and services?"
+},
+{
+"jurisdiction": "PORTAGE COUNTY",
+"contest": "Tomorrow River School District Exceed Revenue Limit Referendum",
+"district": "Tomorrow River School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the School District of the Tomorrow River, Portage County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,100,000 per year for three years, beginning with the 2027-2028 school year and ending with the 2029-2030 school year, for non-recurring purposes?"
+},
+{
+"jurisdiction": "KENOSHA COUNTY",
+"contest": "Trevor-Wilmot Consolidated School District Exceed Revenue Limit Referendum",
+"district": "Trevor-Wilmot Consolidated School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Trevor-Wilmot Consolidated School District, Kenosha County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,900,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of expenses related to maintaining educational programming, safety and facilities?"
+},
+{
+"jurisdiction": "POLK COUNTY",
+"contest": "Unity School Question 1- Bonding",
+"district": "Unity School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Unity School District, Polk County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $32,000,000 for the public purpose of paying the cost of a school facility improvement project at the district campus consisting of: construction of an addition and renovations at the High School, including for career and technical education and automotive space, and cafeteria and food service updates; safety, traffic flow, parking and site improvements; district-wide capital maintenance and building infrastructure improvements, including roof replacement; athletic facility and accessibility improvements, and reconstruction of baseball, football and softball fields, the tennis courts and track; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "BAYFIELD COUNTY",
+"contest": "Washburn School District Exceed Revenue Limit Referendum",
+"district": "Washburn School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the School District of Washburn, Bayfield County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $900,000 for the 2026-2027 school year, by $1,100,000 for the 2027-2028 school year, by $1,300,000 for the 2028-2029 school year, and by $1,500,000 for the 2029-2030 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "DANE COUNTY",
+"contest": "Waunakee School District General Obligation Bonds not to Exceed $97,500,000 Referendum - Question #2",
+"district": "Waunakee Community School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Waunakee Community School District, Dane County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $97,500,000 for the public purpose of paying the cost of a school facility improvement project consisting of:  removal of an older portion of the High School and construction of additions and renovations at the High School; renovations at the old middle school (known as the High School South Campus); outdoor athletic field renovations and improvements at the High School Campus; district-wide renovations, capital maintenance and site improvements; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "MARQUETTE COUNTY",
+"contest": "Westfield School District Exceed Revenue Limit Referendum",
+"district": "Westfield School District",
+"pos": 950001,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Westfield, Marquette, Waushara and Adams Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,400,000 per year for five years, beginning with the 2026-2027 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operational expenses related to transportation, staffing, academic programming, curriculum updates, and career/trade pathways?"
+},
+{
+"jurisdiction": "JACKSON COUNTY",
+"contest": "Black River Falls School District Exceed Revenue Limit Referendum",
+"district": "Black River Falls School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the School District of Black River Falls, Jackson, Clark and Monroe Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,000,000 per year for four years, beginning with the 2026-2027 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational expenses, including to maintain class sizes and educational programs, transportation costs, and to address staff salaries and benefits?"
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Brown Deer School District Capital Referendum",
+"district": "Brown Deer School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Question Number II: Shall the School District of Brown Deer, Milwaukee County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $35,000,000 for the public purpose of paying the cost of a school facility improvement project consisting of:  district-wide capital maintenance, building infrastructure, energy efficiency and accessibility improvements, including elevator replacement and playground renovations at the Elementary School; renovations at the Middle/High School, including to classrooms, the auditorium, pool and locker rooms; site improvements, including replacing the track and adding turf to the field at the Middle/High School; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "MARATHON COUNTY",
+"contest": "Edgar School District Exceed Revenue Limit Referendum",
+"district": "Edgar School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Edgar, Marathon County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,400,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of facility maintenance and operational expenses?"
+},
+{
+"jurisdiction": "WAUKESHA COUNTY",
+"contest": "Elmbrook School District Facility Improvement Expenses Referendum",
+"district": "Elmbrook School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the School District of Elmbrook, Waukesha County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $100,000,000 for the public purpose of paying the cost of a school facility improvement project at Pilgrim Park Middle School, Tonawanda Elementary School, Swanson Elementary School and Wisconsin Hills Middle School consisting of: renovations, accessibility updates, building infrastructure and site\nimprovements; construction of additions at Pilgrim Park Middle School; construction of an addition at Tonawanda Elementary School; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "Hillsboro School District Facilities and Programs Referendum",
+"district": "Hillsboro School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Hillsboro, Vernon, Richland, Monroe, Juneau and Sauk Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,100,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes to maintain District facilities and current programs?"
+},
+{
+"jurisdiction": "OUTAGAMIE COUNTY",
+"contest": "Little Chute Area School District Operational Expenses Referendum - QUESTION NUMBER I",
+"district": "Little Chute Area School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "\"Shall the Little Chute Area School District, Outagamie County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $400,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of operational expenses for technology hardware, software, and infrastructure?\""
+},
+{
+"jurisdiction": "COLUMBIA COUNTY",
+"contest": "Lodi School District Exceed Revenue Limit Referendum - Question I",
+"district": "Lodi School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Question I: Shall the School District of Lodi, Columbia and Dane Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $5,980,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of operational expenses for instructional and educational programming, technology updates and staff compensation?"
+},
+{
+"jurisdiction": "DANE COUNTY",
+"contest": "Middleton-Cross Plains School District to Exceed the Revenue Limit Referendum",
+"district": "Middleton-Cross Plains Area School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Middleton-Cross Plains Area School District, Dane County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $24,900,000 for the 2027- 2028 school year, by $27,900,000 for the 2028-2029 school year, by $31,100,000 for the 2029-2030 school year and by $34,600,000 for the 2030-2031 school year, for non-recurring purposes consisting of expenses related to ongoing educational and extracurricular programming, and compensation, and other operational expenses?"
+},
+{
+"jurisdiction": "OCONTO COUNTY",
+"contest": "Oconto Unified School District Exceed Revenue Limits Referendum",
+"district": "Oconto Unified School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Oconto Unified School District, Oconto County, Wisconsin, be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $900,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of District operation and maintenance costs?"
+},
+{
+"jurisdiction": "POLK COUNTY",
+"contest": "Unity School Question 2- Exceed Revenue Limit",
+"district": "Unity School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Unity School District, Polk County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $600,000 beginning with the 2026-2027 school year, for recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "MARINETTE COUNTY",
+"contest": "Wausaukee School - Exceed Revenue Limit",
+"district": "Wausaukee School District",
+"pos": 950002,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION: Shall the School District of Wausaukee be authorized to exceed state revenue limits on a non-recurring basis by $800,000.00 in the 2026-2027 school year, $1,000,000.00 in the 2027-2028 school year, $1,200,000.00 in the 2028-2029 school year, and $1,400,000.00 in the 2029-2030 school year, and $1,600,000.00 in the 2030-2031 school year, for nonrecurring purposes, with such revenues used to maintain and enhance the District\u2019s educational programming and for operational and maintenance expenses?"
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Greenfield School District Operational Referendum",
+"district": "Greenfield School District",
+"pos": 950003,
+"referendum": true,
+"candidates": [],
+"question": "Question I: Shall the School District of Greenfield, Milwaukee County, Wisconsin that the revenues included in the School District budget be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes by $5,000,000 beginning in the 2027-28 school year and every school year thereafter, through the 2030-2031 school year, on a non-recurring basis for the purpose of operational expenditures related to sustaining class size, maintaining and supporting instructional programming, attracting and retaining high-quality staff, maintaining student mental health supports, staying current with educational technology, maintaining student transportation services, and other educational expenditures?"
+},
+{
+"jurisdiction": "OUTAGAMIE COUNTY",
+"contest": "Little Chute Area School District Capital Improvements Referendum - QUESTION NUMBER II",
+"district": "Little Chute Area School District",
+"pos": 950003,
+"referendum": true,
+"candidates": [],
+"question": "\"Shall the Little Chute Area School District, Outagamie County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $1,950,000 for the public purpose of paying the cost of a school facility improvement project consisting of: district building infrastructure and capital maintenance improvements, including roof repairs and replacement at all school buildings, asbestos abatement and related renovations at the High School, and air conditioning replacement at the Elementary School; and acquisition of furnishings, fixtures and equipment?\""
+},
+{
+"jurisdiction": "COLUMBIA COUNTY",
+"contest": "Lodi School District General Obligation Bonds Referendum - Question II",
+"district": "Lodi School District",
+"pos": 950003,
+"referendum": true,
+"candidates": [],
+"question": "Question II: Shall the School District of Lodi, Columbia and Dane Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $13,200,000 for the public purpose of paying the cost of a school facility improvement project consisting of: renovations at the High School, including to the career and technical educational spaces, indoor pool, and athletic and pool locker rooms; construction of athletic practice fields, a varsity baseball field and corresponding site improvements at the Primary School; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "GREEN LAKE COUNTY",
+"contest": "Markesan School District Exceed Revenue Limit Referendum",
+"district": "Markesan School District",
+"pos": 950003,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Markesan District Schools be authorized to exceed state revenue limits on a non-recurring basis by $700,000.00 in each of four (4) consecutive years for the 2026-27, 2027-28, 2028-29, and 2029-30 school years to maintain school district programs and operations?"
+},
+{
+"jurisdiction": "WAUKESHA COUNTY",
+"contest": "Oconomowoc Area School District Exceed Revenue Limit Referendum",
+"district": "Oconomowoc Area School District",
+"pos": 950003,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Oconomowoc Area School District, Waukesha, Jefferson and Dodge Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $3,000,000 for the 2027-2028 school year; by an additional $2,000,000 (for a total of $5,000,000) for the 2028-2029 school year; by an additional $2,000,000 (for a total of $7,000,000) for the 2029-2030 school year; by an additional $2,500,000 (for a total of $9,500,000) for the 2030-2031 school year; and by an additional $2,700,000 for the 2031-2032 school year (for a total of $12,200,000 and to remain at that amount thereafter), for recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Granton Area School District Exceed Revenue Limit Referendum",
+"district": "Granton Area School District",
+"pos": 950004,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Granton Area School District, Clark County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $400,000 per year for two years, beginning with the 2026-2027 school year and ending with the 2027-2028 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Greenfield School District Capital Referendum",
+"district": "Greenfield School District",
+"pos": 950004,
+"referendum": true,
+"candidates": [],
+"question": "Question II: Shall the foregoing resolution of the Board of Education of the School District of Greenfield be approved: BE IT RESOLVED by the Board of Education of the School District of Greenfield, Milwaukee County, Wisconsin, shall be issued pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $35,000,000 for the public purpose of paying the cost of school facility improvement projects consisting of capital maintenance and improvement, safety, security, and other site improvements at the schools of the School District; and acquisition of furnishings, fixtures, and equipment?"
+},
+{
+"jurisdiction": "COLUMBIA COUNTY",
+"contest": "Pardeeville Area School District General Obligation Bonds Referendum",
+"district": "Pardeeville Area School District",
+"pos": 950004,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Pardeeville Area School District, Columbia and Marquette Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $13,100,000 for the public purpose of paying the cost of a school facility improvement project consisting of: construction of an addition and renovations at the Middle/High School, including for classrooms and instructional space, restrooms, a cafeteria and a safe and secure entrance; demolition of the Balliet building; renovations at the High School, including to restrooms and for expansion of the existing kitchen/cafeteria; district-wide capital improvement projects identified in the district's capital improvement plan; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "GREEN LAKE COUNTY",
+"contest": "Princeton School District Exceed Revenue Limit Referendum",
+"district": "Princeton School District",
+"pos": 950004,
+"referendum": true,
+"candidates": [],
+"question": "Question Number I:  Shall the School District of Princeton, Green Lake and Marquette Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $575,000 for the 2027-2028 school year and by $1,200,000 per year for three years, beginning with the 2028-2029 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of costs associated with educational programming and staffing, ongoing maintenance and operations?"
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "Viroqua Area School District Operating Referendum",
+"district": "Viroqua Area School District",
+"pos": 950004,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Viroqua Area School District, Vernon and Crawford Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,800,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operation and maintenance expenses of the District?"
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Fox Point-Bayside School District Operational Referendum",
+"district": "Fox Point J2 School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Joint School District Number 2, Villages of Fox Point and Bayside, Milwaukee and Ozaukee Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $3,950,000 beginning with the 2027-2028 school year, for recurring purposes in order to maintain instructional programs, operations, and services?"
+},
+{
+"jurisdiction": "BROWN COUNTY",
+"contest": "Green Bay Area Public School District Exceed Revenue Limit Referendum",
+"district": "Green Bay Area Public School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Green Bay Area Public School District, Brown County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $29,000,000 for the 2027-2028 school year, by $36,000,000 for the 2028-2029 school year, by $44,000,000 for the 2029-2030 school year, and by $49,000,000 for the 2030-2031 school year, for non-recurring purposes including funding educational programs, staffing, and other operational expenses?"
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Greenwood School District Advisory/Non-Binding Consolidation Referendum",
+"district": "Greenwood School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Advisory/Non-Binding Question: How should the School District of Greenwood, Clark County, Wisconsin proceed on the proposed consolidation with the School District of Loyal, Clark County, Wisconsin, which would form one single, combined school district? Please choose one:"
+},
+{
+"jurisdiction": "GREEN LAKE COUNTY",
+"contest": "Princeton School District Improvement Project Referendum",
+"district": "Princeton School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Question Number II:  Shall the School District of Princeton, Green Lake and Marquette Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $14,000,000 for the public purpose of paying the cost of a school facility improvement project consisting of:  district-wide safety and security improvements, including construction of secure entrances, building systems, infrastructure and capital maintenance improvements; renovations to instructional spaces; site and track improvements; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "OUTAGAMIE COUNTY",
+"contest": "Seymour Community School District Operational and Maintenance Expenses Referendum",
+"district": "Seymour Community School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "\"Shall the Seymour Community School District, Outagamie and Shawano Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $5,000,000 per year for three years, beginning with the 2027-2028 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational and maintenance expenses, including expenses related  to staffing and to maintain programs and services?\""
+},
+{
+"jurisdiction": "WAUKESHA COUNTY",
+"contest": "Swallow School District Exceed Revenue Limit Referendum",
+"district": "Swallow School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "\"Shall the annual budget of the Swallow School District, Waukesha County, Wisconsin, be authorized to exceed the statutory revenue limit by $500,000 per year beginning with the 2026-2027 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of funding operational expenses and current educational programs?\""
+},
+{
+"jurisdiction": "VERNON COUNTY",
+"contest": "Westby Area School District Education and Operating Referendum",
+"district": "Westby Area School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Westby Area School District, Vernon, La Crosse and Monroe Counties, Wisconsin be authorized to exceed the revenue limit specified in Section I 21.91, Wisconsin Statutes, by$ I ,600,000 for the 2027-2028 school year, by $1,700,000 for the 2028-2029 school year, and by $1,800,000 for the 2029-2030 school year, for non-recurring purposes to sustain educational programs and to operate the District?"
+},
+{
+"jurisdiction": "SAWYER COUNTY",
+"contest": "Winter School District Exceed Revenue Limit Referendum",
+"district": "Winter School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "QUESTION: Shall the School District of Winter, located in Sawyer County and Rusk County, Wisconsin, be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,500,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operational expenses, including but not limited to school safety, staffing, and facility maintenance?"
+},
+{
+"jurisdiction": "SAUK COUNTY",
+"contest": "Wisconsin Dells School District Exceed Revenue Limit Referendum",
+"district": "Wisconsin Dells School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the School District of Wisconsin Dells, Sauk, Adams, Columbia, Juneau and Marquette\nCounties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin\nStatutes, by $1,800,000 beginning with the 2026-2027 school year, for recurring purposes consisting of\nmaintaining current elementary, middle and high school class sizes, technology equipment, existing\ncareer and technical education programming, along with operational costs associated with all school\nbuildings?"
+},
+{
+"jurisdiction": "JUNEAU COUNTY",
+"contest": "Wonewoc-Union Center School District Exceed Revenue Limit Referendum",
+"district": "Wonewoc-Union Center School District",
+"pos": 950005,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Wonewoc and Union Center, Sauk, Juneau and Richland Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statues, by $500,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Loyal School District Advisory/Non-Binding Consolidation Referendum",
+"district": "Loyal School District",
+"pos": 950006,
+"referendum": true,
+"candidates": [],
+"question": "Advisory/Non-Binding Question: How should the School District of Loyal, Clark County, Wisconsin proceed on the proposed consolidation with the School District of Greenwood, Clark County, Wisconsin, which would form one single, combined school district? Please choose one:"
+},
+{
+"jurisdiction": "MILWAUKEE COUNTY",
+"contest": "Whitefish Bay School District Capital Referendum",
+"district": "Whitefish Bay School District",
+"pos": 950006,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the School District of Whitefish Bay, Milwaukee County, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $90,000,000 for the public purpose of paying the cost of a school building and facility improvement project consisting of: construction of additions, renovations, partial removal of the existing building and site improvements at the Middle School on its current site; building infrastructure and capital maintenance improvements at the High School; fire protection and alarm system updates and replacement at the High School, Cumberland and Richards Elementary Schools; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "BROWN COUNTY",
+"contest": "Pulaski School District General Obligation Bonds for School Facility Improvements Referendum",
+"district": "Pulaski Community School District",
+"pos": 950007,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the Pulaski Community School District, Brown, Oconto, Shawano and Outagamie Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $59,800,000 for the public purpose of paying the cost of a school facility improvement project consisting of: construction of an addition and renovations at Lannoye Elementary School, including for classrooms, special education, and support spaces; renovations at Pulaski Community Middle School in Career and Technology Education (CTE), including Technology and Engineering Education, Agriscience, Family and Consumer Science, and Business and Information Technology classroom spaces, and conversion of the existing pool to a multi-purpose activity facility; construction of additions and renovations at Pulaski High School, including for a community swimming pool facility, a fitness/weight center, wrestling space, additions and renovations to Career and Technology Education (CTE) classroom spaces in select program areas, renovations to classrooms and labs, and construction of tennis courts and parking lot expansion; district-wide capital maintenance, building systems and site improvements; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "JEFFERSON COUNTY",
+"contest": "Lake Mills Area School District Exceed Revenue Limit Referendum",
+"district": "Lake Mills Area School District",
+"pos": 950008,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Lake Mills Area School District, Jefferson County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $2,900,000 per year for four years, beginning with the 2026-2027 school year and ending with the 2029-2030 school year, for non- recurring purposes consisting of operational expenses, including educational programming, staff salaries and benefits, technology, maintenance, and transportation expenses?"
+},
+{
+"jurisdiction": "CLARK COUNTY",
+"contest": "Thorp School District General Obligation Bonds Referendum",
+"district": "Thorp School District",
+"pos": 950008,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the School District of Thorp, Clark and Taylor Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $8,500,000 for the public purpose of paying the cost of a school facility improvement project consisting of:  district-wide capital maintenance and building infrastructure improvements, including plumbing, electrical, HVAC, roof, asphalt and fire safety repairs and replacements; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "JEFFERSON COUNTY",
+"contest": "Palmyra-Eagle School Exceed Revenue Limit Referendum",
+"district": "Palmyra-Eagle Area School District",
+"pos": 950010,
+"referendum": true,
+"candidates": [],
+"question": "\"Shall the Palmyra-Eagle Area School District, located in\nWaukesha, Jefferson and Walworth Counties, Wisconsin, be\nauthorized to exceed the revenue limit specified in Section 121.91,\nWisconsin Statutes, by $797,000 per year for four years, beginning\nwith the 2027-2028 school year and ending with the 2030-2031\nschool year, for non-recurring purposes consisting of operational\nexpenses, including but not limited to maintaining programs and\nstaffing?\u201d"
+},
+{
+"jurisdiction": "BURNETT COUNTY",
+"contest": "Siren School District Exceed Revenue Limit Referendum",
+"district": "Siren School District",
+"pos": 950010,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Siren, Burnett County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $750,000 per year for four years, beginning with the 2026-2027 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of operational expenses, including to maintain educational and elective programming at Siren Schools?"
+},
+{
+"jurisdiction": "BROWN COUNTY",
+"contest": "West De Pere School District Exceed Revenue Limits Referendum",
+"district": "West De Pere School District",
+"pos": 950010,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of West De Pere, Brown and Outagamie Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $4,900,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of operational and maintenance expenses?"
+},
+{
+"jurisdiction": "SAUK COUNTY",
+"contest": "Reedsburg School District General Obligation Bonds Referendum",
+"district": "Reedsburg School District",
+"pos": 950015,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the School District of Reedsburg, Sauk and Juneau Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation\nbonds in an amount not to exceed $83,000,000 for the public purpose of paying the cost of a school building project consisting of: construction of a new middle school on district-owned land, site improvements, and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "DOOR COUNTY",
+"contest": "Southern Door County School District Exceed Revenue Limit Referendum",
+"district": "Southern Door County School District",
+"pos": 950100,
+"referendum": true,
+"candidates": [],
+"question": "\"Shall the Southern Door County School District, Door County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $2,055,000 per year for 3 years, beginning with the 2026-2027 school year and ending with the 2028-2029 school year, for non-recurring purposes consisting of operational expenses for teacher and staff compensation, restoring select teaching positions, and maintaining school facilities?\""
+},
+{
+"jurisdiction": "WALWORTH COUNTY",
+"contest": "Williams Bay School District Exceed Revenue Limit Referendum",
+"district": "Williams Bay School District",
+"pos": 950100,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Williams Bay, Walworth County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $2,000,000 for the 2027-2028 school year, by $2,250,000 for the 2028-2029 school year, by $2,500,000 for the 2029-2030 school year, and by $2,750,000 for the 2030-2031 school year, for non-recurring purposes consisting of ongoing operational expenses?"
+},
+{
+"jurisdiction": "WALWORTH COUNTY",
+"contest": "Geneva J4 School District Exceed Revenue Limit Referendum",
+"district": "Geneva J4 School District",
+"pos": 950200,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Geneva Jt. 4 School District, Town of Geneva and Town of Linn, Walworth County, be authorized to exceed the revenue limit specified in Section 121.91(2m), Wisconsin Statutes, by $750,000 in the 2027-2028 school year, by $1,000,000 in the 2028-2029 school year, by $1,250,000 in the 2029-20230 school year, and by $1,500,000 in the 2030-2031 school year for non-recurring purposes of paying the ongoing operational expenses of the school district?"
+},
+{
+"jurisdiction": "DOOR COUNTY",
+"contest": "Sturgeon Bay School District Exceed Revenue Limit Referendum",
+"district": "Sturgeon Bay School District",
+"pos": 950200,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall The School District of Sturgeon Bay, Door County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $3,750,000 per year for five years, beginning with the 2027-2028 school year and ending with the 2031-2032 school year, for non-recurring purposes consisting of operational expenses, including funding educational programming for students and teacher and staff compensation?"
+},
+{
+"jurisdiction": "WALWORTH COUNTY",
+"contest": "Whitewater Unified School District Exceed Revenue Limit Referendum",
+"district": "Whitewater Unified School District",
+"pos": 950300,
+"referendum": true,
+"candidates": [],
+"question": "Question: Shall the Whitewater Unified School District, Walworth, Jefferson and Rock Counties,\nWisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes,\nby $5,500,000 per year for four years, beginning with the 2027-2028 school year and ending with the\n2030-2031 school year, for non-recurring purposes consisting of the following: maintaining student\nsupport and mental health services, maintaining comprehensive instructional and co-curricular\nprograms, and maintaining technology, safety, and facilities infrastructure?"
+},
+{
+"jurisdiction": "WAUPACA COUNTY",
+"contest": "Weyauwega-Fremont School District Facility Improvements Referendum",
+"district": "Weyauwega-Fremont School District",
+"pos": 950500,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Weyauwega-Fremont, Waupaca, Winnebago and Waushara Counties, Wisconsin be authorized to issue pursuant to Chapter 67 of the Wisconsin Statutes, general obligation bonds in an amount not to exceed $8,450,000 for the public purpose of paying the cost of a school facility improvement project consisting of:  safety, security, building infrastructure and site improvements at Fremont Elementary School, Weyauwega Elementary School and Weyauwega Middle School; construction of a secure entrance at Weyauwega Elementary School; district-wide capital maintenance; and acquisition of furnishings, fixtures and equipment?"
+},
+{
+"jurisdiction": "WAUPACA COUNTY",
+"contest": "Iola-Scandinavia School District Exceed Revenue Limit Referendum",
+"district": "Iola-Scandinavia School District",
+"pos": 950501,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Iola-Scandinavia, Waupaca and Portage Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $1,200,000 for the 2026-2027 school year, and by $1,500,000 per year for three years, beginning with the 2027-2028 school year and ending with the 2029-2030 school year, for non-recurring purposes consisting of sustaining educational programming, student opportunities and operations?"
+},
+{
+"jurisdiction": "ROCK COUNTY",
+"contest": "Evansville School District Exceed Revenue Limit Referendum",
+"district": "Evansville  Community School District",
+"pos": 951568,
+"referendum": true,
+"candidates": [],
+"question": "Shall the Evansville Community School District, Rock, Green and Dane Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $5,300,000 per year for four years, beginning with the 2027-2028 school year and ending with the 2030-2031 school year, for non-recurring purposes consisting of operational and maintenance expenses, including to provide student resources and educational programming and to address facility maintenance?"
+},
+{
+"jurisdiction": "ROCK COUNTY",
+"contest": "Janesville School District Exceed Revenue Limit Referendum",
+"district": "Janesville School District",
+"pos": 952695,
+"referendum": true,
+"candidates": [],
+"question": "Shall the School District of Janesville, Rock County, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $18,500,000 for the 2027-2028 school year, by $22,500,000 for the 2028-2029 school year, by $26,500,000 for the 2029-2030 school year, and by $30,500,000 for the 2030-2031 school year, for non-recurring purposes consisting of paying the costs of maintaining District class size, student program options and services?"
+},
+{
+"jurisdiction": "FOND DU LAC COUNTY",
+"contest": "Ripon Area School District Exceed Revenue Limit Referendum",
+"district": "Ripon Area School District",
+"pos": 954200,
+"referendum": true,
+"candidates": [],
+"question": "Question:  Shall the Ripon Area School District, Fond du Lac, Winnebago and Green Lake Counties, Wisconsin be authorized to exceed the revenue limit specified in Section 121.91, Wisconsin Statutes, by $500,000 for the 2027-2028 school year and by $1,350,000 per year for the 2028-2029 school year through the 2032-2033 school year, on a non-recurring basis, for the purpose of maintaining current educational programming, academic resources, and district operations?"
+}
+]
+}

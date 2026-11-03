@@ -16,8 +16,26 @@ CASES = [  # zip, expected House district labels (current map), expect split not
     ("05401", ["VT-00"], False, False),
     ("20001", ["DC-00"], False, False),
     ("53066", ["WI-05"], False, False),  # verified with Census geocoder (119th and 120th): WI-05
+    ("53202", ["WI-04"], False, False),   # Milwaukee: a different WI ZIP (ballot section for another county)
     ("00000", [], False, False),
 ]
+import datetime as _d
+BALLOT_LIVE = _d.date.today() < _d.date(2026, 11, 10)   # the "On your ballot" section is hidden after Nov 9, 2026
+WI_53066 = {  # official WEC list (Oct 6, 2026) for the contests a 53066 voter can see
+    "Governor / Lieutenant Governor (one ticket)": ["Tom Tiffany / David Varnam|R", "David Crowley / Sarah Godlewski|D"],
+    "Attorney General": ["Eric Toney|R", "Josh Kaul|D"],
+    "Secretary of State": ["Jay Schroeder|R", "JoCasta Zamarripa|D", "Pete Karas|Wisconsin Green"],
+    "State Treasurer": ["John S. Leiber|R", "Yee Leng Xiong|D"],
+    "U.S. House · District 5": ["Scott Fitzgerald|R", "Andrew Beck|D"],
+    "State Senate · District 33": ["Chris Kapenga|R", "Mike Van Someren|D"],
+    "State Assembly · District 97": ["Cindi Duchow|R"],
+    "State Assembly · District 99": ["Barbara Dittrich|R"],
+    "Waukesha County Sheriff": ["Nick Ollinger|R"], "Waukesha County Clerk of Circuit Court": ["Monica Paz|R"],
+    "Jefferson County Sheriff": ["Travis Maze|R"], "Jefferson County Clerk of Circuit Court": ["Cindy Hamre-Incha|R"],
+    "Dodge County Sheriff": ["Dale J. Schmidt|R"], "Dodge County Clerk of Circuit Court": ["Kelly Enright|R"],
+}
+WI_QUESTIONS = ["State of Wisconsin Partial Veto Referendum", "State of Wisconsin Freedom to Gather in Places of Worship During an Emergency Referendum",
+                "State of Wisconsin Governmental Entity Discrimination Prohibited Referendum", "Oconomowoc Area School District Exceed Revenue Limit Referendum"]
 PACKAGE_NOTE = "Package of nominations, including the Special Envoy to Monitor and Combat Anti-Semitism."
 fails = []
 exe = os.environ.get("CHROME", "/usr/bin/google-chrome")
@@ -48,6 +66,26 @@ with sync_playwright() as p:
                 if split != ("split across" in txt.lower()): ok = False; print(z, "split notice mismatch")
                 if redrawn != ("redrew its congressional map" in txt): ok = False; print(z, "redistricting notice mismatch")
                 if "running in 2026" not in txt.lower(): ok = False
+                if BALLOT_LIVE:
+                    bt = page.locator(".ballot")
+                    if bt.count() != 1: ok = False; print(z, "On-your-ballot section missing")
+                    elif z != "53066" and not z.startswith("53") and "vote.org" not in bt.inner_html(): ok = False; print(z, "non-WI ballot fallback link missing")
+                    if page.locator(".ballot .badge, .ballot .v-yea, .ballot .v-nay, .ballot .flag").count(): ok = False; print(z, "ballot styled like a vote/flag")
+                    for pt in page.locator(".ballot .party").all_inner_texts():
+                        if pt not in ("R", "D", "I", "Wisconsin Green", "Constitution"): ok = False; print(z, "unexpected ballot party label", pt)
+                    if z == "53066":
+                        got = page.evaluate("""() => Object.fromEntries([...document.querySelectorAll('.ballot .contest')].filter(c => c.querySelector('ul.cands')).map(c =>
+                            [c.querySelector('h4').textContent.trim(), [...c.querySelectorAll('ul.cands li')].map(li => li.childNodes[0].textContent.trim() + '|' + (li.querySelector('.party')?.textContent || ''))]))""")
+                        if got != WI_53066:
+                            ok = False; print(z, "ballot mismatch; missing/extra:", {k: v for k, v in WI_53066.items() if got.get(k) != v}, [k for k in got if k not in WI_53066])
+                        qs = page.evaluate("() => [...document.querySelectorAll('.ballot .contest')].filter(c => c.querySelector('details.q')).map(c => c.querySelector('h4').textContent.trim())")
+                        if sorted(qs) != sorted(WI_QUESTIONS): ok = False; print(z, "questions mismatch", qs)
+                        if "Oconomowoc Area School District" not in page.locator(".ballot").inner_text() or "$3,000,000" not in page.locator(".ballot").inner_html(): ok = False; print(z, "referendum text missing")
+                        bh = page.locator(".ballot").inner_html()
+                        if "https://myvote.wi.gov/" not in bh or "elections.wi.gov" not in bh: ok = False; print(z, "ballot links missing")
+                        if "exact ballot" not in page.locator(".ballot .notice").inner_text().lower(): ok = False; print(z, "sample ballot notice missing")
+                        if page.locator(".ballot").bounding_box()["y"] > page.locator("article.card").first.bounding_box()["y"]: ok = False; print(z, "ballot not above member cards")
+                        if label == "desktop": print(f"  53066 ballot: {len(got)} contests with candidates, {len(qs)} questions")
                 # a member card must show at least one vote badge
                 if page.locator(".badge").count() == 0: ok = False; print(z, "no vote badges")
                 if z == "53066" and "Wisconsin · 5th District" not in page.inner_text(".loc"): ok = False; print(z, "district label mismatch")
@@ -111,6 +149,8 @@ with sync_playwright() as p:
                 page.screenshot(path=f"{SHOTS}/results-10001-money-{label}.png", full_page=True)
             if z == "53066":
                 page.screenshot(path=f"{SHOTS}/results-53066-{label}.png", full_page=True)
+                if BALLOT_LIVE and page.locator(".ballot").count():
+                    page.locator(".ballot").screenshot(path=os.environ.get("BALLOT_SHOT", f"{SHOTS}/results-53066-ballot-{label}.png") if label == "desktop" else f"{SHOTS}/results-53066-ballot-{label}.png")
                 card = page.locator("article.card", has=page.locator("li.isr")).first
                 if label == "mobile" and card.count():
                     card.locator("ul.votes").scroll_into_view_if_needed()

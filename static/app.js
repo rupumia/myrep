@@ -157,6 +157,55 @@ function raceBlock(race, members, title) {
   </div>`;
 }
 
+
+// ---- "On your ballot": Wisconsin Elections Commission lists (WI only); other states link to official lookups
+function ballotContest(c) {
+  if (c.question !== undefined) {
+    return `<div class="contest"><h4>${esc(c.office)}</h4><details class="q"><summary>Read the question as printed on the ballot</summary><p class="small q-text">${esc(c.question || "Question text not provided.")}</p></details></div>`;
+  }
+  const one = c.candidates.length === 1;
+  return `<div class="contest"><h4>${esc(c.office)}</h4><ul class="cands">${c.candidates.map(k =>
+    `<li>${esc(k.name)}${k.abbr ? ` <span class="party" title="${esc(k.party)}">${esc(k.abbr)}</span>` : ""}</li>`).join("")}</ul>
+    ${one ? `<p class="small">Only one candidate is listed on the ballot for this office.</p>` : ""}</div>`;
+}
+function ballotGroup(title, contests, note) {
+  if (!contests.length) return "";
+  return `<h3 class="bgroup">${esc(title)}</h3>${note ? `<p class="small">${note}</p>` : ""}<div class="bgrid">${contests.map(ballotContest).join("")}</div>`;
+}
+const ballotPct = s => s >= 0.995 ? "" : ` <span class="small">(~${Math.round(s * 100)}% of this ZIP's land area)</span>`;
+async function ballotSection(zip, dists26) {
+  const wi = dists26.some(d => d.state === "WI");
+  const other = dists26.filter(d => d.state !== "WI");
+  const generic = `<p class="small">Governor, state, and local races vary by address. MyRep doesn't list them for this state yet; use <a href="https://www.vote.org/polling-place-locator/" target="_blank" rel="noopener">Vote.org</a> or your state's official site via <a href="https://vote.gov/" target="_blank" rel="noopener">vote.gov</a> to see your sample ballot.</p>`;
+  const head = `<h2 class="section" id="ballot-head">On your ballot · Nov. 3, 2026</h2>`;
+  if (!wi) return `<section class="ballot">${head}${generic}</section>`;
+  const b = await getJSON("ballot/WI.json");
+  const z = b && b.zips[zip];
+  if (!b || !z) return `<section class="ballot">${head}<div class="unavail">Wisconsin ballot data isn't available for this ZIP.</div><p class="small">Check your sample ballot at <a href="https://myvote.wi.gov/" target="_blank" rel="noopener">myvote.wi.gov</a>.</p></section>`;
+  const multi = a => a && a.length > 1;
+  let h = head + `<div class="notice"><strong>Check your exact ballot at <a href="https://myvote.wi.gov/" target="_blank" rel="noopener">myvote.wi.gov</a>.</strong>
+    This list is built from your ZIP code only, and a ZIP can cross district, county, and school-district lines, so some races below may not be on <em>your</em> ballot. Candidates are as listed by the Wisconsin Elections Commission (list dated Oct. 6, 2026).</div>`;
+  h += ballotGroup("Statewide", b.statewide.filter(c => c.question === undefined));
+  const houses = dists26.filter(d => d.state === "WI").map(d => ({d, c: b.house[d.district]})).filter(x => x.c);
+  h += ballotGroup("U.S. House", houses.map(x => x.c), multi(houses) ? "Your ZIP is in more than one congressional district; each is shown." : "");
+  const sen = (z.senate || []).filter(([n]) => b.senate[n]);
+  h += ballotGroup("State Senate", sen.map(([n]) => b.senate[n]), multi(z.senate) ? "Your ZIP spans more than one state Senate district; each is shown." : "");
+  if (!sen.length && (z.senate || []).length) h += `<h3 class="bgroup">State Senate</h3><p class="small">No State Senate race for District ${esc(z.senate.map(x => x[0]).join(", "))} is on this year's ballot (only odd-numbered districts are up in 2026).</p>`;
+  const asm = (z.assembly || []).filter(([n]) => b.assembly[n]);
+  h += ballotGroup("State Assembly", asm.map(([n]) => b.assembly[n]), multi(z.assembly) ? `Your ZIP spans ${z.assembly.length} Assembly districts: ${z.assembly.map(([n, s]) => `District ${esc(n)}${ballotPct(s)}`).join(", ")}. Each is shown; your address decides which one is yours.` : "");
+  const cty = (z.county || []).flatMap(([n, s]) => (b.county[n] || []).map(c => ({...c, office: c.office})));
+  if (cty.length) {
+    h += `<h3 class="bgroup">County offices</h3>${multi(z.county) ? `<p class="small">Your ZIP touches ${z.county.length} counties (${z.county.map(([n, s]) => esc(n) + ballotPct(s)).join(", ")}); each county's contests are shown.</p>` : ""}<div class="bgrid">${cty.map(ballotContest).join("")}</div>`;
+  } else h += `<h3 class="bgroup">County offices</h3><p class="small">The Elections Commission's list has no county office contests for the counties in this ZIP.</p>`;
+  const loc = (z.local || []).flatMap(([n, s]) => (b.local[n] || []).map(c => ({...c, office: c.office, share: s})));
+  h += ballotGroup("Local questions and offices", loc, loc.length ? "Referendum wording is exactly as the Commission lists it; a ZIP often covers only part of a school district or municipality." : "");
+  const q = b.statewide.filter(c => c.question !== undefined);
+  h += ballotGroup("Statewide questions (constitutional amendments)", q, "Voters answer Yes or No on each.");
+  h += `<p class="small">Not covered: write-in candidates, city/village/town elections (Wisconsin holds those in April), county supervisor and other district-level local seats, and some municipal courts. Source: <a href="${esc(b.sources[0].url)}" target="_blank" rel="noopener">Wisconsin Elections Commission, All Contests and Candidates</a> and its <a href="${esc(b.sources[1].url)}" target="_blank" rel="noopener">Referendum Listing</a>. Party is shown as a plain label.</p>`;
+  if (other.length) h += generic;
+  return `<section class="ballot" id="ballot">${h}</section>`;
+}
+
 async function lookup(zip) {
   const res = $("#results"), msg = $("#form-msg");
   msg.textContent = "";
@@ -186,6 +235,9 @@ async function lookup(zip) {
   const sname = s => states[s]?.name || s;
   h += `<div class="loc"><h2>ZIP ${esc(zip)}</h2><p>${dists.map(d => `${esc(sname(d.state))} · ${distLabel(d.state, d.district)}`).join(" / ")}</p></div>`;
   if (dists.length > 1) h += `<div class="notice"><strong>This ZIP code is split across ${dists.length} congressional districts.</strong> We're showing every possible House member: ${dists.map(d => `${esc(d.state)}-${d.district === "00" ? "AL" : esc(d.district)} (~${Math.round(d.land_share * 100)}% of the ZIP's land area)`).join(", ")}. Check your exact address at <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a>.</div>`;
+
+  const ELECTION_END = new Date("2026-11-10T00:00:00-06:00");
+  if (new Date() < ELECTION_END) h += await ballotSection(zip, dists26);
 
   const sens = stateCodes.flatMap(s => states[s]?.senators || []);
   const nonVoting = stateCodes.every(s => ["DC","PR","AS","GU","MP","VI"].includes(s));

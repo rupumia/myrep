@@ -94,3 +94,11 @@ details.flag-def[open] summary::after{content:" ▴"}
 .topic-isr{border:1.5px solid #475569;color:#1e293b;background:#f1f5f9}
 .votes-note{margin:0 0 6px}
 .vnote{font-size:.8rem;color:var(--muted);font-style:italic;margin:1px 0 2px}
+
+.ballot .bgroup{font-size:1rem;color:var(--green);margin:20px 0 6px}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px}
+.contest{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.contest h4{margin:0 0 6px;font-size:.98rem}
+.cands{list-style:none;margin:0;padding:0}.cands li{padding:3px 0}
+.contest .small{margin:6px 0 0}
+details.q summary{cursor:pointer;color:var(--green-2);font-size:.9rem}.q-text{line-height:1.45;color:var(--ink)}

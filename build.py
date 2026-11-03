@@ -27,6 +27,7 @@ import requests
 import aipac
 import israel
 import districts2026
+import wi_ballot
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(ROOT, "cache", "raw")
@@ -536,6 +537,8 @@ def main():
         v["senate_race_2026"] = st in senate_race_states
         v["name"] = STATE_NAMES.get(st, st)
         write_json(f"states/{st}.json", v)
+    try: wi_ballot.build(write_json, meta, log=log)
+    except Exception as e: log("WI ballot FAILED", e); meta["warnings"].append(f"Wisconsin ballot data unavailable: {e}")
     meta["votes_per_member"] = VOTES_PER_MEMBER
     meta["israel_keywords"] = israel.KEYWORDS
     meta["defense_pacs"] = {"companies": DEFENSE["companies"], "sources": DEFENSE["sources"], "not_included": DEFENSE["not_included"]}
