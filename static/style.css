@@ -102,3 +102,20 @@ details.flag-def[open] summary::after{content:" ▴"}
 .cands{list-style:none;margin:0;padding:0}.cands li{padding:3px 0}
 .contest .small{margin:6px 0 0}
 details.q summary{cursor:pointer;color:var(--green-2);font-size:.9rem}.q-text{line-height:1.45;color:var(--ink)}
+
+/* election results (neutral colors only: no party colors, no Yea/Nay green/red) */
+.resbox{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)}
+.reshead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:4px}
+.res-label{font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0!important}
+.rs{display:inline-block;font-size:.82rem;font-weight:700;border-radius:999px;padding:1px 10px;background:var(--gray-soft);border:1px solid var(--gray);color:var(--ink)}
+table.res{width:100%;border-collapse:collapse;font-size:.92rem;margin:2px 0}
+table.res td{padding:3px 4px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.res tr.win td:first-child{font-weight:700}table.res tr.wi td{color:var(--muted)}
+table.res td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.res td.pc{min-width:84px}
+.chk{color:var(--ink);font-weight:700}
+.bar{display:block;height:4px;background:var(--gray-soft);border-radius:2px;margin-top:2px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gray)}
+.res-meta{color:var(--muted);margin:4px 0 0}
+details.res-parts{margin-top:6px}details.res-parts summary{cursor:pointer;color:var(--green-2);font-size:.88rem}
+.res-part{margin-top:8px}
+.contest.has-rows ul.cands{display:none}   /* the results table below lists the same candidates */

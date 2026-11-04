@@ -100,6 +100,13 @@ def build(write_json, meta, log=print):
            "county": {k: v for k, v in county.items() if k in used_cty},
            "local": {k: v for k, v in local_c.items() if k in used_local},
            "zips": zips}
+    try:
+        import wi_results
+        rsnap = wi_results.load(log)
+        meta.update(wi_results.attach(out, rsnap, log) or {})
+        wi_results.build_house(write_json, rsnap, log)
+    except Exception as e:
+        log("results FAILED (ballot built without results):", e); meta.setdefault("warnings", []).append(f"Election results unavailable: {e}")
     write_json("ballot/WI.json", out)
     meta["sources"]["ballot_wi"] = {"name": "Wisconsin Elections Commission: official list of contests and candidates for the Nov 3, 2026 general election",
         "url": "https://elections.wi.gov/elections", "retrieved": snap["retrieved"]}

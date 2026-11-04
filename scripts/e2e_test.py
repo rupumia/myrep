@@ -20,7 +20,8 @@ CASES = [  # zip, expected House district labels (current map), expect split not
     ("00000", [], False, False),
 ]
 import datetime as _d
-BALLOT_LIVE = _d.date.today() < _d.date(2026, 11, 10)   # the "On your ballot" section is hidden after Nov 9, 2026
+BALLOT_LIVE = _d.date.today() < _d.date(2027, 1, 3)   # the section is shown until ~60 days after the election (Jan 3, 2027)
+POST_ELECTION = _d.date.today() >= _d.date(2026, 11, 4)  # from Nov 4 it is titled "Nov. 3, 2026 election results" and shows results
 WI_53066 = {  # official WEC list (Oct 6, 2026) for the contests a 53066 voter can see
     "Governor / Lieutenant Governor (one ticket)": ["Tom Tiffany / David Varnam|R", "David Crowley / Sarah Godlewski|D"],
     "Attorney General": ["Eric Toney|R", "Josh Kaul|D"],
@@ -36,6 +37,35 @@ WI_53066 = {  # official WEC list (Oct 6, 2026) for the contests a 53066 voter c
 }
 WI_QUESTIONS = ["State of Wisconsin Partial Veto Referendum", "State of Wisconsin Freedom to Gather in Places of Worship During an Emergency Referendum",
                 "State of Wisconsin Governmental Entity Discrimination Prohibited Referendum", "Oconomowoc Area School District Exceed Revenue Limit Referendum"]
+U = "Unopposed"
+# substring each contest's result chip must contain (stable facts: calls, not vote counts, which keep changing until certification)
+EXPECT_RES = {
+    "53066": {"Governor / Lieutenant Governor (one ticket)": "Called: David Crowley", "Attorney General": "Called: Josh Kaul", "Secretary of State": "Called: JoCasta Zamarripa",
+              "State Treasurer": "Called: Yee Leng Xiong", "U.S. House · District 5": "Called: Scott Fitzgerald", "State Senate · District 33": "Called: Chris Kapenga",
+              "State Assembly · District 97": U, "State Assembly · District 99": U,
+              "Waukesha County Sheriff": U, "Waukesha County Clerk of Circuit Court": U, "Jefferson County Sheriff": U, "Jefferson County Clerk of Circuit Court": U,
+              "Dodge County Sheriff": U, "Dodge County Clerk of Circuit Court": U,
+              "State of Wisconsin Partial Veto Referendum": "Passed", "State of Wisconsin Freedom to Gather in Places of Worship During an Emergency Referendum": "Failed",
+              "State of Wisconsin Governmental Entity Discrimination Prohibited Referendum": "Passed", "Oconomowoc Area School District Exceed Revenue Limit Referendum": "Failed"},
+    "53202": {"Governor / Lieutenant Governor (one ticket)": "Called: David Crowley", "Attorney General": "Called: Josh Kaul", "Secretary of State": "Called: JoCasta Zamarripa",
+              "State Treasurer": "Called: Yee Leng Xiong", "U.S. House · District 4": "Called: Gwen Moore", "State Senate · District 7": "Called: Chris J. Larson",
+              "State Assembly · District 19": "Called: Ryan Clancy", "Milwaukee County Sheriff": U, "Milwaukee County Clerk of Circuit Court": U},
+}
+RES_JS = r"""async () => {
+  const j = await (await fetch('data/ballot/WI.json')).json();
+  const all = [...j.statewide, ...Object.values(j.house), ...Object.values(j.senate), ...Object.values(j.assembly), ...Object.values(j.county).flat(), ...Object.values(j.local).flat()];
+  const byOffice = Object.fromEntries(all.map(c => [c.office, c]));
+  const num = t => Number(t.replace(/[^0-9]/g, ''));
+  return [...document.querySelectorAll('.ballot .contest')].map(c => {
+    const office = c.querySelector('h4').textContent.trim(), box = c.querySelector('.resbox');
+    const rows = box ? [...box.querySelectorAll(':scope > table.res tr')].map(tr => [tr.children[0].textContent.replace('✓','').replace(/\s+/g,' ').trim(), num(tr.children[1].textContent), tr.classList.contains('win')]) : [];
+    const want = ((byOffice[office] || {}).result || {}).rows || [];
+    return {office, chip: box && box.querySelector('.rs') ? box.querySelector('.rs').textContent.trim() : '', label: box ? box.querySelector('.res-label')?.textContent : '',
+      hasSourceLink: !!(box && box.querySelector('p.res-meta a[href^="http"]')), meta: box ? [...box.querySelectorAll('p.res-meta')].map(p => p.textContent).join(' | ') : '',
+      checks: box ? box.querySelectorAll(':scope > table.res .chk').length : 0, wins: rows.filter(r => r[2]).length,
+      votesMatchData: rows.length === want.length && rows.every((r, i) => r[1] === want[i].votes), nrows: rows.length, hasResult: !!(byOffice[office] || {}).result};
+  });
+}"""
 PACKAGE_NOTE = "Package of nominations, including the Special Envoy to Monitor and Combat Anti-Semitism."
 fails = []
 exe = os.environ.get("CHROME", "/usr/bin/google-chrome")
@@ -69,10 +99,38 @@ with sync_playwright() as p:
                 if BALLOT_LIVE:
                     bt = page.locator(".ballot")
                     if bt.count() != 1: ok = False; print(z, "On-your-ballot section missing")
-                    elif z != "53066" and not z.startswith("53") and "vote.org" not in bt.inner_html(): ok = False; print(z, "non-WI ballot fallback link missing")
+                    elif z != "53066" and not z.startswith("53") and ("vote.gov" if POST_ELECTION else "vote.org") not in bt.inner_html(): ok = False; print(z, "non-WI ballot fallback link missing")
+                    if POST_ELECTION and not z.startswith("53") and z not in ("00000", "20001") and not (page.locator(".ballot .rs").count() and "unofficial results" in bt.text_content().lower()): ok = False; print(z, "U.S. House result missing in results section")
                     if page.locator(".ballot .badge, .ballot .v-yea, .ballot .v-nay, .ballot .flag").count(): ok = False; print(z, "ballot styled like a vote/flag")
-                    for pt in page.locator(".ballot .party").all_inner_texts():
+                    for pt in page.locator(".ballot .party").evaluate_all("els => els.map(e => e.textContent.trim())"):
                         if pt not in ("R", "D", "I", "Wisconsin Green", "Constitution"): ok = False; print(z, "unexpected ballot party label", pt)
+                    if POST_ELECTION and z in EXPECT_RES:
+                        if "Nov. 3, 2026 election results" not in page.locator("#ballot-head").text_content(): ok = False; print(z, "ballot heading not renamed after election day")
+                        if "unofficial results" not in page.locator(".ballot .notice").first.inner_text().lower(): ok = False; print(z, "unofficial-results notice missing")
+                        info = {i["office"]: i for i in page.evaluate(RES_JS)}
+                        for office, want in EXPECT_RES[z].items():
+                            i = info.get(office)
+                            if not i: ok = False; print(z, "missing contest", office); continue
+                            if want not in i["chip"]: ok = False; print(z, office, "result chip", repr(i["chip"]), "expected", want)
+                            if i["label"] != "Unofficial results": ok = False; print(z, office, "missing 'Unofficial results' label")
+                            if want == U:
+                                if i["checks"] or i["wins"]: ok = False; print(z, office, "unopposed shows a winner check")
+                            else:
+                                if not i["hasSourceLink"] or " as of " not in " " + i["meta"]: ok = False; print(z, office, "source link / as-of missing:", i["meta"][:120])
+                                if i["nrows"] < 2 or not i["votesMatchData"]: ok = False; print(z, office, "vote rows missing or not equal to site data")
+                                if want.startswith("Called") and (i["checks"] != 1 or i["wins"] != 1): ok = False; print(z, office, "expected exactly one winner check")
+                                if want in ("Passed", "Failed") and i["checks"]: ok = False; print(z, office, "Yes/No question marked with a candidate check")
+                        # every non-called contest must say so instead of declaring a winner
+                        for i in info.values():
+                            if i["chip"].startswith("Too close") and i["checks"]: ok = False; print(z, i["office"], "uncalled race has a winner check")
+                        bg = page.evaluate("() => { const e = document.querySelector('.ballot .bar i'); return e ? getComputedStyle(e).backgroundColor : '' }")
+                        if bg != "rgb(107, 114, 128)": ok = False; print(z, "result bar not neutral gray:", bg)
+                        if page.evaluate("() => document.documentElement.scrollWidth > window.innerWidth + 1"): ok = False; print(z, label, "horizontal overflow")
+                        if z == "53066" and label == "desktop":
+                            d = page.locator("details.res-parts").first; d.locator("summary").click()
+                            if "Waukesha County" not in d.inner_text() or "Dodge County" not in d.inner_text(): ok = False; print(z, "county returns missing")
+                            print(f"  53066 results: {len(EXPECT_RES[z])} contests checked, all with Unofficial results label")
+                        if z == "53202" and label == "desktop": print(f"  53202 results: {len(EXPECT_RES[z])} contests checked")
                     if z == "53066":
                         got = page.evaluate("""() => Object.fromEntries([...document.querySelectorAll('.ballot .contest')].filter(c => c.querySelector('ul.cands')).map(c =>
                             [c.querySelector('h4').textContent.trim(), [...c.querySelectorAll('ul.cands li')].map(li => li.childNodes[0].textContent.trim() + '|' + (li.querySelector('.party')?.textContent || ''))]))""")
@@ -83,7 +141,7 @@ with sync_playwright() as p:
                         if "Oconomowoc Area School District" not in page.locator(".ballot").inner_text() or "$3,000,000" not in page.locator(".ballot").inner_html(): ok = False; print(z, "referendum text missing")
                         bh = page.locator(".ballot").inner_html()
                         if "https://myvote.wi.gov/" not in bh or "elections.wi.gov" not in bh: ok = False; print(z, "ballot links missing")
-                        if "exact ballot" not in page.locator(".ballot .notice").inner_text().lower(): ok = False; print(z, "sample ballot notice missing")
+                        if "myvote.wi.gov" not in page.locator(".ballot .notice").first.inner_html(): ok = False; print(z, "sample ballot notice missing")
                         if page.locator(".ballot").bounding_box()["y"] > page.locator("article.card").first.bounding_box()["y"]: ok = False; print(z, "ballot not above member cards")
                         if label == "desktop": print(f"  53066 ballot: {len(got)} contests with candidates, {len(qs)} questions")
                 # a member card must show at least one vote badge

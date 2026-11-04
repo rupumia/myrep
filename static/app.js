@@ -158,15 +158,47 @@ function raceBlock(race, members, title) {
 }
 
 
-// ---- "On your ballot": Wisconsin Elections Commission lists (WI only); other states link to official lookups
+// ---- "On your ballot" / "Nov. 3, 2026 election results": Wisconsin Elections Commission lists (WI only); other states link to official lookups
+const ELECTION_DAY_END = new Date("2026-11-04T00:00:00-06:00");   // from Nov. 4 the section reports results
+const RESULTS_END = new Date("2027-01-03T00:00:00-06:00");         // ~60 days after the election
+let ZIP_COUNTIES = [];
+const fmtN = n => n == null ? "" : Number(n).toLocaleString("en-US");
+const fmtPct = p => p == null ? "" : `${Number(p).toFixed(1).replace(/\.0$/, "")}%`;
+const WI_RESULTS_URL = "https://elections.wi.gov/election-results";
+function resultRows(rows) {
+  if (!rows || !rows.length) return "";
+  return `<table class="res"><tbody>${rows.map(r => `<tr class="${r.winner ? "win" : ""}${r.write_in ? " wi" : ""}"><td>${esc(r.name)}${r.abbr ? ` <span class="party" title="${esc(r.abbr)}">${esc(r.abbr)}</span>` : ""}${r.incumbent ? ` <span class="small">(incumbent)</span>` : ""}${r.winner ? ` <span class="chk" title="Winner" role="img" aria-label="Winner">✓</span>` : ""}</td>
+    <td class="num">${fmtN(r.votes)}</td><td class="num pc">${fmtPct(r.pct)}<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, r.pct || 0))}%"></i></span></td></tr>`).join("")}</tbody></table>`;
+}
+function resultStatus(r) {
+  const w = r.winner ? esc(r.winner) : "";
+  return {called: `<span class="rs rs-called">Called: ${w} ✓</span>`, passed: `<span class="rs rs-called">Passed ✓</span>`, failed: `<span class="rs rs-called">Failed</span>`,
+    counting: `<span class="rs rs-wait">Too close to call / counting</span>`, unopposed: `<span class="rs rs-un">Unopposed</span>`,
+    counties_only: `<span class="rs rs-wait">Not called · county returns only</span>`}[r.status] || "";
+}
+function resultBlock(c) {
+  const r = c.result;
+  if (!r) return `<div class="resbox"><p class="small res-none">No results for this contest are loaded on MyRep yet. <a href="${WI_RESULTS_URL}" target="_blank" rel="noopener">Elections Commission results page</a> links each county clerk's results.</p></div>`;
+  const parts = (r.parts || []).filter(p => !ZIP_COUNTIES.length || ZIP_COUNTIES.includes(p.county));
+  const meta = [r.source ? `Source: ${r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.source)}</a>` : esc(r.source)}` : "",
+    r.as_of ? `as of ${esc(r.as_of)}` : "",
+    r.pct_in != null && r.total ? `${esc(String(r.pct_in))}% of expected vote counted (${fmtN(r.total)} votes)` : ""].filter(Boolean).join(" · ");
+  const call = r.call_note ? `${esc(r.call_note)}${r.news ? ` <a href="${esc(r.news.url)}" target="_blank" rel="noopener">${esc(r.news.label)}</a>.` : ""}` : "";
+  return `<div class="resbox"><div class="reshead"><span class="small res-label">Unofficial results</span>${resultStatus(r)}</div>${resultRows(r.rows)}
+    ${meta ? `<p class="small res-meta">${meta}</p>` : ""}${call && r.status !== "unopposed" ? `<p class="small res-meta">${call}</p>` : ""}${r.note ? `<p class="small res-meta">${esc(r.note)}</p>` : ""}
+    ${parts.length ? `<details class="res-parts"><summary>County returns${ZIP_COUNTIES.length ? " for the counties in your ZIP" : ""}</summary>${parts.map(p => `<div class="res-part"><strong>${esc(p.county)}</strong>
+      <p class="small res-meta">${esc(p.source)}${p.as_of ? ` · ${esc(p.as_of)}` : ""}${p.reporting ? ` · ${p.reporting[0]} of ${p.reporting[1]} reporting units` : ""} · <a href="${esc(p.url)}" target="_blank" rel="noopener">results page</a></p>${resultRows(p.candidates)}</div>`).join("")}</details>` : ""}</div>`;
+}
 function ballotContest(c) {
+  const showRes = new Date() >= ELECTION_DAY_END;
+  const res = showRes ? resultBlock(c) : "";
   if (c.question !== undefined) {
-    return `<div class="contest"><h4>${esc(c.office)}</h4><details class="q"><summary>Read the question as printed on the ballot</summary><p class="small q-text">${esc(c.question || "Question text not provided.")}</p></details></div>`;
+    return `<div class="contest"><h4>${esc(c.office)}</h4><details class="q"><summary>Read the question as printed on the ballot</summary><p class="small q-text">${esc(c.question || "Question text not provided.")}</p></details>${res}</div>`;
   }
   const one = c.candidates.length === 1;
-  return `<div class="contest"><h4>${esc(c.office)}</h4><ul class="cands">${c.candidates.map(k =>
+  return `<div class="contest${showRes && c.result && c.result.rows && c.result.rows.length ? " has-rows" : ""}"><h4>${esc(c.office)}</h4><ul class="cands">${c.candidates.map(k =>
     `<li>${esc(k.name)}${k.abbr ? ` <span class="party" title="${esc(k.party)}">${esc(k.abbr)}</span>` : ""}</li>`).join("")}</ul>
-    ${one ? `<p class="small">Only one candidate is listed on the ballot for this office.</p>` : ""}</div>`;
+    ${one && !showRes ? `<p class="small">Only one candidate is listed on the ballot for this office.</p>` : ""}${res}</div>`;
 }
 function ballotGroup(title, contests, note) {
   if (!contests.length) return "";
@@ -177,14 +209,26 @@ async function ballotSection(zip, dists26) {
   const wi = dists26.some(d => d.state === "WI");
   const other = dists26.filter(d => d.state !== "WI");
   const generic = `<p class="small">Governor, state, and local races vary by address. MyRep doesn't list them for this state yet; use <a href="https://www.vote.org/polling-place-locator/" target="_blank" rel="noopener">Vote.org</a> or your state's official site via <a href="https://vote.gov/" target="_blank" rel="noopener">vote.gov</a> to see your sample ballot.</p>`;
-  const head = `<h2 class="section" id="ballot-head">On your ballot · Nov. 3, 2026</h2>`;
-  if (!wi) return `<section class="ballot">${head}${generic}</section>`;
+  const post = new Date() >= ELECTION_DAY_END;
+  const head = `<h2 class="section" id="ballot-head">${post ? "Nov. 3, 2026 election results" : "On your ballot · Nov. 3, 2026"}</h2>`;
+  ZIP_COUNTIES = [];
+  const genericPost = `<p class="small">MyRep doesn't list state or local results for this state. Find them on your state or county election website via <a href="https://vote.gov/" target="_blank" rel="noopener">vote.gov</a>.</p>`;
+  if (!wi) {
+    let g = "";
+    if (post) {
+      const hr = await getJSON("results/house.json");
+      const cs = dists26.map(d => { const r = hr?.races?.[`${d.state}-${d.district}`]; return r ? {office: `U.S. House · ${d.state} ${distLabel(d.state, d.district)}`, candidates: [], result: {status: r.status, winner: r.winner, rows: r.rows, source: hr.source, url: r.url, as_of: r.as_of, pct_in: r.pct_in, total: r.total, call_note: r.status === "counting" ? "Not called" : (r.status === "called" ? "Called: NBC News projection using AP vote data" : ""), parts: [], note: r.ranked_choice ? "Ranked-choice race: first-choice votes shown." : ""}} : null; }).filter(Boolean);
+      g = cs.length ? `<h3 class="bgroup">U.S. House</h3><div class="bgrid">${cs.map(c => ballotContest({...c, candidates: [{}, {}]})).join("")}</div>` : "";
+    }
+    return `<section class="ballot" id="ballot">${head}${g}${post ? genericPost : generic}</section>`;
+  }
   const b = await getJSON("ballot/WI.json");
   const z = b && b.zips[zip];
   if (!b || !z) return `<section class="ballot">${head}<div class="unavail">Wisconsin ballot data isn't available for this ZIP.</div><p class="small">Check your sample ballot at <a href="https://myvote.wi.gov/" target="_blank" rel="noopener">myvote.wi.gov</a>.</p></section>`;
   const multi = a => a && a.length > 1;
-  let h = head + `<div class="notice"><strong>Check your exact ballot at <a href="https://myvote.wi.gov/" target="_blank" rel="noopener">myvote.wi.gov</a>.</strong>
-    This list is built from your ZIP code only, and a ZIP can cross district, county, and school-district lines, so some races below may not be on <em>your</em> ballot. Candidates are as listed by the Wisconsin Elections Commission (list dated Oct. 6, 2026).</div>`;
+  ZIP_COUNTIES = (z.county || []).map(([n]) => n);
+  let h = head + (post ? `<div class="notice"><strong>Unofficial results.</strong> Counts come from county clerks' unofficial results and AP vote data published by NBC News, and they change until the county canvass (about Nov. 17) and state certification. A race MyRep can't confirm as called says so; no numbers are estimated. This list is built from your ZIP code only, so some races below may not have been on <em>your</em> ballot (see <a href="https://myvote.wi.gov/" target="_blank" rel="noopener">myvote.wi.gov</a>). Candidates are as listed by the Wisconsin Elections Commission (list dated Oct. 6, 2026).</div>` : `<div class="notice"><strong>Check your exact ballot at <a href="https://myvote.wi.gov/" target="_blank" rel="noopener">myvote.wi.gov</a>.</strong>
+    This list is built from your ZIP code only, and a ZIP can cross district, county, and school-district lines, so some races below may not be on <em>your</em> ballot. Candidates are as listed by the Wisconsin Elections Commission (list dated Oct. 6, 2026).</div>`);
   h += ballotGroup("Statewide", b.statewide.filter(c => c.question === undefined));
   const houses = dists26.filter(d => d.state === "WI").map(d => ({d, c: b.house[d.district]})).filter(x => x.c);
   h += ballotGroup("U.S. House", houses.map(x => x.c), multi(houses) ? "Your ZIP is in more than one congressional district; each is shown." : "");
@@ -201,8 +245,8 @@ async function ballotSection(zip, dists26) {
   h += ballotGroup("Local questions and offices", loc, loc.length ? "Referendum wording is exactly as the Commission lists it; a ZIP often covers only part of a school district or municipality." : "");
   const q = b.statewide.filter(c => c.question !== undefined);
   h += ballotGroup("Statewide questions (constitutional amendments)", q, "Voters answer Yes or No on each.");
-  h += `<p class="small">Not covered: write-in candidates, city/village/town elections (Wisconsin holds those in April), county supervisor and other district-level local seats, and some municipal courts. Source: <a href="${esc(b.sources[0].url)}" target="_blank" rel="noopener">Wisconsin Elections Commission, All Contests and Candidates</a> and its <a href="${esc(b.sources[1].url)}" target="_blank" rel="noopener">Referendum Listing</a>. Party is shown as a plain label.</p>`;
-  if (other.length) h += generic;
+  h += `<p class="small">Not covered: write-in candidates, city/village/town elections (Wisconsin holds those in April), county supervisor and other district-level local seats, and some municipal courts. Source: <a href="${esc(b.sources[0].url)}" target="_blank" rel="noopener">Wisconsin Elections Commission, All Contests and Candidates</a> and its <a href="${esc(b.sources[1].url)}" target="_blank" rel="noopener">Referendum Listing</a>. Party is shown as a plain label.</p>${post ? ` Results (unofficial): county clerks' own results pages for Waukesha, Jefferson and Dodge counties; AP vote data as published by <a href="https://www.nbcnews.com/politics/2026-elections/wisconsin-results" target="_blank" rel="noopener">NBC News</a> for governor, attorney general, secretary of state and U.S. House; <a href="https://exa.ai/library/election" target="_blank" rel="noopener">Exa Library</a> for state treasurer, the three constitutional amendments and some legislative races. Wisconsin has no statewide results feed (<a href="${WI_RESULTS_URL}" target="_blank" rel="noopener">Elections Commission</a>); official results come after canvass and certification. Results refresh each time MyRep rebuilds.` : ""}</p>`;
+  if (other.length) h += post ? genericPost : generic;
   return `<section class="ballot" id="ballot">${h}</section>`;
 }
 
@@ -236,8 +280,7 @@ async function lookup(zip) {
   h += `<div class="loc"><h2>ZIP ${esc(zip)}</h2><p>${dists.map(d => `${esc(sname(d.state))} · ${distLabel(d.state, d.district)}`).join(" / ")}</p></div>`;
   if (dists.length > 1) h += `<div class="notice"><strong>This ZIP code is split across ${dists.length} congressional districts.</strong> We're showing every possible House member: ${dists.map(d => `${esc(d.state)}-${d.district === "00" ? "AL" : esc(d.district)} (~${Math.round(d.land_share * 100)}% of the ZIP's land area)`).join(", ")}. Check your exact address at <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a>.</div>`;
 
-  const ELECTION_END = new Date("2026-11-10T00:00:00-06:00");
-  if (new Date() < ELECTION_END) h += await ballotSection(zip, dists26);
+  if (new Date() < RESULTS_END) h += await ballotSection(zip, dists26);
 
   const sens = stateCodes.flatMap(s => states[s]?.senators || []);
   const nonVoting = stateCodes.every(s => ["DC","PR","AS","GU","MP","VI"].includes(s));

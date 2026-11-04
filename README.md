@@ -110,4 +110,19 @@ Notes: GitHub pauses scheduled workflows in repos with no activity for 60 days, 
 * `wi_contests_2026.json`: Wisconsin Elections Commission "All Contests and Candidates" + "Referendum Listing" (Oct 6, 2026 files), made by `scripts/wi_ballot_snapshot.py`. A snapshot is committed because elections.wi.gov blocks some scripted/CI traffic, and the list is final on Election Day.
 * `wi_zcta_geo.json`: ZCTA overlap shares with state Senate/Assembly districts, counties, municipalities, and school districts (Census TIGER/Line 2025), made by `scripts/wi_zcta_geo.py`. Shares are land-area shares, not population or address counts.
 
-The frontend hides the section after Nov 9, 2026. Other states show links to Vote.org / vote.gov. Unmatched WEC contests (Price County Supervisor District 5, Marshfield joint municipal court) are listed in `meta.json` under `ballot.unmatched_wi`.
+From Nov 4, 2026 the section is titled "Nov. 3, 2026 election results" (see below) and stays visible until Jan 3, 2027 (about 60 days). Other states show links to Vote.org / vote.gov. Unmatched WEC contests (Price County Supervisor District 5, Marshfield joint municipal court) are listed in `meta.json` under `ballot.unmatched_wi`.
+
+## Election results (Nov 3, 2026)
+
+`wi_results_src.py` (fetchers) and `wi_results.py` (join + snapshot) add **unofficial** results to the ballot section and to every U.S. House race. Wisconsin has no statewide results feed (the Elections Commission says so), so:
+
+| What | Source | Fetched how |
+|---|---|---|
+| Waukesha, Jefferson, Dodge counties: every contest in the ZIP's counties (governor, AG, SoS, treasurer, CD5, legislature, sheriff, clerk of circuit court, questions, school referendum) | the county clerks' own results pages / PDF | HTML and PDF (`pypdf`) |
+| Governor, AG, SoS, U.S. House (all states) | AP vote data as published by NBC News (`__NEXT_DATA__` JSON on each page) | HTTP |
+| State treasurer, the 3 constitutional amendments, State Senate 33 and 7, Assembly 19 | Exa Library contest pages (match AP/NBC exactly on the three races both carry) | HTTP |
+| Oconomowoc Area School District referendum | sum of the three county clerks' returns (matches the published 8,920 yes / 11,414 no) | computed |
+
+Rules: numbers are copied from the source with its own as-of time, never estimated. A race is "Called" only when a source says so; otherwise it reads "Too close to call / counting" (or "Not called · county returns only" where only county pieces exist). Single-candidate races say "Unopposed". The winner gets a neutral check mark; bars and chips are gray (no party colors, no green/red). Not covered: Milwaukee County and other counties' own pages (Cloudflare blocks scripts), city/town races, other counties' referenda; those cards say no results are loaded.
+
+Refresh: each build (weekly cron, every push, manual dispatch) re-fetches every source independently; a source that fails keeps its last value from `data_src/wi_results_2026.json`, flagged by its own as-of time. `WI_RESULTS_REFRESH=0` builds from the snapshot only. Results are unofficial until the county canvass (about Nov 17) and state certification (by Dec 1); the weekly cron picks up changes until the section expires Jan 3, 2027.
